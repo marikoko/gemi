@@ -55,6 +55,7 @@ main#preview {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 #demo-btn {
@@ -65,19 +66,19 @@ main#preview {
     background: purple;
 }
 
-.animate_a {
+.btnA {
     animation: grow 2s ease-in-out;
 }
 
-.animate_b {
+.btnB {
     animation: rotate 2s ease-in-out;
 }
 
-.animate_c {
+.btnC {
     animation: colorchange 2s ease-in-out;
 }
 
-.animate_d {
+.btnD {
     animation: moveleft 2s ease-in-out;
 }
 
@@ -99,5 +100,5 @@ main#preview {
 
 @keyframes moveleft {
     0% { transform: translateX(0);}
-    100% { transform: translateX(40%);}
+    100% { transform: translateX(400px);}
 }
