@@ -4,44 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gemibi</title>
+    <title>Gemi</title>
     <link rel="stylesheet" href="scss/gemimain.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Gemi</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <section class="preview">
-            <header>
-                <nav>
-                    <div>GEMI</div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <main id="preview">
                 <button id="demo-btn">Help</button>
-            </main>
+                <button class="startAni">Start</button>
+                <button class="replay">Replay</button>
+                <button class="slower">Slow down</button>
         </section>
 
         <section class="selection">
+            <h2>Selection Area</h2>
+            <div class="components">
+                <h3>Components</h3>
+                <button class="btn">Buttons</button>
+                <button class="textfield">Textfields</button>
+                <button class="selection-controls">Selection Controls</button>
+                <button class="modal">Modal</button>
+            </div>
             <div class="colors">
-                <h2>Colors</h2>
-                <input type="text">
+                <h3>Colors</h3>
+                <label>First Main Color
+                    <input type="text">
+                </label>
+                <label>Second Main Color
+                    <input type="text">
+                </label>
+                <label>Akzent Color
+                    <input type="text">
+                </label>
+
             </div>
 
             <div class="brandidentity">
-                <h2>Brand Identity</h2>
+                <h3>Brand Identity</h3>
                 <button id="btnA" class="brand-type">TypA</button>
                 <button id="btnB" class="brand-type">TypB</button>
                 <button id="btnC" class="brand-type">TypC</button>
                 <button id="btnD" class="brand-type">TypD</button>
             </div>
 
-            <!-- <div class="timing">
-                <h2>Timing</h2>
-            </div> -->
         </section>
 
         <section class="output">
