@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.blue {
+  color: #ff4466;
+}
+
+.spiefreu {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+  display: block;
+}
+
+.circle-wrapper {
+  filter: blur(15px) contrast(200);
+}
+
+.circle-btn {
+  width: 60px;
+  height: 60px;
+  margin-left: 10%;
+  border-radius: 50%;
+  background: #000;
+  display: inline-block;
+}
+
+.circle-btn:first-of-type {
+  animation: go-right 3s infinite;
+}
+
+.circle-btn:last-of-type {
+  animation: go-left 3s infinite;
+}
+
+@keyframes go-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(115%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes go-left {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-115%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=spiefreu.css.map */

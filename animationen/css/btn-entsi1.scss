@@ -1,0 +1,262 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    @include resetting;
+}
+
+body {
+    font-size: $text-default;
+}
+
+.center-flex {
+    @include flex(center, center);
+}
+
+.center {
+  margin: $center;
+}
+
+#entsiBtn {
+  width: 120px;
+  height: 50px;
+  // muss noch raus!!!!!
+  margin: 80px auto;
+  // ------
+  padding-left: 2vw;
+  display: block;
+  font-size: 1.2rem;
+  text-align: left;
+  border: 1px solid #3f3f3f;
+  position: relative;
+}
+
+#entsiBtn:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  border: 3px solid #3f3f3f;
+  border-bottom: 0;
+  border-left: 0;
+  transform: translate(50%, 50%) rotate(45deg);
+  position: absolute;
+}
+
+.animate {
+  // entspricht der Höhe des Buttons
+  color: red;
+}
+.animate:after {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border: 4px solid #fefefe;
+  border-radius: 50%;
+
+  // lässt Lücke im Kreis entstehen
+  border-left-color: transparent;
+
+  // mittig
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  animation: spin ease-in-out 2.5s forwards;
+  -webkit-animation-name: spin ease-in-out 2.5s forwards;
+}
+
+#btn-C.animate.success:before {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 12.5px;
+  border: 4px solid pink;
+  border-right: 0;
+  border-top: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  -webkit-animation: success ease-in 0.15s forwards;
+  animation: success ease-in 0.15s forwards;
+  animation-delay: 2.5s;
+}
+
+// Versuch mit geteiltem Button
+.buttonA:last-of-type {
+  position: relative;
+}
+.buttonA:last-of-type::after {
+  content:'';
+  width: 50%;
+  height: 50%;
+  border: 2px solid red;
+
+}
+// Versuch ::after
+p:after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: orange;
+  border: 2px solid red;
+  transform: rotate(90deg);
+}
+
+#btn-text-C {
+    @include btn-style(70%, 100%, 0, 10px, 0);
+}
+
+#btn-C {
+    @include btn-style(30%, 100%, 0, 10px, 0);
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    // transition: border-radius linear 0.05s, width linear 0.05s;
+  }
+//   #btn-C:focus {
+//     outline: 0;
+//   }
+#btn-C.animate {
+  // entspricht der Höhe des Buttons
+  width: 30%;
+  height: 100%;
+  min-width: 0;
+  // border-radius: 50%;
+  color: transparent;
+}
+#btn-C.animate:after {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border: 4px solid #fefefe;
+  border-radius: 50%;
+
+  // lässt Lücke im Kreis entstehen
+  border-left-color: transparent;
+
+  // mittig
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  animation: spin ease-in-out 2.5s forwards;
+  -webkit-animation-name: spin ease-in-out 2.5s forwards;
+}
+
+#btn-C.animate.success:before {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 12.5px;
+  border: 4px solid pink;
+  border-right: 0;
+  border-top: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  -webkit-animation: success ease-in 0.15s forwards;
+  animation: success ease-in 0.15s forwards;
+  animation-delay: 2.5s;
+}
+//   #btn-C.animate.error {
+//     position: relative;
+//     -webkit-animation: vibrate ease-in 0.5s forwards;
+//     animation: vibrate ease-in 0.5s forwards;
+//     -webkit-animation-delay: 2.5s;
+//     animation-delay: 2.5s;
+//   }
+//   #btn-C.animate.error:before {
+//     color: #fff;
+//     position: absolute;
+//     content: '!';
+//     font-size: 1.8rem;
+//     font-weight: bold;
+//     text-align: center;
+//     left: 50%;
+//     top: 50%;
+//     -webkit-transform: translate(-50%, -50%) scale(0);
+//     transform: translate(-50%, -50%) scale(0);
+//     -webkit-animation: error ease-in 0.5s forwards;
+//     animation: error ease-in 0.5s forwards;
+//     animation-delay: 2.5s;
+//   }
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  90% {
+    transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  98% {
+    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(0);
+  }
+}
+@keyframes success {
+  from {
+    transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}
+@-webkit-keyframes success {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}
+@keyframes error {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #f44336;
+  }
+}
+@-webkit-keyframes error {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    background-color: #f44336;
+  }
+}
+@keyframes vibrate {
+  0%, 30%, 60%, 85%, 100% {
+    left: 0;
+    background-color: #f44336;
+  }
+  10%, 40%, 90%, 70% {
+    left: -2px;
+    background-color: #f44336;
+  }
+  20%, 50%, 80%, 95% {
+    left: 2px;
+    background-color: #f44336;
+  }
+}

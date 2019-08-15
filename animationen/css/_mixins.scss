@@ -1,0 +1,23 @@
+
+@mixin resetting {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@mixin btn-style($width, $height, $margin, $padding, $radius) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+    padding: $padding;
+    font-size: $text-btn;
+    border-radius: $radius;
+    border: none;
+    box-shadow: none;
+}
+
+@mixin flex ($justify, $align:stretch) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}

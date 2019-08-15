@@ -1,0 +1,28 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-A {
+  width: 240px;
+  height: 80px;
+  margin: 3vw;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: none;
+  background: orange;
+}
+/*# sourceMappingURL=ruhsa.css.map */

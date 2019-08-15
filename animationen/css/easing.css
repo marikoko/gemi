@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 200px;
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+.easing-btn {
+  width: 120px;
+  height: 40px;
+  margin: 3vw;
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+}
+/*# sourceMappingURL=easing.css.map */
