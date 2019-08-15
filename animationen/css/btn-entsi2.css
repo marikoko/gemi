@@ -58,7 +58,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   animation: spin ease-in-out 2.5s forwards;
-  -webkit-animation-name: spin ease-in-out 2.5s forwards;
+  -webkit-animation: spin ease-in-out 2.5s forwards;
 }
 
 #btn-C.animate.success:before {
@@ -98,7 +98,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   animation: spin ease-in-out 2.5s forwards;
-  -webkit-animation-name: spin ease-in-out 2.5s forwards;
+  -webkit-animation: spin ease-in-out 2.5s forwards;
 }
 
 #btn-C.animate.success:before {
