@@ -10,9 +10,24 @@ body {
 }
 
 #entsiBtn {
-    width: 160px;
+    width: 120px;
     height: 50px;
-    border: 2px solid #3f3f3f;
+    margin: 30px auto;
+    border: 1px solid #3f3f3f;
+}
+
+#entsiBtn-text, #entsiBtn-ani {
+  background: $color-bg-default;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.5s ease-in-out;
+  outline: 0 !important;
+}
+
+#entsiBtn:hover #entsiBtn-text, #entsiBtn:hover #entsiBtn-ani {
+  background: #5a5a5a;
+  color: #fff;
 }
 
 #entsiBtn-text {
@@ -21,25 +36,27 @@ body {
 
 #entsiBtn-ani {
     @include btn-style(30%, 100%, -4px, 10px, 0);
-    background: red;
+    // background: red;
     position: relative;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    // transition: border-radius linear 0.05s, width linear 0.05s;
-  }
+}
 
+.color-ani {
+  // background-color:$color-bg-ani;
+  color: rbga(255,255,255,0.2)
+  // color: red;
+}
 
 .animate {
-  // entspricht der Höhe des Buttons
-  color: red;
+  // background-color:$color-bg-ani;
+  color: transparent !important;
 }
+
 .animate:after {
   position: absolute;
   content: '';
-  width: 25px;
-  height: 25px;
-  border: 4px solid #fefefe;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fefefe;
   border-radius: 50%;
 
   // lässt Lücke im Kreis entstehen
@@ -51,163 +68,56 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
-  animation: spin ease-in-out 2.5s forwards;
-  -webkit-animation: spin ease-in-out 2.5s forwards;
+  animation: rotate-circle ease-in-out 2s forwards;
+  -webkit-animation: rotate-circle ease-in-out 2s forwards;
 }
 
-#btn-C.animate.success:before {
+.animate.success:before {
   position: absolute;
   content: '';
-  width: 25px;
-  height: 12.5px;
-  border: 4px solid pink;
+  width: 20px;
+  height: 10px;
+  border: 2px solid #fefefe;
   border-right: 0;
   border-top: 0;
   left: 50%;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  -webkit-animation: success ease-in 0.15s forwards;
-  animation: success ease-in 0.15s forwards;
+  transform: translate(-50%, -40%) rotate(0deg) scale(0);
+  -webkit-animation: success ease-in 0.1s forwards;
+  animation: success ease-in 0.1s forwards;
   animation-delay: 2.5s;
 }
 
-
-#btn-C.animate {
-  // entspricht der Höhe des Buttons
-  width: 30%;
-  height: 100%;
-  min-width: 0;
-  // border-radius: 50%;
-  color: transparent;
+@keyframes rotate-circle {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  90% { transform: translate(-50%, -50%) rotate(1080deg) scale(1); }
+  100% { transform: scale(0); }
 }
-#btn-C.animate:after {
-  position: absolute;
-  content: '';
-  width: 25px;
-  height: 25px;
-  border: 4px solid #fefefe;
-  border-radius: 50%;
-
-  // lässt Lücke im Kreis entstehen
-  border-left-color: transparent;
-
-  // mittig
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
-  animation: spin ease-in-out 2.5s forwards;
-  -webkit-animation: spin ease-in-out 2.5s forwards;
+@-webkit-keyframes rotate-circle {
+  0% { -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  98% { -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(1); }
+  100% { -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(0); }
 }
 
-#btn-C.animate.success:before {
-  position: absolute;
-  content: '';
-  width: 25px;
-  height: 12.5px;
-  border: 4px solid pink;
-  border-right: 0;
-  border-top: 0;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  -webkit-animation: success ease-in 0.15s forwards;
-  animation: success ease-in 0.15s forwards;
-  animation-delay: 2.5s;
-}
-//   #btn-C.animate.error {
-//     position: relative;
-//     -webkit-animation: vibrate ease-in 0.5s forwards;
-//     animation: vibrate ease-in 0.5s forwards;
-//     -webkit-animation-delay: 2.5s;
-//     animation-delay: 2.5s;
-//   }
-//   #btn-C.animate.error:before {
-//     color: #fff;
-//     position: absolute;
-//     content: '!';
-//     font-size: 1.8rem;
-//     font-weight: bold;
-//     text-align: center;
-//     left: 50%;
-//     top: 50%;
-//     -webkit-transform: translate(-50%, -50%) scale(0);
-//     transform: translate(-50%, -50%) scale(0);
-//     -webkit-animation: error ease-in 0.5s forwards;
-//     animation: error ease-in 0.5s forwards;
-//     animation-delay: 2.5s;
-//   }
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-  90% {
-    transform: translate(-50%, -50%) rotate(1080deg) scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-  98% {
-    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(1);
-  }
-  100% {
-    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(0);
-  }
-}
 @keyframes success {
-  from {
-    transform: translate(-50%, -50%) rotate(0) scale(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-  }
+  from { transform: translate(-50%, -50%) rotate(0) scale(0); }
+  to { transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
 }
 @-webkit-keyframes success {
-  from {
-    -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
-  }
-  to {
-    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-  }
+  from { -webkit-transform: translate(-50%, -50%) rotate(0) scale(0); }
+  to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
 }
 @keyframes error {
-  from {
-    transform: translate(-50%, -50%) scale(0);
-  }
-  to {
-    transform: translate(-50%, -50%) scale(1);
-    background-color: #f44336;
-  }
+  from { transform: translate(-50%, -50%) scale(0); }
+  to { transform: translate(-50%, -50%) scale(1); background-color: #f44336; }
 }
 @-webkit-keyframes error {
-  from {
-    -webkit-transform: translate(-50%, -50%) scale(0);
-  }
-  to {
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    background-color: #f44336;
-  }
+  from { -webkit-transform: translate(-50%, -50%) scale(0); }
+  to { -webkit-transform: translate(-50%, -50%) scale(1); background-color: #f44336; }
 }
 @keyframes vibrate {
-  0%, 30%, 60%, 85%, 100% {
-    left: 0;
-    background-color: #f44336;
-  }
-  10%, 40%, 90%, 70% {
-    left: -2px;
-    background-color: #f44336;
-  }
-  20%, 50%, 80%, 95% {
-    left: 2px;
-    background-color: #f44336;
-  }
+  0%, 30%, 60%, 85%, 100% { left: 0; background-color: #f44336; }
+  10%, 40%, 90%, 70% { left: -2px; background-color: #f44336; }
+  20%, 50%, 80%, 95% { left: 2px; background-color: #f44336; }
 }

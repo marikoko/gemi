@@ -9,9 +9,24 @@ body {
 }
 
 #entsiBtn {
-  width: 160px;
+  width: 120px;
   height: 50px;
-  border: 2px solid #3f3f3f;
+  margin: 30px auto;
+  border: 1px solid #3f3f3f;
+}
+
+#entsiBtn-text, #entsiBtn-ani {
+  background: #fff;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.5s ease-in-out;
+  outline: 0 !important;
+}
+
+#entsiBtn:hover #entsiBtn-text, #entsiBtn:hover #entsiBtn-ani {
+  background: #5a5a5a;
+  color: #fff;
 }
 
 #entsiBtn-text {
@@ -34,91 +49,51 @@ body {
   border-radius: 0;
   border: none;
   box-shadow: none;
-  background: red;
   position: relative;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
+}
+
+.color-ani {
+  color: rbga(255, 255, 255, 0.2);
 }
 
 .animate {
-  color: red;
+  color: transparent !important;
 }
 
 .animate:after {
   position: absolute;
   content: '';
-  width: 25px;
-  height: 25px;
-  border: 4px solid #fefefe;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fefefe;
   border-radius: 50%;
   border-left-color: transparent;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  animation: spin ease-in-out 2.5s forwards;
-  -webkit-animation: spin ease-in-out 2.5s forwards;
+  animation: rotate-circle ease-in-out 2s forwards;
+  -webkit-animation: rotate-circle ease-in-out 2s forwards;
 }
 
-#btn-C.animate.success:before {
+.animate.success:before {
   position: absolute;
   content: '';
-  width: 25px;
-  height: 12.5px;
-  border: 4px solid pink;
+  width: 20px;
+  height: 10px;
+  border: 2px solid #fefefe;
   border-right: 0;
   border-top: 0;
   left: 50%;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  -webkit-animation: success ease-in 0.15s forwards;
-  animation: success ease-in 0.15s forwards;
+  transform: translate(-50%, -40%) rotate(0deg) scale(0);
+  -webkit-animation: success ease-in 0.1s forwards;
+  animation: success ease-in 0.1s forwards;
   animation-delay: 2.5s;
 }
 
-#btn-C.animate {
-  width: 30%;
-  height: 100%;
-  min-width: 0;
-  color: transparent;
-}
-
-#btn-C.animate:after {
-  position: absolute;
-  content: '';
-  width: 25px;
-  height: 25px;
-  border: 4px solid #fefefe;
-  border-radius: 50%;
-  border-left-color: transparent;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  animation: spin ease-in-out 2.5s forwards;
-  -webkit-animation: spin ease-in-out 2.5s forwards;
-}
-
-#btn-C.animate.success:before {
-  position: absolute;
-  content: '';
-  width: 25px;
-  height: 12.5px;
-  border: 4px solid pink;
-  border-right: 0;
-  border-top: 0;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  -webkit-animation: success ease-in 0.15s forwards;
-  animation: success ease-in 0.15s forwards;
-  animation-delay: 2.5s;
-}
-
-@keyframes spin {
+@keyframes rotate-circle {
   0% {
     transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
@@ -130,7 +105,7 @@ body {
   }
 }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes rotate-circle {
   0% {
     -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
