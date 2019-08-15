@@ -1,0 +1,22 @@
+{
+  "name": "gemi",
+  "version": "1.0.0",
+  "description": "UI Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('Yeah');"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marikoko/gemibi.git"
+  },
+  "author": "Heike Koch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marikoko/gemibi/issues"
+  },
+  "homepage": "https://github.com/marikoko/gemibi#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1"
+  }
+}
