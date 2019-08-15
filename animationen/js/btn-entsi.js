@@ -8,7 +8,6 @@ const entsiBtnAni = document.querySelector('#entsiBtn-ani')
 animateButton = (e) => {
     // console.log('geklickt');
     e.preventDefault;
-
     changeColor();
 
     //reset animation
