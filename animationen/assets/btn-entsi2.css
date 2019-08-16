@@ -20,7 +20,7 @@ body {
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
   outline: 0 !important;
 }
 
@@ -72,25 +72,26 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  animation: rotate-circle ease-in-out 2s forwards;
-  -webkit-animation: rotate-circle ease-in-out 2s forwards;
+  animation: rotate-circle ease-in-out 1s forwards;
+  -webkit-animation: rotate-circle ease-in-out 1s forwards;
 }
 
 .animate.success:before {
   position: absolute;
   content: '';
   width: 20px;
-  height: 10px;
+  height: 8px;
   border: 2px solid #fefefe;
   border-right: 0;
   border-top: 0;
   left: 50%;
   top: 40%;
-  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  transform: translate(-50%, -40%) rotate(0deg) scale(0);
-  -webkit-animation: success ease-in 0.1s forwards;
-  animation: success ease-in 0.1s forwards;
-  animation-delay: 2.5s;
+  -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+  transform: translate(-50%, -50%) rotate(0) scale(0);
+  -webkit-animation: success ease-in 0.2s forwards;
+  animation: success ease-in 0.2s forwards;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 @keyframes rotate-circle {
@@ -98,7 +99,7 @@ body {
     transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
   90% {
-    transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
   }
   100% {
     transform: scale(0);
@@ -110,28 +111,30 @@ body {
     -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
   98% {
-    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+    -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(1);
   }
   100% {
-    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(0);
+    -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(0);
   }
 }
 
 @keyframes success {
   from {
-    transform: translate(-50%, -50%) rotate(0) scale(0);
+    transform: translate(-50%, -50%) rotate(-135deg) scale(0);
   }
   to {
     transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    background-color: #14c88b;
   }
 }
 
 @-webkit-keyframes success {
   from {
-    -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+    -webkit-transform: translate(-50%, -50%) rotate(-135deg) scale(0);
   }
   to {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    background-color: #14c88b;
   }
 }
 
@@ -156,6 +159,21 @@ body {
 }
 
 @keyframes vibrate {
+  0%, 30%, 60%, 85%, 100% {
+    left: 0;
+    background-color: #f44336;
+  }
+  10%, 40%, 90%, 70% {
+    left: -2px;
+    background-color: #f44336;
+  }
+  20%, 50%, 80%, 95% {
+    left: 2px;
+    background-color: #f44336;
+  }
+}
+
+@-webkit-keyframes vibrate {
   0%, 30%, 60%, 85%, 100% {
     left: 0;
     background-color: #f44336;

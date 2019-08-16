@@ -8,16 +8,14 @@ const entsiBtnAni = document.querySelector('#entsiBtn-ani')
 animateButton = (e) => {
     // console.log('geklickt');
     e.preventDefault;
-    changeColor();
+    changeColorStart();
 
     //reset animation
     entsiBtnAni.classList.remove('animate');
     // console.log('entfernt');
-
     entsiBtnAni.classList.add('animate');
     // console.log('dazu');
-    
-    // e.target.classList.add('animate');
+    btn.addEventListener('animationend', aniDoneSuccess, false);
     // console.log('dazu2');
     removeAll();
 
@@ -36,17 +34,27 @@ animateButton = (e) => {
     // },6000);
   };
 
-changeColor = () => {
+changeColorStart = () => {
   buttons.forEach((i) => {
     i.style.backgroundColor = '#5a5a5a';
   })
   entsiBtnText.style.color = "rgba(255,255,255,0.6)";
 }
 
+aniDoneSuccess = () => {
+  console.log('Success ani zu ende');
+  buttons.forEach((i) => {
+    i.style.backgroundColor = '#14c88b';
+    btn.style.border = "0px";
+  })
+  entsiBtnText.style.color = "#ffffff";
+}
+
 animationEnd = () => {
   buttons.forEach((i) => {
     i.style.backgroundColor = '#ffffff';
     i.style.color = '#000';
+    btn.style.border = '1px solid #3f3f3f';
   })
 }
 
