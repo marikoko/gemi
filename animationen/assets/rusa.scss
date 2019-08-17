@@ -1,0 +1,75 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    @include resetting;
+}
+
+html, body {
+    width: $width-height-default; 
+    height: $width-height-default; 
+}
+
+body {
+    font-size: $text-size-default;
+}
+
+#rusaBtn {
+    @include btn-style(80px, 80px, 3vw, 10px, 50%);
+    position: relative;
+    background:$color-btn-bg;
+    color: $color-btn-text;
+    cursor: pointer;
+    outline:0;
+    transition: background 0.5s ease-in-out;
+}
+
+#rusaBtn:hover {
+    background: rgba(darken($color-btn-bg, 10%),1);
+}
+
+#rusaBtn:before, #rusaBtn:after {
+    transition: all 0.5s ease-in-out;
+}
+
+.animate-main {
+    animation: gooey-border 2s ease-in-out alternate;
+}
+
+.animate-before-after {
+    &:before, &:after {
+        content:'';
+        position: absolute;
+        top:-5%;
+        left:-5%;
+        width: 110%;
+        height: 110%;
+        z-index: -1;
+        border-radius: 50%;
+    }
+    &:before {
+        background: rgba(darken($color-btn-bg, 10%), 0.3);
+        animation: gooey-border 2s ease-in-out alternate-reverse;
+    }
+
+    &:after {
+        background: rgba($color-btn-bg,0.3);
+        animation: gooey-border-after 2s ease-in-out alternate-reverse;
+    }
+}
+
+
+@keyframes gooey-border {
+  0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; }
+  34% { border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%  ; }
+  67% { border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%  ; }
+  100% { border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%  ; }
+}
+
+@keyframes gooey-border-after {
+  0% { border-radius: 35% 65% 50% 50% / 50% 50% 50% 50% ; } 
+  34% { border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%; } 
+  67% { border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%; } 
+  100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 
+}
+

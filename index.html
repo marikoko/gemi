@@ -8,21 +8,31 @@
     <link rel="stylesheet" href="scss/gemimain.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Gemi</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
-        <section class="preview">
+        <section class="generator">
+            <header>
+                <h1>Gemi</h1>
+            </header>
+            <div class="preview">
                 <button id="demo-btn">Help</button>
                 <button class="startAni">Start</button>
                 <button class="replay">Replay</button>
                 <button class="slower">Slow down</button>
+            </div>
+            <div class="output">
+                <p>Hier kommt der code rein - toll gell</p>
+                <!-- <pre> -->
+                    <code>
+                        .btnA {animation: grow 2s ease-in-out}
+                        
+                        @keyframes grow { 
+                            0% { transform: scale(0);} 100% { transform: scale(1.5);}
+                        }
+                    </code>
+                <!-- </pre> -->
+            </div>
         </section>
+        
 
         <section class="selection">
             <h2>Selection Area</h2>
@@ -33,45 +43,33 @@
                 <button class="selection-controls">Selection Controls</button>
                 <button class="modal">Modal</button>
             </div>
-            <div class="colors">
-                <h3>Colors</h3>
-                <label>First Main Color
-                    <input type="text">
-                </label>
-                <label>Second Main Color
-                    <input type="text">
-                </label>
-                <label>Akzent Color
-                    <input type="text">
-                </label>
-
-            </div>
-
             <div class="brandidentity">
                 <h3>Brand Identity</h3>
-                <button id="btnA" class="brand-type">TypA</button>
-                <button id="btnB" class="brand-type">TypB</button>
-                <button id="btnC" class="brand-type">TypC</button>
-                <button id="btnD" class="brand-type">TypD</button>
+                <button id="enle" class="brand-type">Enle</button>
+                <button id="fresi" class="brand-type">Fresi</button>
+                <button id="ensi" class="brand-type">ensi</button>
+                <button id="rusa" class="brand-type">rusa</button>
+            </div>
+            <div class="colors">
+                <h3>Colors</h3>
+                <label>
+                    <input type="text">Color 1
+                </label>
+                <label>
+                    <input type="text">Color 2
+                </label>
+                <label>
+                    <input type="text">Color 3
+                </label>
             </div>
 
         </section>
 
-        <section class="output">
-            <p>Hier kommt der code rein - toll gell</p>
-            <!-- <pre> -->
-                <code>
-                    .btnA {animation: grow 2s ease-in-out}
-                    
-                    @keyframes grow { 
-                        0% { transform: scale(0);} 100% { transform: scale(1.5);}
-                    }
-                </code>
-            <!-- </pre> -->
-        </section>
+        
     </main>
 
     <footer>
+        <p>Ich bin der footer</p>
 
     </footer>
 

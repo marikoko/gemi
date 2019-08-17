@@ -15,6 +15,11 @@ body {
   border: 1px solid #3f3f3f;
 }
 
+#entsiBtn:hover #entsiBtn-text, #entsiBtn:hover #entsiBtn-ani {
+  background: #5a5a5a;
+  color: #fff;
+}
+
 #entsiBtn-text, #entsiBtn-ani {
   background: #fff;
   cursor: pointer;
@@ -22,11 +27,6 @@ body {
   -webkit-appearance: none;
   transition: all 0.2s ease-in-out;
   outline: 0 !important;
-}
-
-#entsiBtn:hover #entsiBtn-text, #entsiBtn:hover #entsiBtn-ani {
-  background: #5a5a5a;
-  color: #fff;
 }
 
 #entsiBtn-text {
@@ -187,4 +187,4 @@ body {
     background-color: #f44336;
   }
 }
-/*# sourceMappingURL=btn-entsi2.css.map */
+/*# sourceMappingURL=ensi-btn.css.map */
