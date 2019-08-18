@@ -17,11 +17,11 @@ body {
 
 #enleBtn {
     @include btn-style(120px, 50px, 3vw, 10px, 0);
-    // background: #000;
-    background: transparent;
-    color: #000000;
-    // color: $color-btn-text;
-    border: 2px solid #000;
+    background: #000;
+    // background: transparent;
+    // color: #000000;
+    color: $color-btn-text;
+    // border: 2px solid #000;
     overflow:hidden;
     cursor: pointer;
     outline:0;
@@ -39,8 +39,8 @@ body {
     border-radius: 50%;
     background:$color-btn-bg-orange;
     position: absolute;
-    opacity: 1;
-    // mix-blend-mode:screen;
+    transform: translate(240%, 200%);
+    mix-blend-mode:screen;
     z-index: 1;
     transition: all 0.5s ease-in-out;
 }
@@ -76,7 +76,7 @@ body {
     90% { transform: scale(1.01); }
     100% { transform: scale(1); }
 }
-    
+
 .box {
     width: 100px;
     height: 100px;

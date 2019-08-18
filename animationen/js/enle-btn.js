@@ -3,15 +3,14 @@ const btn = document.querySelector('#enleBtn'),
         box = document.querySelector('.box');
         
 animationEnd = () => {
-    // btnBg.style.opacity = 0;
-    // btn.style.backgroundColor = '#14c88b';
-    // btnBg.classList.remove('grow');
+    btn.style.backgroundColor = '#14c88b';
+    btnBg.classList.remove('grow');
 }  
 
 removeAll = () => {
     setTimeout(function(){
+    btn.style.backgroundColor = '#14c88b';
     btnBg.classList.remove('grow');
-    animationEnd();
     },4000);
 }
 
@@ -25,11 +24,12 @@ animateButton = (e) => {
     // const ripples = [];
     // ripples.push(x, y);
     // console.log(ripples);
-    btnBg.style.opacity = 1;
     btnBg.style.top = y + 'px';
+    // console.log(btnBg.style.top);
     btnBg.style.left = x + 'px';
+    // console.log(btnBg.style.top);
     btnBg.classList.add('grow');
-    // btn.addEventListener('animationend', animationEnd, false);
+    btn.addEventListener('animationend', animationEnd, false);
     removeAll();
 }
 
@@ -41,5 +41,6 @@ bounce = (e) => {
     })
 }
 
-btn.addEventListener('mouseover', bounce, false);
+
+btn.addEventListener('mouseenter', bounce, false);
 btn.addEventListener('click', animateButton, false);

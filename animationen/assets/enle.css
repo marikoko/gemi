@@ -24,9 +24,8 @@ body {
   border-radius: 0;
   border: none;
   box-shadow: none;
-  background: transparent;
-  color: #000000;
-  border: 2px solid #000;
+  background: #000;
+  color: #fff;
   overflow: hidden;
   cursor: pointer;
   outline: 0;
@@ -40,7 +39,8 @@ body {
   border-radius: 50%;
   background: #EF6A0F;
   position: absolute;
-  opacity: 1;
+  transform: translate(240%, 200%);
+  mix-blend-mode: screen;
   z-index: 1;
   transition: all 0.5s ease-in-out;
 }
