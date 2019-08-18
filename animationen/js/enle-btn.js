@@ -16,12 +16,12 @@ removeAll = () => {
 }
 
 animateButton = (e) => {
-    // btn.removeEventListener('mouseover', bounce, false);
     e.preventDefault();
     const width = 16;
     const circleWidth = width;
     const x = e.clientX - circleWidth;
     const y = e.clientY - circleWidth;
+    // zum Testen:
     // const ripples = [];
     // ripples.push(x, y);
     // console.log(ripples);
