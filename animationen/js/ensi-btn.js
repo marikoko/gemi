@@ -37,7 +37,7 @@ removeAll = () => {
 }
 
 animateButton = (e) => {
-  e.preventDefault;
+  e.preventDefault();
   changeColorStart();
   entsiBtnAni.classList.remove('animate');
   entsiBtnAni.classList.add('animate');

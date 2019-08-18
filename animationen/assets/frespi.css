@@ -10,7 +10,7 @@
 }
 
 .blue {
-  color: #ff4466;
+  color: #fff;
 }
 
 .spiefreu {
@@ -31,7 +31,7 @@
   height: 60px;
   margin-left: 10%;
   border-radius: 50%;
-  background: #000;
+  background: #E7C3FC;
   display: inline-block;
 }
 
@@ -66,4 +66,4 @@
     transform: translateX(0);
   }
 }
-/*# sourceMappingURL=spiefreu.css.map */
+/*# sourceMappingURL=frespi.css.map */
