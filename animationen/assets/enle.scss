@@ -2,7 +2,7 @@
 @import 'mixins';
 
 * {
-    @include resetting;
+    @include reset;
 }
 
 html, body {

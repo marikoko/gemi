@@ -5,6 +5,10 @@ const btn = document.querySelector('#enleBtn'),
 animationEnd = () => {
     btn.style.backgroundColor = '#14c88b';
     btnBg.classList.remove('grow');
+    btnBg.style.top = 100 + '%';
+    console.log(btnBg.style.top + 'ende');
+    btnBg.style.left = 240 + '%';
+    console.log(btnBg.style.left + 'ende');
 }  
 
 removeAll = () => {
@@ -21,13 +25,13 @@ animateButton = (e) => {
     const x = e.clientX - circleWidth;
     const y = e.clientY - circleWidth;
     // zum Testen:
-    // const ripples = [];
-    // ripples.push(x, y);
-    // console.log(ripples);
+    const ripples = [];
+    ripples.push(x, y);
+    console.log(ripples);
     btnBg.style.top = y + 'px';
-    // console.log(btnBg.style.top);
+    console.log(btnBg.style.top);
     btnBg.style.left = x + 'px';
-    // console.log(btnBg.style.top);
+    console.log(btnBg.style.left);
     btnBg.classList.add('grow');
     btn.addEventListener('animationend', animationEnd, false);
     removeAll();

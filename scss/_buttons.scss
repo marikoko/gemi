@@ -1,17 +1,63 @@
-@import 'variables';
-@import 'mixins';
-
-* {
-    @include reset;
+/* -------- enle scss ----------------------------------------*/
+#enleBtn {
+    @include btn-style(120px, 50px, 3vw, 10px, 0);
+    background: #000;
+    color: $color-btn-text;
+    overflow:hidden;
+    cursor: pointer;
+    outline:0;
+    position: relative;
+    transition: background 0.5s ease-in-out;
 }
 
-body {
-    font-size: $text-size-default;
+.animateBg {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background:$color-btn-bg-orange;
+    position: absolute;
+    transform: translate(240%, 200%);
+    mix-blend-mode:screen;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
 }
 
+.bounce {
+    animation: bounce 0.5s forwards; 
+}
+
+.grow {
+    animation: grow 1s forwards;
+}
+
+.changeColor {
+    // animation: changeColor 0.5s ease-in-out;
+}
+
+@keyframes grow {
+    0%   { transform: scale(0); }
+	80%  { transform: scale(150); }
+	100% { transform: scale(150); opacity: 0; }
+}
+
+@keyframes changeColor {
+    // 0% { background-color: }
+    // 100% { background-color: }
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    35% { transform: scale(0.98); }
+    50% { transform: scale(1.02); }
+    75% { transform: scale(0.99); }
+    90% { transform: scale(1.01); }
+    100% { transform: scale(1); }
+}
+/* -------- enle Ende ----------------------------------------*/
+
+/* -------- ensi scss ----------------------------------------*/
 #entsiBtn {
-    width: 120px;
-    height: 50px;
+    @include btn-style(120px, 50px, 3vw, 0, 0);
     margin: 30px auto;
     border: 1px solid #3f3f3f;
     &:hover #entsiBtn-text, &:hover #entsiBtn-ani {
@@ -123,3 +169,64 @@ body {
   10%, 40%, 90%, 70% { left: -2px; background-color: #f44336; }
   20%, 50%, 80%, 95% { left: 2px; background-color: #f44336; }
 }
+/* -------- ensi Ende ----------------------------------------*/
+
+/* -------- rusa scss ----------------------------------------*/
+#rusaBtn {
+    @include btn-style(80px, 80px, 3vw, 10px, 50%);
+    position: relative;
+    background:$color-btn-bg;
+    color: $color-btn-text;
+    cursor: pointer;
+    outline:0;
+    transition: background 0.5s ease-in-out;
+}
+
+#rusaBtn:hover {
+    background: rgba(darken($color-btn-bg, 10%),1);
+}
+
+#rusaBtn:before, #rusaBtn:after {
+    transition: all 0.5s ease-in-out;
+}
+
+.animate-main {
+    animation: gooey-border 2s ease-in-out alternate;
+}
+
+.animate-layer {
+    &:before, &:after {
+        content:'';
+        position: absolute;
+        top:-5%;
+        left:-5%;
+        width: 110%;
+        height: 110%;
+        z-index: -1;
+        border-radius: 50%;
+    }
+    &:before {
+        background: rgba(darken($color-btn-bg, 10%), 0.3);
+        animation: gooey-border 2s ease-in-out alternate-reverse;
+    }
+
+    &:after {
+        background: rgba($color-btn-bg,0.3);
+        animation: gooey-border-after 2s ease-in-out alternate-reverse;
+    }
+}
+
+@keyframes gooey-border {
+  0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; }
+  34% { border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%  ; }
+  67% { border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%  ; }
+  100% { border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%  ; }
+}
+
+@keyframes gooey-border-after {
+  0% { border-radius: 35% 65% 50% 50% / 50% 50% 50% 50% ; } 
+  34% { border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%; } 
+  67% { border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%; } 
+  100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 
+}
+/* -------- rusa Ende ----------------------------------------*/

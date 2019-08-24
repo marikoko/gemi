@@ -1,3 +1,347 @@
+/* -------- enle scss ----------------------------------------*/
+#enleBtn {
+  width: 120px;
+  height: 50px;
+  margin: 3vw;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+  transition: background 0.5s ease-in-out;
+}
+
+.animateBg {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #EF6A0F;
+  position: absolute;
+  transform: translate(240%, 200%);
+  mix-blend-mode: screen;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.bounce {
+  animation: bounce 0.5s forwards;
+}
+
+.grow {
+  animation: grow 1s forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(150);
+  }
+  100% {
+    transform: scale(150);
+    opacity: 0;
+  }
+}
+
+@keyframes changeColor {}@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  75% {
+    transform: scale(0.99);
+  }
+  90% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* -------- enle Ende ----------------------------------------*/
+/* -------- ensi scss ----------------------------------------*/
+#entsiBtn {
+  width: 120px;
+  height: 50px;
+  margin: 3vw;
+  padding: 0;
+  font-size: 1.2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin: 30px auto;
+  border: 1px solid #3f3f3f;
+}
+
+#entsiBtn:hover #entsiBtn-text, #entsiBtn:hover #entsiBtn-ani {
+  background: #5a5a5a;
+  color: #fff;
+}
+
+#entsiBtn-text, #entsiBtn-ani {
+  background: #fff;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.2s ease-in-out;
+  outline: 0 !important;
+}
+
+#entsiBtn-text {
+  width: 70%;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+#entsiBtn-ani {
+  width: 30%;
+  height: 100%;
+  margin: -4px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+
+.color-ani {
+  color: rbga(255, 255, 255, 0.2);
+}
+
+.animate {
+  color: transparent !important;
+}
+
+.animate:after {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fefefe;
+  border-radius: 50%;
+  border-left-color: transparent;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: rotate-circle ease-in-out 1s forwards;
+  -webkit-animation: rotate-circle ease-in-out 1s forwards;
+}
+
+.animate.success:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 8px;
+  border: 2px solid #fefefe;
+  border-right: 0;
+  border-top: 0;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+  transform: translate(-50%, -50%) rotate(0) scale(0);
+  -webkit-animation: success ease-in 0.2s forwards;
+  animation: success ease-in 0.2s forwards;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes rotate-circle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  90% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@-webkit-keyframes rotate-circle {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  98% {
+    -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(0);
+  }
+}
+
+@keyframes success {
+  from {
+    transform: translate(-50%, -50%) rotate(-135deg) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    background-color: #14c88b;
+  }
+}
+
+@-webkit-keyframes success {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(-135deg) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    background-color: #14c88b;
+  }
+}
+
+@keyframes error {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #f44336;
+  }
+}
+
+@-webkit-keyframes error {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    background-color: #f44336;
+  }
+}
+
+@keyframes vibrate {
+  0%, 30%, 60%, 85%, 100% {
+    left: 0;
+    background-color: #f44336;
+  }
+  10%, 40%, 90%, 70% {
+    left: -2px;
+    background-color: #f44336;
+  }
+  20%, 50%, 80%, 95% {
+    left: 2px;
+    background-color: #f44336;
+  }
+}
+
+@-webkit-keyframes vibrate {
+  0%, 30%, 60%, 85%, 100% {
+    left: 0;
+    background-color: #f44336;
+  }
+  10%, 40%, 90%, 70% {
+    left: -2px;
+    background-color: #f44336;
+  }
+  20%, 50%, 80%, 95% {
+    left: 2px;
+    background-color: #f44336;
+  }
+}
+
+/* -------- ensi Ende ----------------------------------------*/
+/* -------- rusa scss ----------------------------------------*/
+#rusaBtn {
+  width: 80px;
+  height: 80px;
+  margin: 3vw;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  background: #E7C3FC;
+  color: #fff;
+  cursor: pointer;
+  outline: 0;
+  transition: background 0.5s ease-in-out;
+}
+
+#rusaBtn:hover {
+  background: #d492fa;
+}
+
+#rusaBtn:before, #rusaBtn:after {
+  transition: all 0.5s ease-in-out;
+}
+
+.animate-main {
+  animation: gooey-border 2s ease-in-out alternate;
+}
+
+.animate-layer:before, .animate-layer:after {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.animate-layer:before {
+  background: rgba(212, 146, 250, 0.3);
+  animation: gooey-border 2s ease-in-out alternate-reverse;
+}
+
+.animate-layer:after {
+  background: rgba(231, 195, 252, 0.3);
+  animation: gooey-border-after 2s ease-in-out alternate-reverse;
+}
+
+@keyframes gooey-border {
+  0% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  34% {
+    border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%;
+  }
+  67% {
+    border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%;
+  }
+  100% {
+    border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%;
+  }
+}
+
+@keyframes gooey-border-after {
+  0% {
+    border-radius: 35% 65% 50% 50% / 50% 50% 50% 50%;
+  }
+  34% {
+    border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%;
+  }
+  67% {
+    border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%;
+  }
+  100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}
+
+/* -------- rusa Ende ----------------------------------------*/
 * {
   margin: 0px;
   padding: 0px;

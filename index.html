@@ -14,10 +14,30 @@
                 <h1>Gemi</h1>
             </header>
             <div class="preview">
-                <button id="demo-btn">Help</button>
-                <button class="startAni">Start</button>
-                <button class="replay">Replay</button>
-                <button class="slower">Slow down</button>
+
+                <section class="buttons">
+                    <!--------enle Btn ------------------>
+                    <button id="enleBtn">
+                        Send
+                        <span class="animateBg"></span>
+                    </button>
+    
+                    <!--------ensi Btn ------------------>
+                    <div id="entsiBtn">
+                        <button id="entsiBtn-text" class="success">Send</button>
+                        <button id="entsiBtn-ani" class="success"><i class="fas fa-angle-right"></i></button>
+                    </div>
+    
+                    <!--------rusa Btn ------------------>
+                    <button id="rusaBtn">Send</button>
+                </section>
+                
+    
+                <section class="steuerung">
+                    <button class="startAni">Start</button>
+                    <button class="replay">Replay</button>
+                    <button class="slower">Slow down</button>
+                </section>
             </div>
             <div class="output">
                 <p>Hier kommt der code rein - toll gell</p>
@@ -74,5 +94,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/button.js"></script>
+
 </body>
 </html>
