@@ -1,44 +1,53 @@
-const dataC = 1,
-	dataI = 'A',
-	dataObj = {
+/* ------ Store animationtype in data-object --------------- */
+const dataObj = {
 		component: [],
 		bi: [],
 		fullType: function() {
 			return this.component + this.bi;
 		}
-	},
+};
 
-	dataArr = [];
+/* ------ templates ---------------------------------------- */
+var templateBtn = function () {
 
-	changeCssSource = document.querySelector('#custom'),
-	changeJsSource = document.querySelector('script');
-
-/* -------------- templates --------------------------------- */
-var template = function () {
-
-	// If there are no data-type hier kommt Platzhalter hin
+	// If there are no data-type --> zeige Platzhalter an
 	if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
 
 	// If there are
 	return '<button>' + dataObj.component.map(function (item) {
 		return '<p>' + item + '</p>';
 	}).join('') + '</button>';
-
-	// return '<button>' + dataObj.component.map(function (item) {
-	// 	return '<p>' + item + '</p>';
-	// }).join('') + '</button>';
 };
+
+
+var templateCheck = function () {
+
+	// If there are no data-type hier kommt Platzhalter hin
+	if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
+
+	// If there are
+	return '<input type="checkbox" name="hobbies" value="lesen">lesen' + dataObj.component.map(function (item) {
+		return '<p>' + item + '</p>';
+	}).join('') + '</input>';
+};
+
 
 /* -------------- render --------------------------------- */
 // Function to render the UI into the DOM
-var render = function () {
+var render = function (aniType) {
 	var aniShow = document.querySelector('#ani-show');
 	if (!aniShow) return;
-	aniShow.innerHTML = template();
+	if (aniType === '1A') {
+		aniShow.innerHTML = templateBtn();
+	} else if (aniType === '2A') {
+		aniShow.innerHTML = templateCheck();
+	} else {
+		console.log('Fehler');
+	}
 };
 
 // Render the UI
-render();
+// render();
 
 //------------- UI update nach click -------------------------------//
 // Funktion um Nodelist in Array umzuwandeln
@@ -59,103 +68,38 @@ const biArr = nodeInArr(btnBi);
 const allArr = nodeInArr(btnsAll);
 
 
-document.addEventListener('click', function (e) {
-	console.log('geklickt');
-	// Make sure the submitted form was for our list items
-	// if (!event.target.matches('#add-to-list')) return;
-
+document.addEventListener('click', function(e) {
 	// Stop the event
-	event.preventDefault();
+	e.preventDefault();
 
 	// Get button
 	// var btn = event.target.querySelector('#btn');
 	var btn = e.target;
-	console.log(btn);
+	// console.log(btn);
 	var type = btn.getAttribute('data-type');
-	console.log(type);
-	// var actualBtn = nodeInArr(btn);
-	// console.log(actualBtn);
-	// var type = btn.getAttribut('data-type');
 	// console.log(type);
 
 	if(type ==='comp') {
 		console.log('Yeah');
 		// Update the data
-		dataObj.component.push(btn.dataset.comp);
+		// old version: dataObj.component.push(btn.dataset.comp);
+		dataObj.component[0] = btn.dataset.comp;
 	} else if(type ==='bi'){
 		console.log('wooooo');
-		dataObj.bi.push(btn.dataset.bi);
+		dataObj.bi[0] = btn.dataset.bi;
 	} else {
 		console.log('fehler');
 	}
-	// const dataI = e.target.dataset.bi;
-	// console.log(dataI + 'bi');
-	// dataObj.bi = dataI;
-	render();
-	
-	allArr.forEach((btn) => {
-		console.log(e.target);
 
-		var type = allArr.map(function(i) {
-			return i.getAttribute('data-type');
-		});
-		// console.log(type);
+	// save complete anityp 
+	const aniType = dataObj.fullType();
 
-		if(type ==='comp') {
-			console.log('Yeah');
-			// Update the data
-			dataObj.component.push(btn.dataset.comp);
-		} else if(type ==='bi'){
-			console.log('wooooo');
-			dataObj.bi.push(btn.dataset.bi);
-		} else {
-			console.log('fehler');
-		}
-		// const dataI = e.target.dataset.bi;
-		// console.log(dataI + 'bi');
-		// dataObj.bi = dataI;
-		render();
-	})	
-
-	// if (!btn || btn.length < 1) return;
-
-	// Update the data and UI
-	// dataObj.component.push(btn.dataset.comp);
-	// render();
-
-	// Clear the field and return to focus
-	dataObj.component.value = '';
-	// item.focus();
+	// render UI according to anitype
+	render(aniType);
 
 }, false);
 
 
-// // Funktion get data
-// component = (arr) => {
-// 	arr.forEach((btn) => {
-// 		btn.addEventListener('click', (e) => {
-// 			const dataC = e.target.dataset.comp;
-// 			// console.log(dataC + "comp");
-// 			dataObj.component = dataC; 
-// 			createType();
-// 		})
-// 	})
-// }
-
-// brand = (arr) => {
-// 	arr.forEach((btn) => {
-// 		btn.addEventListener('click', (e) => {
-// 			const dataI = e.target.dataset.bi;
-// 			// console.log(dataI + 'bi');
-// 			dataObj.bi = dataI;
-// 			createType();
-// 		})
-// 	})	
-// }
-
-// createType = () => {
-// 	let type = dataObj.fullType();
-// 	// console.log(type);
 // 	switch (type) {
 // 		case '1A':
 // 			changeCssSource.setAttribute('href', '../assets/enle.css');
@@ -212,11 +156,3 @@ document.addEventListener('click', function (e) {
 // 	}	
 // }
 
-
-// // Store component code and brand identity code in object
-// const setComp = component(compArr);
-// const setBi = brand(biArr);
-// const data = setData(compArr, biArr);
-// setData(btnsArr);
-
-//--------------------------------------------------------------//
