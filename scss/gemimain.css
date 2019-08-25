@@ -440,6 +440,10 @@ main {
   transition: all 0.5s ease-in-out;
 }
 
+.selection #brandidentity .buttons {
+  border: none;
+}
+
 @media (min-width: 50rem) {
   .selection .selection {
     grid-column: 3/4;
