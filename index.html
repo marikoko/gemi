@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gemi</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="scss/gemimain.css">
 </head>
 <body>
     <main>
         <section class="generator">
             <header>
-                <h1>Gemi</h1>
+                <h1 id="logo">gemi</h1>
             </header>
-            <div class="preview">
+            <div id="ani-show" class="preview">
 
-                <section class="buttons">
+                <!-- <section class="buttons"> -->
                     <!--------enle Btn ------------------>
-                    <button id="enleBtn">
+                    <!-- <button id="enleBtn">
                         Send
                         <span class="animateBg"></span>
-                    </button>
+                    </button> -->
     
                     <!--------ensi Btn ------------------>
-                    <div id="entsiBtn">
+                    <!-- <div id="entsiBtn">
                         <button id="entsiBtn-text" class="success">Send</button>
                         <button id="entsiBtn-ani" class="success"><i class="fas fa-angle-right"></i></button>
-                    </div>
+                    </div> -->
     
                     <!--------rusa Btn ------------------>
-                    <button id="rusaBtn">Send</button>
-                </section>
+                    <!-- <button id="rusaBtn">Send</button>
+                </section> -->
                 
     
                 <section class="steuerung">
@@ -40,7 +41,6 @@
                 </section>
             </div>
             <div class="output">
-                <p>Hier kommt der code rein - toll gell</p>
                 <!-- <pre> -->
                     <code>
                         .btnA {animation: grow 2s ease-in-out}
@@ -58,39 +58,48 @@
             <h2>Selection Area</h2>
             <div class="components">
                 <h3>Components</h3>
-                <button class="btn">Buttons</button>
-                <button class="textfield">Textfields</button>
-                <button class="selection-controls">Selection Controls</button>
-                <button class="modal">Modal</button>
+                <p>Select a component for which you want to create an animated microinteraction:</p>
+                <div id="components">
+                    <div>
+                        <button id="btn" class="buttons" data-type='comp' data-comp="1">Button</button>
+                        <button id="check" class="buttons" data-type='comp' data-comp="2">Checkbox</button>
+                    </div>
+                    <div>
+                        <button id="text" class="buttons" data-type='comp' data-comp="3">Textfield</button>
+                        <button id="modal" class="buttons" data-type='comp' data-comp="4">Modal</button>
+                    </div>
+                </div>
             </div>
             <div class="brandidentity">
                 <h3>Brand Identity</h3>
-                <button id="enle" class="brand-type">Enle</button>
-                <button id="fresi" class="brand-type">Fresi</button>
-                <button id="ensi" class="brand-type">ensi</button>
-                <button id="rusa" class="brand-type">rusa</button>
+                <p>Select the button that most closely matches your brand personality:</p>
+                <div id="brandidentity">
+                    <button id="btn-enle" class="buttons" data-type='bi' data-bi="A">energetic & lively</button>
+                    <button id="btn-frepi" class="buttons" data-type='bi' data-bi="B">playfull & friendly</button>
+                    <button id="btn-ensi" class="buttons" data-type='bi' data-bi="C">decisive & sure</button>
+                    <button id="btn-rusa" class="buttons" data-type='bi' data-bi="D">calm & soft</button>
+                </div>
             </div>
-            <div class="colors">
+            <div class="brandcolors">
                 <h3>Colors</h3>
-                <label>
-                    <input type="text">Color 1
-                </label>
-                <label>
-                    <input type="text">Color 2
-                </label>
-                <label>
-                    <input type="text">Color 3
-                </label>
+                <p>Enter the brand colors defined according to your corporate identy:</p>
+                <div id="brandcolors">
+                    <label>
+                        <input type="text" data-type="color" data-color="primary">Primary Color
+                    </label>
+                    <label>
+                        <input type="text" data-type="color" data-color="secondary">Secondary Color
+                    </label>
+                    <label>
+                        <input type="text" data-type="color" data-color="accent">Accent Color
+                    </label>
+                </div>
             </div>
-
         </section>
-
-        
     </main>
 
     <footer>
         <p>Ich bin der footer</p>
-
     </footer>
 
     <script src="js/main.js"></script>

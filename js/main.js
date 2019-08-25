@@ -1,85 +1,123 @@
-// console.log('hallo');
+/* ------ Store animationtype in data-object --------------- */
+const dataObj = {
+    component: [],
+    bi: [],
+    primaryColor: [],
+    secondaryColor: [],
+    accentColor: [],
+    fullType: function() {
+        return this.component + this.bi;
+    }
+};
 
-const d = window.document,
-    btnA = d.querySelector('#btnA'),
-    btnB = d.querySelector('#btnB'),
-    btnC = d.querySelector('#btnC'),
-    btnD = d.querySelector('#btnD'),
+/* ------ templates ---------------------------------------- */
+// alte version: var templateBtn = function () {
+const templateBtn = () => {
 
-    demoBtn = d.querySelector('#demo-btn'),
+// If there are no data-type --> zeige Platzhalter an
+if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
 
-    brandType = d.querySelectorAll('.brand-type'),
+// If there are
+return '<button>' + dataObj.component.map(function (item) {
+    return '<p>' + item + '</p>';
+}).join('') + '</button>';
+};
 
-    brandTypeAni = {
-        'TypA': 'animate_a',
-        'TypB': 'animate_b',
-        'TypC': 'animate_c',
-        'TypD': 'animate_d'
-    };
 
-// Beim Klicken des Buttons CSS-Klasse hinzufügen und dadurch Ani starten
-animationStart = (btnTyp) => {
-    console.log(btnTyp + " geklickt");
-    demoBtn.classList.add(btnTyp);
-    demoBtn.addEventListener('animationend', animationEnd(btnTyp));
+const templateCheck = () => {
 
-    // btnB.addEventListener ('click', (e) => {
-    //     console.log(btnB);
-    //     demoBtn.classList.add('animate_b');
-    //     console.log('class b added');
-    //     demoBtn.addEventListener('animationend', animationEnd);
-    // });
+// If there are no data-type hier kommt Platzhalter hin
+if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
+
+// If there are
+return '<input type="checkbox" name="hobbies" value="lesen">lesen' + dataObj.component.map(function (item) {
+    return '<p>' + item + '</p>';
+}).join('') + '</input>';
+};
+
+const templateTextField = () => {
+// If there are no data-type --> zeige Platzhalter an
+if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
+
+// If there are
+return '<button>' + dataObj.component.map(function (item) {
+    return '<p>' + item + '</p>';
+}).join('') + '</button>';
 }
 
+const templateModal = () => {
+// If there are no data-type --> zeige Platzhalter an
+if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
 
-// nach Animationsende CSS-Klasse wieder entfernen / Ani beenden
-animationEnd = (btnTyp, e) => {
-    console.log(btnTyp);
-    demoBtn.removeEventListener('animationend', function(){console.log('ende');});
-    demoBtn.classList.remove(btnTyp);
-    // console.log(btnTyp + ' removed');
-    // switch(btnTyp) {
-    //     case "btnA":
-    //         demoBtn.classList.remove('btnA');
-    //         console.log(btnTyp + ' removed');
-    //         break;
-    //     case "btnB":
-    //         demoBtn.classList.remove('btnB');
-    //         console.log(btnTyp + ' removed');
-    //         break;
-    //     case "btnC":
-    //         demoBtn.classList.remove('btnC');
-    //         console.log(btnTyp + ' removed');
-    //         break;
-    //     case "btnD":
-    //         demoBtn.classList.remove('btnD');
-    //         console.log(btnTyp + ' removed');
-    //         break;
-    //     default:
-    //         console.log('Fehler');
-    // }
-    // return btnTyp;
+// If there are
+return '<button>' + dataObj.component.map(function (item) {
+    return '<p>' + item + '</p>';
+}).join('') + '</button>';
 }
 
-// schauen welcher btn geklickt ist
-whichBtn = () => {
-    for(let i=0; i<brandType.length; i++) {
-        brandType[i].addEventListener('click', function() {
-            // console.log(brandType[i]);
-            let btnTyp = brandType[i].id;
-            console.log(btnTyp);
-            //Ani aufrufen
-            animationStart(btnTyp);
-        });
-    };
+/* -------------- render --------------------------------- */
+// Function to render the UI into the DOM
+var render = function (aniType) {
+var aniShow = document.querySelector('#ani-show');
+if (!aniShow) return;
+if (aniType === '1A') {
+    aniShow.innerHTML = templateBtn();
+} else if (aniType === '2A') {
+    aniShow.innerHTML = templateCheck();
+} else {
+    console.log('Fehler');
+}
+};
+
+// Render the UI
+// render();
+
+//------------- UI update nach click -------------------------------//
+// Funktion um Nodelist in Array umzuwandeln
+nodeInArr = (list) => {
+return Array.from(list);
 }
 
-whichBtn();
-// animation_obj = {
-//  btn-typ1: [
-//         {
-//           name: "btn1",
-//           color: [[50, 0], [0, 100], [100, 100]]
-//         },
-// }
+const btnComponents = document.querySelectorAll('.btn-components'),
+btnBi = document.querySelectorAll('.btn-bi'),
+btnsAll = document.querySelectorAll('[class*="btn"]');
 
+
+var btn = document.querySelector('#btn');
+
+// Convert buttons NodeList to an array
+const compArr = nodeInArr(btnComponents);
+const biArr = nodeInArr(btnBi);
+const allArr = nodeInArr(btnsAll);
+
+
+document.addEventListener('click', function(e) {
+// Stop the event
+e.preventDefault();
+
+// Get button
+// var btn = event.target.querySelector('#btn');
+var btn = e.target;
+// console.log(btn);
+var type = btn.getAttribute('data-type');
+// console.log(type);
+
+if(type ==='comp') {
+    console.log('Yeah');
+    // Update the data
+    // old version: dataObj.component.push(btn.dataset.comp);
+    dataObj.component[0] = btn.dataset.comp;
+} else if(type ==='bi'){
+    console.log('wooooo');
+    dataObj.bi[0] = btn.dataset.bi;
+} else {
+    console.log('fehler');
+}
+
+// save complete anityp 
+const aniType = dataObj.fullType();
+
+// render UI according to anitype
+render(aniType);
+
+}, false);

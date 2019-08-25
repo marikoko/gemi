@@ -2,7 +2,7 @@
 #enleBtn {
     @include btn-style(120px, 50px, 3vw, 10px, 0);
     background: #000;
-    color: $color-btn-text;
+    color: $color-white;
     overflow:hidden;
     cursor: pointer;
     outline:0;
@@ -67,7 +67,7 @@
 }
 
 #entsiBtn-text, #entsiBtn-ani {
-  background: $color-bg-default;
+  background: $color-darkgrey;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
@@ -176,7 +176,7 @@
     @include btn-style(80px, 80px, 3vw, 10px, 50%);
     position: relative;
     background:$color-btn-bg;
-    color: $color-btn-text;
+    color: $color-white;
     cursor: pointer;
     outline:0;
     transition: background 0.5s ease-in-out;
