@@ -1,42 +1,7 @@
-@import 'variables';
-@import 'mixins';
-@import 'buttons';
+// file: _layout.scss
 
-/* ----- General ----------------------- */
+// this file includes all styles for Generator Layout
 
-* {
-    @include reset;
-}
-
-html, body {
-    width: $width-height-default;
-    height: $width-height-default;
-}
-
-body {
-    padding: $padding;
-    font-size: $text-size-default;
-    font-family: $text-font-default; 
-    background:$color-darkbluegrey;
-}
-
-h2 {
-    margin-bottom: $margin;
-    padding: $padding;
-    font-size: 1.6rem;
-    color: $color-white;
-    background: $color-ultradarkgrey;
-}
-
-h3 {
-    @include headline3;
-}
-
-p {
-    font-size: 0.9rem;
-}
-
-/* ----- Content ----------------------- */
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -47,6 +12,7 @@ main {
     }
 }
 
+/* GENERATOR */
 .generator {
     header {
         background:$color-hover;
@@ -114,6 +80,8 @@ main {
     }
 }
 
+
+/* SELECTION AREA */
 .selection {
     h2 {
         border-radius: $border-radius;

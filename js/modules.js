@@ -1,7 +1,7 @@
 const enlebBtn = document.querySelector('#enleBtn'),
         btnBg = document.querySelector('.animateBg'),
         box = document.querySelector('.box'),
-
+        enleBtn = document.querySelector("#enleBtn");
         ensiBtn = document.querySelector("#entsiBtn");
         entsiBtnAni = document.querySelector('#entsiBtn-ani')
         entsiBtnText = document.querySelector('#entsiBtn-text'),
@@ -22,7 +22,7 @@ animationEndEnleBtn = () => {
 
 removeAll = () => {
     setTimeout(function(){
-                enleBtn.style.backgroundColor = '#14c88b';
+        enleBtn.style.backgroundColor = '#14c88b';
         btnBg.classList.remove('grow');
     },4000);
 }
@@ -109,7 +109,6 @@ ensiBtn.addEventListener('click', animateButton, false);
 
 
 /* -------- rusa js ----------------------------------------*/
-
 animationEnd = () => {
     rusaBtn.style.backgroundColor = '#E7C3FC';
     console.log('weg');
@@ -130,6 +129,7 @@ removeAll = () => {
 }
 
 animateButton = (e) => {
+  console.log('geklickt');
   e.preventDefault;
   rusaBtn.style.backgroundColor = '#d492fa';
   rusaBtn.classList.remove('animate-main', 'animate-layer');
@@ -139,5 +139,10 @@ animateButton = (e) => {
   removeAll();
 }
 
+animateHover = (e) => {
+  rusaBtn.classList.add('rusa-hover');
+}
+
+rusaBtn.addEventListener('mouseenter', animateHover, false);
 rusaBtn.addEventListener('click', animateButton, false);
 /* -------- rusa Ende --------------------------------------*/

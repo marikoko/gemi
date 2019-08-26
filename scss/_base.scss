@@ -1,0 +1,100 @@
+// file: _base.scss
+
+// this file includes all resets, variables, mixins, and any utility classes
+
+/* VARIABLES */
+$text-font-default: 'Barlow Semi Condensed', Arial, sans-serif;
+$text-size-default: 16px;
+$text-size-btn: 1.2rem;
+
+// $color-ultradarkgrey: #1d1f21;
+$color-ultradarkgrey: #313335;
+$color-darkgrey: #d3d0c9;
+$color-lightgrey: #f1f1eb;
+$color-ultralightgrey: #fbfcf7;
+$color-hover:#C7E0E8;
+$color-darkbluegrey:#7f8f94;
+$color-white: #fff;
+
+/* Buttonani colors */
+$color-btn-bg: #E7C3FC;
+$color-btn-bg-orange: #EF6A0F;
+
+$width-height-default: 100%;
+$padding: 1vw;
+$margin: 1vw;
+$center: 0 auto;
+$border-radius: 5px;
+$border-radius-top: 5px 5px 0 0;
+$border-radius-bottom: 0 0 5px 5px;
+
+/* MIXINS */
+@mixin reset {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@mixin headline3 () {
+    margin-bottom: 0.6rem;
+    font-size: 1.2rem; 
+}
+@mixin buttons-rounded () {
+    width: 90%;
+    height: 30px;
+    margin: 1vw;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    border: 1.5px solid $color-darkgrey;
+    box-shadow: none;
+    background:$color-white;
+}
+@mixin button-hover () {
+    background-color: $color-hover;
+}
+@mixin btn-style($width, $height, $margin, $padding, $radius) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+    padding: $padding;
+    font-size: $text-size-btn;
+    border-radius: $radius;
+    border: none;
+    box-shadow: none;
+}
+@mixin flex ($justify, $align:stretch) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* GENERAL */
+* {
+    @include reset;
+}
+html, body {
+    width: $width-height-default;
+    height: $width-height-default;
+}
+body {
+    padding: $padding;
+    font-size: $text-size-default;
+    font-family: $text-font-default; 
+    background:$color-darkbluegrey;
+}
+h2 {
+    margin-bottom: $margin;
+    padding: $padding;
+    font-size: 1.6rem;
+    color: $color-white;
+    background: $color-ultradarkgrey;
+}
+h3 {
+    @include headline3;
+}
+p {
+    font-size: 0.9rem;
+}

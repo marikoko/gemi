@@ -1,4 +1,9 @@
-/* -------- enle scss ----------------------------------------*/
+// file: _components.scss
+
+// this file includes all styles for the animated Microinteractions
+
+/* BUTTONS */
+/* -------- button enle ----------------------------------------*/
 #enleBtn {
     @include btn-style(120px, 50px, 3vw, 10px, 0);
     background: #000;
@@ -9,7 +14,6 @@
     position: relative;
     transition: background 0.5s ease-in-out;
 }
-
 .animateBg {
     width: 1rem;
     height: 1rem;
@@ -21,30 +25,24 @@
     z-index: 1;
     transition: all 0.5s ease-in-out;
 }
-
 .bounce {
     animation: bounce 0.5s forwards; 
 }
-
 .grow {
     animation: grow 1s forwards;
 }
-
 .changeColor {
     // animation: changeColor 0.5s ease-in-out;
 }
-
 @keyframes grow {
     0%   { transform: scale(0); }
 	80%  { transform: scale(150); }
 	100% { transform: scale(150); opacity: 0; }
 }
-
 @keyframes changeColor {
     // 0% { background-color: }
     // 100% { background-color: }
 }
-
 @keyframes bounce {
     0% { transform: scale(1); }
     35% { transform: scale(0.98); }
@@ -53,9 +51,11 @@
     90% { transform: scale(1.01); }
     100% { transform: scale(1); }
 }
-/* -------- enle Ende ----------------------------------------*/
 
-/* -------- ensi scss ----------------------------------------*/
+/* -------- button frepi ----------------------------------------*/
+
+
+/* -------- button ensi ----------------------------------------*/
 #entsiBtn {
     @include btn-style(120px, 50px, 3vw, 0, 0);
     margin: 30px auto;
@@ -65,7 +65,6 @@
       color: #fff;
     }
 }
-
 #entsiBtn-text, #entsiBtn-ani {
   background: $color-darkgrey;
   cursor: pointer;
@@ -74,23 +73,19 @@
   transition: all 0.2s ease-in-out;
   outline: 0 !important;
 }
-
 #entsiBtn-text {
     @include btn-style(70%, 100%, 0, 10px, 0);
 }
-
 #entsiBtn-ani {
     @include btn-style(30%, 100%, -4px, 10px, 0);
     // background: red;
     position: relative;
 }
-
 .color-ani {
   // background-color:$color-bg-ani;
   color: rbga(255,255,255,0.2)
   // color: red;
 }
-
 .animate {
   // background-color:$color-bg-ani;
   color: transparent !important;
@@ -110,7 +105,6 @@
     -webkit-animation: rotate-circle ease-in-out 1s forwards;
   }
 }
-
 .animate.success:before {
   position: absolute;
   content: '';
@@ -128,7 +122,6 @@
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
-
 @keyframes rotate-circle {
   0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
   90% { transform: translate(-50%, -50%) rotate(720deg) scale(1); }
@@ -139,7 +132,6 @@
   98% { -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(1); }
   100% { -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(0); }
 }
-
 @keyframes success {
   from { transform: translate(-50%, -50%) rotate(-135deg) scale(0); }
   to { transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #14c88b; }
@@ -148,8 +140,7 @@
   from { -webkit-transform: translate(-50%, -50%) rotate(-135deg) scale(0); }
   to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #14c88b; }
 }
-
-
+// soll das rein?
 @keyframes error {
   from { transform: translate(-50%, -50%) scale(0); }
   to { transform: translate(-50%, -50%) scale(1); background-color: #f44336; }
@@ -163,15 +154,14 @@
   10%, 40%, 90%, 70% { left: -2px; background-color: #f44336; }
   20%, 50%, 80%, 95% { left: 2px; background-color: #f44336; }
 }
-
 @-webkit-keyframes vibrate {
   0%, 30%, 60%, 85%, 100% { left: 0; background-color: #f44336; }
   10%, 40%, 90%, 70% { left: -2px; background-color: #f44336; }
   20%, 50%, 80%, 95% { left: 2px; background-color: #f44336; }
 }
-/* -------- ensi Ende ----------------------------------------*/
 
-/* -------- rusa scss ----------------------------------------*/
+
+/* -------- button rusa ----------------------------------------*/
 #rusaBtn {
     @include btn-style(80px, 80px, 3vw, 10px, 50%);
     position: relative;
@@ -181,19 +171,15 @@
     outline:0;
     transition: background 0.5s ease-in-out;
 }
-
-#rusaBtn:hover {
+#rusa-hover {
     background: rgba(darken($color-btn-bg, 10%),1);
 }
-
 #rusaBtn:before, #rusaBtn:after {
     transition: all 0.5s ease-in-out;
 }
-
 .animate-main {
     animation: gooey-border 2s ease-in-out alternate;
 }
-
 .animate-layer {
     &:before, &:after {
         content:'';
@@ -209,24 +195,41 @@
         background: rgba(darken($color-btn-bg, 10%), 0.3);
         animation: gooey-border 2s ease-in-out alternate-reverse;
     }
-
     &:after {
         background: rgba($color-btn-bg,0.3);
         animation: gooey-border-after 2s ease-in-out alternate-reverse;
     }
 }
-
 @keyframes gooey-border {
   0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; }
   34% { border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%  ; }
   67% { border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%  ; }
   100% { border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%  ; }
 }
-
 @keyframes gooey-border-after {
   0% { border-radius: 35% 65% 50% 50% / 50% 50% 50% 50% ; } 
   34% { border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%; } 
   67% { border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%; } 
   100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 
 }
-/* -------- rusa Ende ----------------------------------------*/
+
+
+/* CHECKBOX / RADIO */
+/* -------- checkbox enle ----------------------------------------*/
+/* -------- checkbox frepi ----------------------------------------*/
+/* -------- checkbox ensi ----------------------------------------*/
+/* -------- checkbox rusa ----------------------------------------*/
+
+
+/* TEXTFIELD */
+/* -------- textfield enle ----------------------------------------*/
+/* -------- textfield frepi ----------------------------------------*/
+/* -------- textfield ensi ----------------------------------------*/
+/* -------- textfield rusa ----------------------------------------*/
+
+
+/* MODAL */
+/* -------- modal enle ----------------------------------------*/
+/* -------- modal frepi ----------------------------------------*/
+/* -------- modal ensi ----------------------------------------*/
+/* -------- modal rusa ----------------------------------------*/
