@@ -21,7 +21,7 @@
 }
 
 @mixin button-hover () {
-    background: $color-hover;
+    background-color: $color-hover;
 }
 
 @mixin btn-style($width, $height, $margin, $padding, $radius) {

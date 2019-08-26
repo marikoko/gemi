@@ -12,9 +12,27 @@
     <main>
         <section class="generator">
             <header>
-                <h1 id="logo">gemi</h1>
+                <h1 id="logo"><span>gemi</span>Generator for Branded Microinteractions </h1>
             </header>
-            <div id="ani-show" class="preview">
+            <div id="ani-controls">
+                <svg class="btn-controls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2025.77 2206.4">
+                    <g>
+                        <path class="cls-1" d="M2025.77,1012.88c0-270.55-105.36-524.91-296.67-716.21S1283.43,0,1012.88,0,488,105.36,296.67,296.67,0,742.33,0,1012.88c0,262.57,100.05,511.51,281.73,701a44,44,0,0,0,63.51-60.91C179.36,1480,88,1252.64,88,1012.88,88,502.9,502.9,88,1012.88,88s924.89,414.9,924.89,924.88c0,466.43-347.09,853.25-796.53,915.94l189.65-162.09a44,44,0,0,0-57.17-66.9L984.29,1947.19a44,44,0,0,0-15.36,33.61c0,.32,0,.64,0,1a44,44,0,0,0,31.55,42.18l326,177.1a44,44,0,1,0,42-77.32l-201.63-109.55c212.11-32.14,407.78-130.56,562.31-285.08C1920.41,1537.79,2025.77,1283.43,2025.77,1012.88Z"/>
+                        <path class="cls-1" d="M1502.11,1012.88a44,44,0,0,0-20.72-37.34L816.75,561.18a44,44,0,0,0-67.27,37.34v828.72a44,44,0,0,0,67.27,37.34l664.64-414.36A44,44,0,0,0,1502.11,1012.88ZM837.48,1348V677.8l537.46,335.08Z"/>
+                    </g>
+                </svg>
+                <svg class="btn-controls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2292.57 2292.57">
+                    <g>
+                        <path class="cls-2" d="M1800.38,2250.07c135.46,0,245.29-109.82,245.29-245.28V1354.2c0-112.9,91.52-207.91,204.4-207.91-112.88,0-204.4-91.51-204.4-204.41V287.79c0-135.46-109.83-245.29-245.29-245.29"/>
+                        <path class="cls-2" d="M492.19,2250.07c-135.46,0-245.29-109.82-245.29-245.28V1354.2c0-112.9-91.52-207.91-204.4-207.91,112.88,0,204.4-91.51,204.4-204.41V287.79C246.9,152.33,356.73,42.5,492.19,42.5"/>
+                        <rect class="cls-3" x="1098.24" y="1050.05" width="145.7" height="145.7" rx="72.85"/>
+                    </g>
+                </svg>
+                <svg class="btn-controls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2513.08 2267.36">
+                        <path class="cls-4" d="M529.32,62.37C300.3,108,115.45,292,64.84,520,23,708.32,72.9,881.68,173.07,1015.23h-2.42l994.28,1160c48.15,56.18,135.07,56.18,183.22,0l994.27-1160H2340c100.17-133.55,150-306.91,108.23-495.24C2397.63,292,2212.78,108,1983.75,62.37c-387.19-77.2-727.21,217.39-727.21,590.9C1256.54,279.76,916.51-14.83,529.32,62.37Z"/>
+                </svg>
+            </div>
+            <div id="ani-preview">
 
                 <!-- <section class="buttons"> -->
                     <!--------enle Btn ------------------>
@@ -32,15 +50,8 @@
                     <!--------rusa Btn ------------------>
                     <!-- <button id="rusaBtn">Send</button>
                 </section> -->
-                
-    
-                <section class="steuerung">
-                    <button class="startAni">Start</button>
-                    <button class="replay">Replay</button>
-                    <button class="slower">Slow down</button>
-                </section>
             </div>
-            <div class="output">
+            <div id="ani-code">
                 <!-- <pre> -->
                     <code>
                         .btnA {animation: grow 2s ease-in-out}
@@ -60,13 +71,10 @@
                 <h3>Components</h3>
                 <p>Select a component for which you want to create an animated microinteraction:</p>
                 <div id="components">
-                    <div>
-                        <button id="btn" class="buttons" data-type='comp' data-comp="1">Button</button>
-                        <button id="check" class="buttons" data-type='comp' data-comp="2">Checkbox</button>
-                    </div>
-                    <div>
-                        <button id="text" class="buttons" data-type='comp' data-comp="3">Textfield</button>
-                        <button id="modal" class="buttons" data-type='comp' data-comp="4">Modal</button>
+                    <button id="btn" class="buttons" data-type='comp' data-comp="1">Button</button>
+                    <button id="check" class="buttons" data-type='comp' data-comp="2">Checkbox</button>
+                    <button id="text" class="buttons" data-type='comp' data-comp="3">Textfield</button>
+                    <button id="modal" class="buttons" data-type='comp' data-comp="4">Modal</button>
                     </div>
                 </div>
             </div>
@@ -84,14 +92,14 @@
                 <h3>Colors</h3>
                 <p>Enter the brand colors defined according to your corporate identy:</p>
                 <div id="brandcolors">
-                    <label>
-                        <input type="text" data-type="color" data-color="primary">Primary Color
+                    <label>Primary Color
+                        <input type="text" data-type="color" data-color="primary">
                     </label>
-                    <label>
-                        <input type="text" data-type="color" data-color="secondary">Secondary Color
+                    <label>Secondary Color
+                        <input type="text" data-type="color" data-color="secondary">
                     </label>
-                    <label>
-                        <input type="text" data-type="color" data-color="accent">Accent Color
+                    <label>Accent Color
+                        <input type="text" data-type="color" data-color="accent">
                     </label>
                 </div>
             </div>

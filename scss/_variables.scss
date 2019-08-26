@@ -2,12 +2,13 @@ $text-font-default: 'Barlow Semi Condensed', Arial, sans-serif;
 $text-size-default: 16px;
 $text-size-btn: 1.2rem;
 
-$color-ultradarkgrey: #1d1f21;
+// $color-ultradarkgrey: #1d1f21;
+$color-ultradarkgrey: #313335;
 $color-darkgrey: #d3d0c9;
 $color-lightgrey: #f1f1eb;
 $color-ultralightgrey: #fbfcf7;
 $color-hover:#C7E0E8;
-
+$color-darkbluegrey:#7f8f94;
 
 $color-white: #fff;
 
@@ -20,6 +21,11 @@ $center: 0 auto;
 $width-height-default: 100%;
 
 $padding: 1vw;
+$margin: 1vw;
+$border-radius: 5px;
+$border-radius-top: 5px 5px 0 0;
+$border-radius-bottom: 0 0 5px 5px;
+
 
 /* Color Theme Swatches in Hex */
 $Grayscale-1-hex: #DBDBDB;

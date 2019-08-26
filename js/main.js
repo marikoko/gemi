@@ -58,19 +58,16 @@ return '<button>' + dataObj.component.map(function (item) {
 /* -------------- render --------------------------------- */
 // Function to render the UI into the DOM
 var render = function (aniType) {
-var aniShow = document.querySelector('#ani-show');
-if (!aniShow) return;
+var aniPreview = document.querySelector('#ani-preview');
+if (!aniPreview) return;
 if (aniType === '1A') {
-    aniShow.innerHTML = templateBtn();
+    aniPreview.innerHTML = templateBtn();
 } else if (aniType === '2A') {
-    aniShow.innerHTML = templateCheck();
+    aniPreview.innerHTML = templateCheck();
 } else {
     console.log('Fehler');
 }
 };
-
-// Render the UI
-// render();
 
 //------------- UI update nach click -------------------------------//
 // Funktion um Nodelist in Array umzuwandeln
@@ -78,17 +75,15 @@ nodeInArr = (list) => {
 return Array.from(list);
 }
 
-const btnComponents = document.querySelectorAll('.btn-components'),
-btnBi = document.querySelectorAll('.btn-bi'),
-btnsAll = document.querySelectorAll('[class*="btn"]');
+// const btnComponents = document.querySelectorAll('.btn-components'),
+// btnBi = document.querySelectorAll('.btn-bi'),
+// btnsAll = document.querySelectorAll('[class*="btn"]');
+// var btn = document.querySelector('#btn');
 
-
-var btn = document.querySelector('#btn');
-
-// Convert buttons NodeList to an array
-const compArr = nodeInArr(btnComponents);
-const biArr = nodeInArr(btnBi);
-const allArr = nodeInArr(btnsAll);
+// // Convert buttons NodeList to an array
+// const compArr = nodeInArr(btnComponents);
+// const biArr = nodeInArr(btnBi);
+// const allArr = nodeInArr(btnsAll);
 
 
 document.addEventListener('click', function(e) {

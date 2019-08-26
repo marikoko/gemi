@@ -363,7 +363,7 @@ body {
   padding: 1vw;
   font-size: 16px;
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
-  background: #d3d0c9;
+  background: #7f8f94;
 }
 
 h2 {
@@ -371,7 +371,7 @@ h2 {
   padding: 1vw;
   font-size: 1.6rem;
   color: #fff;
-  background: #1d1f21;
+  background: #313335;
 }
 
 h3 {
@@ -398,12 +398,74 @@ main {
 }
 
 .generator header {
-  background: #f1f1eb;
+  background: #C7E0E8;
   padding: 1vw;
+  border-radius: 5px 5px 0 0;
 }
 
 .generator header #logo {
+  font-size: 1rem;
+}
+
+.generator header #logo span {
+  margin-right: 15px;
+  font-size: 1.5rem;
   font-family: 'Baloo Da', cursive;
+}
+
+.generator #ani-controls {
+  text-align: right;
+  padding: 1vw;
+  background: #fbfcf7;
+}
+
+.generator .btn-controls {
+  width: 35px;
+  height: 35px;
+  margin: 10px 5px 0 5px;
+  padding: 7px;
+  border-radius: 50%;
+  border: none;
+  background: #7f8f94;
+}
+
+.generator .btn-controls .cls-1 {
+  fill: #fff;
+}
+
+.generator .btn-controls .cls-2, .generator .btn-controls .cls-4 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 100px;
+}
+
+.generator .btn-controls .cls-3 {
+  fill: #fff;
+}
+
+.generator #ani-preview {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fbfcf7;
+}
+
+.generator #ani-code {
+  padding: 1vw;
+  color: #fff;
+  background: #313335;
+  border-radius: 0 0 5px 5px;
+}
+
+@media (min-width: 50rem) {
+  .generator #ani-code {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
 }
 
 @media (min-width: 50rem) {
@@ -413,14 +475,20 @@ main {
   }
 }
 
+.selection h2 {
+  border-radius: 5px;
+  margin-bottom: 0.5vw;
+}
+
 .selection .components, .selection .brandidentity, .selection .brandcolors {
   background: #fff;
   padding: 1vw;
   margin-bottom: 0.5vw;
+  border-radius: 5px;
 }
 
 .selection .buttons:hover {
-  background: #C7E0E8;
+  background-color: #C7E0E8;
 }
 
 .selection #components {
@@ -440,16 +508,27 @@ main {
   transition: all 0.5s ease-in-out;
 }
 
+.selection #brandidentity {
+  margin-top: 1vw;
+  grid-gap: 0.2vw;
+}
+
 .selection #brandidentity .buttons {
+  height: 50px;
   border: none;
 }
 
+.selection #brandcolors label {
+  margin: 0.5vw 1vw 0 0;
+  display: block;
+}
+
 @media (min-width: 50rem) {
-  .selection .selection {
+  .selection {
     grid-column: 3/4;
     grid-row: 1/5;
   }
-  .selection #brandidentity {
+  .selection #brandidentity, .selection #components {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -470,34 +549,5 @@ main {
     grid-column: 2/3;
     grid-row: 2/3;
   }
-}
-
-.output {
-  color: #fff;
-  background: #1d1f21;
-}
-
-@media (min-width: 50rem) {
-  .output {
-    grid-column: 1/3;
-    grid-row: 4/5;
-  }
-}
-
-.preview {
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background: #fbfcf7;
-}
-
-#demo-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: purple;
 }
 /*# sourceMappingURL=gemimain.css.map */
