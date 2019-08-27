@@ -1,15 +1,13 @@
-const enlebBtn = document.querySelector('#enleBtn'),
-        btnBg = document.querySelector('.animateBg'),
-        box = document.querySelector('.box'),
-        enleBtn = document.querySelector("#enleBtn");
-        ensiBtn = document.querySelector("#entsiBtn");
-        entsiBtnAni = document.querySelector('#entsiBtn-ani')
-        entsiBtnText = document.querySelector('#entsiBtn-text'),
-        buttons = [entsiBtnAni, entsiBtnText];
+function geklickt (e) {
+    alert('hi');
+}
 
-        rusaBtn = document.querySelector('#rusaBtn');
+const ensiBtnAni = document.querySelector('#ensiBtn-ani'),
+    ensiBtnText = document.querySelector('#ensiBtn-text'),
+    buttons = [ensiBtnAni, ensiBtnText],
+    delay = 3500;
 
-
+/* ENLE JS */
 /* -------- enle js ------------------------------------------*/
 animationEndEnleBtn = () => {
     enleBtn.style.backgroundColor = '#14c88b';
@@ -20,30 +18,31 @@ animationEndEnleBtn = () => {
     console.log(btnBg.style.left + 'ende');
 }  
 
-removeAll = () => {
-    setTimeout(function(){
-        enleBtn.style.backgroundColor = '#14c88b';
-        btnBg.classList.remove('grow');
-    },4000);
-}
+// removeAll = () => {
+//     setTimeout(function(){
+//         enleBtn.style.backgroundColor = '#14c88b';
+//         btnBg.classList.remove('grow');
+//     },4000);
+// }
 
 animateButton = (e) => {
+    console.log('btn enle geklickt');
     e.preventDefault();
-                    const width = 16;
-                    const circleWidth = width;
-                    const x = e.clientX - circleWidth;
-                    const y = e.clientY - circleWidth;
-                    // zum Testen:
-                    const ripples = [];
-                    ripples.push(x, y);
-                    console.log(ripples);
-                    btnBg.style.top = y + 'px';
-                    console.log(btnBg.style.top);
-                    btnBg.style.left = x + 'px';
-                    console.log(btnBg.style.left);
-                    btnBg.classList.add('grow');
-            enleBtn.addEventListener('animationend', animationEnd, false);
-    removeAll();
+    const width = 16;
+    const circleWidth = width;
+    const x = e.clientX - circleWidth;
+    const y = e.clientY - circleWidth;
+    // zum Testen:
+    const ripples = [];
+    ripples.push(x, y);
+    console.log(ripples);
+    btnBg.style.top = y + 'px';
+    console.log(btnBg.style.top);
+    btnBg.style.left = x + 'px';
+    console.log(btnBg.style.left);
+    btnBg.classList.add('grow');
+    enleBtn.addEventListener('animationend', animationEndEnleBtn, false);
+    removeAll(enleBtn, 'grow');
 }
 
 bounce = (e) => {   
@@ -54,95 +53,86 @@ bounce = (e) => {
     })
 }
 
-
 enleBtn.addEventListener('mouseenter', bounce, false);
 enleBtn.addEventListener('click', animateButton, false);
 
-/* -------- enle Ende --------------------------------------*/
+
+/* FREPI JS */ 
+frepiBtn.addEventListener('click', geklickt, false);
 
 
+/* ENSI JS */
+animateHoverEnsi = () => {
+    buttons.forEach((i) => {
+      i.style.backgroundColor = '#7f8f94';
+    })
+    ensiBtnText.style.color = "rgba(255,255,255,0.6)";
+} 
 
-/* -------- ensi js ----------------------------------------*/
-changeColorStart = () => {
-  buttons.forEach((i) => {
-    i.style.backgroundColor = '#5a5a5a';
-  })
-  entsiBtnText.style.color = "rgba(255,255,255,0.6)";
+animateButtonEnsi = (e) => {
+    console.log('ensi geklickt');
+    e.preventDefault();
+    animateHoverEnsi();
+    ensiBtn.style.backgroundColor = '#000';
+    ensiBtn.classList.remove('animate');
+    ensiBtn.classList.add('animate');
+    ensiBtn.addEventListener('animationend', aniDoneSuccessEnsi, false);
+    removeAll();
 }
 
-aniDoneSuccess = () => {
-  buttons.forEach((i) => {
-    i.style.backgroundColor = '#14c88b';
-    ensiBtn.style.border = "0px";
-  })
-  entsiBtnText.style.color = "#ffffff";
+aniDoneSuccessEnsi = () => {
+    buttons.forEach((i) => {
+        i.style.backgroundColor = '#14c88b';
+        ensiBtn.style.border = "0px";
+    })
+ensiBtnText.style.color = "#ffffff";
 }
 
 animationEndEnsiBtn = () => {
-  buttons.forEach((i) => {
-    i.style.backgroundColor = '#ffffff';
-    i.style.color = '#000';
-    ensiBtn.style.border = '1px solid #3f3f3f';
-  })
+    buttons.forEach((i) => {
+        i.style.backgroundColor = '#ffffff';
+        i.style.color = '#000';
+        ensiBtn.style.border = '1px solid #3f3f3f';
+    })
 }
 
 removeAll = () => {
-  setTimeout(function(){
-    entsiBtnAni.classList.remove('animate');
-    animationEnd();
-    console.log('entfernt nach time');
-  },4000);
+    setTimeout(function(){
+        ensiBtn.classList.remove('animate');
+        animationEnd();
+        console.log('entfernt nach time');
+    },delay);
 }
 
-animateButton = (e) => {
-  e.preventDefault();
-            changeColorStart();
-            entsiBtnAni.classList.remove('animate');
-            entsiBtnAni.classList.add('animate');
-        ensiBtn.addEventListener('animationend', aniDoneSuccess, false);
-  removeAll();
+ensiBtn.addEventListener('mouseenter', animateHoverEnsi, false);
+ensiBtn.addEventListener('click', animateButtonEnsi, false);
+
+
+/* RUSA JS */ 
+animateHoverRusa = () => {
+    rusaBtn.style.backgroundColor = '#d492fa';
 }
-
-ensiBtn.addEventListener('click', animateButton, false);
-
-/* -------- ensi Ende --------------------------------------*/
-
-
-/* -------- rusa js ----------------------------------------*/
-animationEnd = () => {
-    rusaBtn.style.backgroundColor = '#E7C3FC';
-    console.log('weg');
+animateButtonRusa = (e) => {
+    console.log('frusa geklickt');
+    e.preventDefault;
+    rusaBtn.style.backgroundColor = '#d492fa';
+    rusaBtn.classList.remove('animate-main', 'animate-layer');
+    rusaBtn.classList.add('animate-main', 'animate-layer');
+    rusaBtn.addEventListener('animationend', aniSuccessRusa, false);
 }
-
-aniDoneSuccess = () => {
+aniSuccessRusa = () => {
+    console.log('ende wird gestarte');
     rusaBtn.style.backgroundColor = '#8FE2AD';
     rusaBtn.classList.remove('animate-main', 'animate-layer');
     console.log('ende');
+    removeAllRusa();
 }
-
-removeAll = () => {
+removeAllRusa = () => {
   setTimeout(function(){
+    rusaBtn.style.backgroundColor = '#E7C3FC';
     rusaBtn.classList.remove('animate-main', 'animate-layer');
-    animationEnd();
-    console.log('entfernt nach time');
-  },4000);
+    console.log('entfernt nach delay');
+  },delay);
 }
-
-animateButton = (e) => {
-  console.log('geklickt');
-  e.preventDefault;
-  rusaBtn.style.backgroundColor = '#d492fa';
-  rusaBtn.classList.remove('animate-main', 'animate-layer');
-  rusaBtn.classList.add('animate-main', 'animate-layer');
-  console.log('animate');
-  rusaBtn.addEventListener('animationend', aniDoneSuccess, false);
-  removeAll();
-}
-
-animateHover = (e) => {
-  rusaBtn.classList.add('rusa-hover');
-}
-
-rusaBtn.addEventListener('mouseenter', animateHover, false);
-rusaBtn.addEventListener('click', animateButton, false);
-/* -------- rusa Ende --------------------------------------*/
+rusaBtn.addEventListener('mouseenter', animateHoverRusa, false);
+rusaBtn.addEventListener('click', animateButtonRusa, false);

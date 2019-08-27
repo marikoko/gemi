@@ -1,5 +1,24 @@
 /* VARIABLES */
 /* Buttonani colors */
+/* EXTEND */
+#enleBtn, #frepiBtn, #ensiBtn, #ensiBtn-text, #ensiBtn-ani, #rusaBtn {
+  width: 120px;
+  height: 50px;
+  margin: 1vw;
+  padding: 1vw;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #313335;
+  background: #fff;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  outline: 0;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
 /* MIXINS */
 /* GENERAL */
 * {
@@ -106,6 +125,7 @@ main {
   align-items: center;
   overflow: hidden;
   background: #fbfcf7;
+  position: relative;
 }
 
 .generator #ani-code {
@@ -209,21 +229,10 @@ main {
 /* BUTTONS */
 /* -------- button enle ----------------------------------------*/
 #enleBtn {
-  width: 120px;
-  height: 50px;
-  margin: 3vw;
-  padding: 10px;
-  font-size: 1.2rem;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  background: #000;
   color: #fff;
+  background: #000;
   overflow: hidden;
-  cursor: pointer;
-  outline: 0;
   position: relative;
-  transition: background 0.5s ease-in-out;
 }
 
 .animateBg {
@@ -248,13 +257,13 @@ main {
 
 @keyframes grow {
   0% {
-    transform: scale(0);
+    transform: translateX(25vw) scale(0);
   }
   80% {
-    transform: scale(150);
+    transform: translateX(25vw) scale(150);
   }
   100% {
-    transform: scale(150);
+    transform: translateX(25vw) scale(150);
     opacity: 0;
   }
 }
@@ -282,26 +291,15 @@ main {
 
 /* -------- button frepi ----------------------------------------*/
 /* -------- button ensi ----------------------------------------*/
-#entsiBtn {
-  width: 120px;
-  height: 50px;
-  margin: 3vw;
+#ensiBtn {
   padding: 0;
-  font-size: 1.2rem;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  margin: 30px auto;
   border: 1px solid #3f3f3f;
+  display: flex;
+  justify-content: flex-start;
 }
 
-#entsiBtn:hover #entsiBtn-text, #entsiBtn:hover #entsiBtn-ani {
-  background: #5a5a5a;
-  color: #fff;
-}
-
-#entsiBtn-text, #entsiBtn-ani {
-  background: #d3d0c9;
+#ensiBtn-text, #ensiBtn-ani {
+  background: #fff;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
@@ -309,38 +307,26 @@ main {
   outline: 0 !important;
 }
 
-#entsiBtn-text {
+#ensiBtn-text {
   width: 70%;
   height: 100%;
   margin: 0;
   padding: 10px;
-  font-size: 1.2rem;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
 }
 
-#entsiBtn-ani {
+#ensiBtn-ani {
   width: 30%;
   height: 100%;
-  margin: -4px;
+  margin: 0;
   padding: 10px;
-  font-size: 1.2rem;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
   position: relative;
-}
-
-.color-ani {
-  color: rbga(255, 255, 255, 0.2);
 }
 
 .animate {
   color: transparent !important;
 }
 
-.animate:after {
+.animate :after {
   position: absolute;
   content: '';
   width: 20px;
@@ -472,22 +458,10 @@ main {
 #rusaBtn {
   width: 80px;
   height: 80px;
-  margin: 3vw;
-  padding: 10px;
-  font-size: 1.2rem;
   border-radius: 50%;
-  border: none;
-  box-shadow: none;
-  position: relative;
-  background: #E7C3FC;
   color: #fff;
-  cursor: pointer;
-  outline: 0;
-  transition: background 0.5s ease-in-out;
-}
-
-#rusa-hover {
-  background: #d492fa;
+  background: #E7C3FC;
+  position: relative;
 }
 
 #rusaBtn:before, #rusaBtn:after {

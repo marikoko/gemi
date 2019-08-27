@@ -1,5 +1,5 @@
 /* ------ GENERATOR ---------------------------------------- */
-/* ------ Store animationtype in data-object --------------- */
+/* STORE ANIMATIONTYPE IN DATA-OBJECT */
 const dataObj = {
     component: [],
     bi: [],
@@ -11,49 +11,30 @@ const dataObj = {
     }
 },
     selectionArea = document.querySelector('.selection'),
-    aniPreview = document.getElementById('ani-preview');
+    enleBtn = document.querySelector('#enleBtn'),
+    frepiBtn = document.querySelector('#frepiBtn'),
+    ensiBtn = document.querySelector('#ensiBtn'),
+    rusaBtn = document.querySelector('#rusaBtn'),
+    aniBtns = document.querySelectorAll('.aniBtn');
 
-
-/* ------ templates ---------------------------------------- */
+/* TEMPLATES */
 // alte version: var templateBtn = function () {
-const templateBtnEnle = () => {
+const templateBtn = (type) => {
     // If there are no data-type --> zeige Platzhalter an
     if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
 
-    // If there are
-    return '<button id="enleBtn">Send</button>';
-
-    // return '<button>' + dataObj.component.map(function (item) {
-    //     return '<p>' + item + '</p>';
-    // }).join('') + '</button>';
-};
-
-const templateBtnFrepi = () => {
-    // If there are no data-type --> zeige Platzhalter an
-    if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
-
-    // If there are
-    return '<button id="frepiBtn">Send</button>';
-};
-
-const templateBtnEnsi = () => {
-    // If there are no data-type --> zeige Platzhalter an
-    if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
-
-    // If there are
-    return '<div id="entsiBtn"><button id="entsiBtn-text" class="success">Send</button><button id="entsiBtn-ani" class="success"><i class="fas fa-angle-right"></i></button></div>';
-};
-
-const templateBtnRusa = (aniType) => {
-    // If there are no data-type --> zeige Platzhalter an
-    if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
-
-    // If there are
-    // return '<button id="rusaBtn">Send</button>';
-
-    const newElem = addElement('button', {id:'rusaBtn'});
-    const newElem2 = document.body.appendChild(newElem);
-    newElem2.innerText = 'fffff';
+    const aniArr = nodeInArr(aniBtns);
+    aniArr.forEach(function(item){
+        item.style.opacity = '0';
+        // item.style.top = '10%';
+        item.style.transform = 'translateX(10%)';
+    })
+    // type.style.transform = 'translateX(move)';
+    type.style.position = 'absolute';
+    type.style.transform = 'translateY(50%)';
+    type.style.transform = 'translateX(50%)';
+    type.style.transform = 'translate(-50%, -50%)';
+    type.style.opacity = '1';
 };
 
 const templateCheck = () => {
@@ -87,43 +68,32 @@ const templateModal = () => {
     }).join('') + '</button>';
 };
 
-/* -------------- render --------------------------------- */
+/* RENDERING */
 // Function to render the UI into the DOM
 var render = function (aniType) {
-    var aniPreview = document.querySelector('#ani-preview');
-    if (!aniPreview) return;
+    if (!aniType) return;
+    console.log(aniType);
     if (aniType === '1A') {
-        aniPreview.innerHTML = templateBtnEnle(aniType);
+        templateBtn(enleBtn);
     } else if (aniType === '1B') {
-        aniPreview.innerHTML = templateBtnFrepi(aniType);
+        templateBtn(frepiBtn);
     } else if (aniType === '1C') {
-        aniPreview.innerHTML = templateBtnEnsi(aniType);
+        templateBtn(ensiBtn);
     } else if (aniType === '1D') {
-        aniPreview.innerHTML = templateBtnRusa(aniType);
+        templateBtn(rusaBtn);
     } else {
         return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
     }
 }
 
-//------------- UI update nach click -------------------------------//
+/* UI UPDATE NACH CLICK */
 // Funktion um Nodelist in Array umzuwandeln
 nodeInArr = (list) => {
     return Array.from(list);
 }
 
-// const btnComponents = document.querySelectorAll('.btn-components'),
-// btnBi = document.querySelectorAll('.btn-bi'),
-// btnsAll = document.querySelectorAll('[class*="btn"]');
-// var btn = document.querySelector('#btn');
-
-// // Convert buttons NodeList to an array
-// const compArr = nodeInArr(btnComponents);
-// const biArr = nodeInArr(btnBi);
-// const allArr = nodeInArr(btnsAll);
-
-
 selectionArea.addEventListener('click', function(e) {
-    console.log('area geklickt');
+    // console.log('area geklickt');
     // Stop the event
     e.preventDefault();
 
@@ -153,7 +123,10 @@ selectionArea.addEventListener('click', function(e) {
     render(aniType);
 
 }, false);
-//------------- Generator End-------------------------------//
+
+
+
+/* TESTS */
 
 function addElement(type, attributes) { 
     const elem = document.createElement(type);

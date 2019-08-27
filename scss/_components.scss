@@ -5,14 +5,12 @@
 /* BUTTONS */
 /* -------- button enle ----------------------------------------*/
 #enleBtn {
-    @include btn-style(120px, 50px, 3vw, 10px, 0);
-    background: #000;
+    // @include btn-style(120px, 50px, 3vw, 10px, 0);
+    @extend %button;
     color: $color-white;
+    background: #000;
     overflow:hidden;
-    cursor: pointer;
-    outline:0;
     position: relative;
-    transition: background 0.5s ease-in-out;
 }
 .animateBg {
     width: 1rem;
@@ -35,9 +33,9 @@
     // animation: changeColor 0.5s ease-in-out;
 }
 @keyframes grow {
-    0%   { transform: scale(0); }
-	80%  { transform: scale(150); }
-	100% { transform: scale(150); opacity: 0; }
+    0%   { transform: translateX(25vw) scale(0); }
+	80%  { transform: translateX(25vw) scale(150); }
+	100% { transform: translateX(25vw) scale(150); opacity: 0; }
 }
 @keyframes changeColor {
     // 0% { background-color: }
@@ -53,43 +51,54 @@
 }
 
 /* -------- button frepi ----------------------------------------*/
-
+#frepiBtn {
+  @extend %button; 
+  // @include btn-style(120px, 50px, 0, 0, 0)
+}
 
 /* -------- button ensi ----------------------------------------*/
-#entsiBtn {
-    @include btn-style(120px, 50px, 3vw, 0, 0);
-    margin: 30px auto;
+#ensiBtn {
+    @extend %button;
+    padding: 0;
     border: 1px solid #3f3f3f;
-    &:hover #entsiBtn-text, &:hover #entsiBtn-ani {
-      background: #5a5a5a;
-      color: #fff;
-    }
+    display: flex;
+    justify-content: flex-start;
+    // &:hover #entsiBtn-text, &:hover #entsiBtn-ani {
+    //   background: #5a5a5a;
+    //   color: #fff;
+    // }
 }
-#entsiBtn-text, #entsiBtn-ani {
-  background: $color-darkgrey;
+#ensiBtn-text, #ensiBtn-ani {
+  background: $color-white;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
   transition: all 0.2s ease-in-out;
   outline: 0 !important;
 }
-#entsiBtn-text {
-    @include btn-style(70%, 100%, 0, 10px, 0);
+#ensiBtn-text {
+    @extend %button;
+    width:70%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
 }
-#entsiBtn-ani {
-    @include btn-style(30%, 100%, -4px, 10px, 0);
-    // background: red;
+#ensiBtn-ani {
+    @extend %button;
+    width: 30%;
+    height: 100%; 
+    margin: 0;
+    padding: 10px;
     position: relative;
 }
-.color-ani {
-  // background-color:$color-bg-ani;
-  color: rbga(255,255,255,0.2)
-  // color: red;
-}
+// .color-ani {
+//   // background-color:$color-bg-ani;
+//   color: rbga(255,255,255,0.2)
+//   // color: red;
+// }
 .animate {
-  // background-color:$color-bg-ani;
   color: transparent !important;
-  &:after {
+  :after {
     position: absolute;
     content: '';
     width: 20px;
@@ -163,16 +172,14 @@
 
 /* -------- button rusa ----------------------------------------*/
 #rusaBtn {
-    @include btn-style(80px, 80px, 3vw, 10px, 50%);
-    position: relative;
-    background:$color-btn-bg;
+    // @include btn-style(80px, 80px, 3vw, 10px, 50%);
+    @extend %button;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     color: $color-white;
-    cursor: pointer;
-    outline:0;
-    transition: background 0.5s ease-in-out;
-}
-#rusa-hover {
-    background: rgba(darken($color-btn-bg, 10%),1);
+    background:$color-btn-bg;
+    position: relative;
 }
 #rusaBtn:before, #rusaBtn:after {
     transition: all 0.5s ease-in-out;
