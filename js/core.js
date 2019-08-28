@@ -11,30 +11,26 @@ const dataObj = {
     }
 },
     selectionArea = document.querySelector('.selection'),
+    btnPrototype = document.querySelector('#btn-prototype'),
     enleBtn = document.querySelector('#enleBtn'),
     frepiBtn = document.querySelector('#frepiBtn'),
     ensiBtn = document.querySelector('#ensiBtn'),
-    rusaBtn = document.querySelector('#rusaBtn'),
+    // rusaBtn = document.querySelector('#rusaBtn'),
     aniBtns = document.querySelectorAll('.aniBtn');
 
 /* TEMPLATES */
 // alte version: var templateBtn = function () {
 const templateBtn = (type) => {
-    // If there are no data-type --> zeige Platzhalter an
-    if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
-
-    const aniArr = nodeInArr(aniBtns);
-    aniArr.forEach(function(item){
-        item.style.opacity = '0';
-        // item.style.top = '10%';
-        item.style.transform = 'translateX(10%)';
+    console.log(type);
+    btnPrototype.setAttribute('id', type);
+    btnPrototype.addEventListener('mouseenter', function() {
+        const attr = btnPrototype.getAttribute('id');
+        animateHover(attr);
     })
-    // type.style.transform = 'translateX(move)';
-    type.style.position = 'absolute';
-    type.style.transform = 'translateY(50%)';
-    type.style.transform = 'translateX(50%)';
-    type.style.transform = 'translate(-50%, -50%)';
-    type.style.opacity = '1';
+    btnPrototype.addEventListener('click', function() {
+        const attr = btnPrototype.getAttribute('id');
+        animateBtn(attr);
+    })
 };
 
 const templateCheck = () => {
@@ -74,13 +70,13 @@ var render = function (aniType) {
     if (!aniType) return;
     console.log(aniType);
     if (aniType === '1A') {
-        templateBtn(enleBtn);
+        templateBtn('enleBtn');
     } else if (aniType === '1B') {
-        templateBtn(frepiBtn);
+        templateBtn('frepiBtn');
     } else if (aniType === '1C') {
-        templateBtn(ensiBtn);
+        templateBtn('ensiBtn');
     } else if (aniType === '1D') {
-        templateBtn(rusaBtn);
+        templateBtn('rusaBtn');
     } else {
         return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
     }

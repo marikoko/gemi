@@ -1,7 +1,7 @@
 /* VARIABLES */
 /* Buttonani colors */
 /* EXTEND */
-#enleBtn, #frepiBtn, #ensiBtn, #ensiBtn-text, #ensiBtn-ani, #rusaBtn {
+.generator #ani-preview #btn-prototype, #enleBtn, #frepiBtn, #ensiBtn, #ensiBtn-text, #ensiBtn-ani, #rusaBtn {
   width: 120px;
   height: 50px;
   margin: 1vw;
@@ -98,6 +98,7 @@ main {
   margin: 10px 5px 0 5px;
   padding: 7px;
   border-radius: 50%;
+  box-shadow: 5px 5px 7px #d3d0c9;
   border: none;
   background: #7f8f94;
 }
@@ -126,6 +127,10 @@ main {
   overflow: hidden;
   background: #fbfcf7;
   position: relative;
+}
+
+.generator #ani-preview #btn-prototype {
+  border: 1px solid #d3d0c9;
 }
 
 .generator #ani-code {
