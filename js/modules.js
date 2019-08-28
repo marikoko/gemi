@@ -1,6 +1,7 @@
 const ensiBtnAni = document.querySelector('#ensiBtn-ani'),
     ensiBtnText = document.querySelector('#ensiBtn-text'),
     buttons = [ensiBtnAni, ensiBtnText],
+    btnBg = document.createElement('span'),
     delay = 3500,
     miChange = {
         button: [
@@ -40,7 +41,8 @@ const ensiBtnAni = document.querySelector('#ensiBtn-ani'),
                 border: 'none'
             }
         ]
-}
+    }
+
 
 animateHover = (attr) => {
     switch (attr) {
@@ -92,12 +94,20 @@ animateBtn = (attr) => {
     }
 }
 
-removeAll = () => {
-    setTimeout(function(){
-        rusaBtn.style.backgroundColor = '#E7C3FC';
-        rusaBtn.classList.remove('animate-main', 'animate-layer');
-        btnPrototype.setAttribute('id', 'btn-prototype');
-    },delay);
+const create = createBtnPrototype = () => {
+    console.log('create');
+    let btnPrototype = document.createElement('button');
+    aniPreview.appendChild(btnPrototype);
+    btnPrototype.textContent = 'Send'
+    btnPrototype.setAttribute('id', 'btn-prototype');
+    btnPrototype.style.backgroundColor = '#fff';
+    btnPrototype.style.border = '1px solid #d3d0c9';
+}
+
+createBtnRusa = () => {
+    console.log('reset rusa')
+    btnPrototype.style.backgroundColor = '#E7C3FC';
+    btnPrototype.style.border = 'none';
 }
 
 // /* ENLE JS */
@@ -105,13 +115,10 @@ removeAll = () => {
 animateHoverEnle = () => {   
     btnPrototype.classList.add('bounce');
     console.log('bounce');
-    btnPrototype.addEventListener('animationend', function(){
-        enleBtn.classList.remove('bounce');
-    })
 }
 
 animateButtonEnle = () => {
-    let btnBg = document.createElement('span');
+    const btnBg = document.createElement('span');
     btnPrototype.appendChild(btnBg);
     btnBg.setAttribute('class', 'animateBg');
     btnBg.style.backgroundColor = 'red';
@@ -131,7 +138,6 @@ animateButtonEnle = () => {
     // console.log(btnBg.style.left);
     // btnBg.classList.add('grow');
     btnPrototype.addEventListener('animationend', animationEndEnleBtn, false);
-    removeAll();
 }
 
 animationEndEnleBtn = () => {
@@ -141,14 +147,16 @@ animationEndEnleBtn = () => {
     console.log(btnBg.style.top + 'ende');
     btnBg.style.left = 240 + '%';
     console.log(btnBg.style.left + 'ende');
+    removeAllEnle();
 }  
 
 removeAllEnle = () => {
     setTimeout(function(){
+        console.log('weg');
         btnPrototype.removeChild(btnBg),
-        enleBtn.style.backgroundColor = '#14c88b';
+        btnPrototype.style.backgroundColor = '#14c88b';
         btnBg.classList.remove('grow');
-        enleBtn.classList.remove('bounce');
+        btnPrototype.classList.remove('bounce');
     },delay);
 }
 
@@ -208,25 +216,24 @@ animateHoverRusa = () => {
 animateButtonRusa = () => {
     console.log('frusa geklickt');
     // e.preventDefault;
-    rusaBtn.style.backgroundColor = '#d492fa';
-    rusaBtn.classList.remove('animate-main', 'animate-layer');
-    rusaBtn.classList.add('animate-main', 'animate-layer');
-    rusaBtn.addEventListener('animationend', aniSuccessRusa, false);
+    btnPrototype.style.backgroundColor = '#d492fa';
+    btnPrototype.classList.remove('animate-main', 'animate-layer');
+    btnPrototype.classList.add('animate-main', 'animate-layer');
+    btnPrototype.addEventListener('animationend', aniSuccessRusa, false);
 }
 
 aniSuccessRusa = () => {
     console.log('ende wird gestarte');
-    rusaBtn.style.backgroundColor = '#8FE2AD';
-    rusaBtn.classList.remove('animate-main', 'animate-layer');
+    btnPrototype.style.backgroundColor = '#8FE2AD';
+    btnPrototype.classList.remove('animate-main', 'animate-layer');
     console.log('ende');
     removeAllRusa();
 }
 
 removeAllRusa = () => {
   setTimeout(function(){
-    rusaBtn.style.backgroundColor = '#E7C3FC';
-    rusaBtn.classList.remove('animate-main', 'animate-layer');
+    btnPrototype.style.backgroundColor = '#E7C3FC';
+    btnPrototype.classList.remove('animate-main', 'animate-layer');
     console.log('entfernt nach delay');
-    btnPrototype.setAttribute('id', 'btn-prototype');
   },delay);
 }

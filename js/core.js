@@ -11,12 +11,15 @@ const dataObj = {
     }
 },
     selectionArea = document.querySelector('.selection'),
-    btnPrototype = document.querySelector('#btn-prototype'),
+    aniPreview = document.querySelector('#ani-preview'),
     enleBtn = document.querySelector('#enleBtn'),
     frepiBtn = document.querySelector('#frepiBtn'),
     ensiBtn = document.querySelector('#ensiBtn'),
     // rusaBtn = document.querySelector('#rusaBtn'),
     aniBtns = document.querySelectorAll('.aniBtn');
+
+let btnPrototype = document.querySelector('#btn-prototype');
+
 
 /* TEMPLATES */
 // alte version: var templateBtn = function () {

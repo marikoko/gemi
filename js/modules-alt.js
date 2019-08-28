@@ -13,8 +13,7 @@ const enlebBtn = document.querySelector('#enleBtn'),
 
 /* -------- enle js ------------------------------------------*/
 animationEndEnleBtn = () => {
-    let btnBg = document.createElement('span');
-    enleBtn.appendChild(btnBg);
+   
     enleBtn.style.backgroundColor = '#14c88b';
     btnBg.classList.remove('grow');
     btnBg.style.top = 100 + '%';

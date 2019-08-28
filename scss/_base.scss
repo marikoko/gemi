@@ -103,7 +103,7 @@ $opacity: 1;
 }
 html, body {
     width: $width-height-default;
-    height: $width-height-default;
+    max-height: 500px;
 }
 body {
     padding: $padding;
@@ -114,9 +114,8 @@ body {
 h2 {
     margin-bottom: $margin;
     padding: $padding;
-    font-size: 1.6rem;
-    color: $color-white;
-    background: $color-ultradarkgrey;
+    font-size: 1.3rem;
+    color: $color-ultradarkgrey;
 }
 h3 {
     @include headline3;
