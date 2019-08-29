@@ -1,4 +1,5 @@
 /* VARIABLES */
+/* RGB */
 /* Buttonani colors */
 /* EXTEND */
 #enleBtn, #frepiBtn, #ensiBtn, #ensiBtn-text, #ensiBtn-ani, #rusaBtn {
@@ -33,38 +34,48 @@ html, body {
 }
 
 body {
-  padding: 1vw;
   font-size: 16px;
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
-  background: #7f8f94;
+  background: #fff;
 }
 
 h2 {
   margin-bottom: 1vw;
-  padding: 1vw;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #313335;
 }
 
 h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 p {
   font-size: 0.9rem;
 }
 
-header {
-  grid-column: 1/6;
-  grid-row: 1/2;
-  background: #C7E0E8;
-  padding: 1vw;
-  border-radius: 5px 5px 0 0;
+.bi-fixed ul {
+  width: 100%;
+  box-shadow: 0 5px 5px #f1f1eb;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  position: fixed;
+  z-index: 10;
+}
+
+.bi-fixed #logo {
+  z-index: 0;
 }
 
 header #logo {
+  width: 100%;
+  padding: 1vw;
   font-size: 1rem;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 5px 5px #f1f1eb;
+  position: fixed;
+  z-index: 10;
 }
 
 header #logo span {
@@ -73,49 +84,152 @@ header #logo span {
   font-family: 'Baloo Da', cursive;
 }
 
-/* GENERATOR */
-.generator {
-  background: orange;
+header .intro-text, header #brandidentity, header ul {
+  padding: 1vw;
 }
 
-.generator .components {
-  background: #fff;
-  padding: 1vw;
-  margin-bottom: 0.5vw;
-  border-radius: 5px;
+header ul {
+  transition: all 0.5s ease-in-out;
+}
+
+header ul li {
+  list-style-type: none;
+}
+
+header ul li:first-of-type {
+  border-bottom: 4px solid #ffbc57;
+}
+
+header ul li:nth-of-type(2) {
+  border-bottom: 4px solid #edf5a3;
+}
+
+header ul li:nth-of-type(3) {
+  border-bottom: 4px solid #a0d9ee;
+}
+
+header ul li:last-of-type {
+  border-bottom: 4px solid #f7e0ff;
 }
 
 @media (min-width: 50rem) {
-  .generator {
+  header {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 0.7fr repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
-  .generator .component {
+  header #logo {
     grid-column: 1/6;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr;
-  }
-  .generator .component .component-text {
-    background: ligthgrey;
     grid-row: 1/2;
   }
-  .generator .component .component-button {
-    background: pink;
+  header .intro-text {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  header #brandidentity {
+    grid-column: 2/6;
     grid-row: 2/3;
   }
-  .generator .component .component-checkbox {
-    background: darkblue;
+  header #components {
+    grid-column: 1/2;
     grid-row: 3/4;
   }
-  .generator .component .component-textfield {
-    background: darkgreen;
-    grid-row: 4/5;
+  header ul {
+    grid-column: 2/6;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
   }
-  .generator .component .component-modal {
-    background: lightblue;
-    grid-row: 5/6;
+}
+
+main {
+  grid-column: 1/6;
+  grid-row: 4/8;
+}
+
+/* GENERATOR */
+.generator {
+  padding: 1vw;
+}
+
+.generator .bi {
+  width: 18vw;
+  height: 10vw;
+  min-height: 100px;
+  margin: 1vw;
+  padding: 1vw;
+  text-align: center;
+  background: #fbfcf7;
+  position: relative;
+}
+
+.generator .bi .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.generator .enle {
+  grid-column: 2/3;
+  border: 1px solid #ffbc57;
+}
+
+.generator .frepi {
+  grid-column: 3/4;
+  border: 1px solid #edf5a3;
+}
+
+.generator .ensi {
+  grid-column: 4/5;
+  border: 1px solid #a0d9ee;
+}
+
+.generator .rusa {
+  grid-column: 5/6;
+  border: 1px solid #f7e0ff;
+}
+
+@media (min-width: 50rem) {
+  .generator .component-button, .generator .component-checkbox,
+  .generator .component-textfield, .generator .component-modal {
+    display: grid;
+    grid-template-columns: 0.7fr repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-row-gap: 2vw;
+  }
+  .generator .component-button .component-type, .generator .component-checkbox .component-type,
+  .generator .component-textfield .component-type, .generator .component-modal .component-type {
+    grid-column: 1/2;
+  }
+  .generator .component-button .enle, .generator .component-checkbox .enle,
+  .generator .component-textfield .enle, .generator .component-modal .enle {
+    grid-column: 2/3;
+  }
+  .generator .component-button .frepi, .generator .component-checkbox .frepi,
+  .generator .component-textfield .frepi, .generator .component-modal .frepi {
+    grid-column: 3/4;
+  }
+  .generator .component-button .ensi, .generator .component-checkbox .ensi,
+  .generator .component-textfield .ensi, .generator .component-modal .ensi {
+    grid-column: 4/5;
+  }
+  .generator .component-button .rusa, .generator .component-checkbox .rusa,
+  .generator .component-textfield .rusa, .generator .component-modal .rusa {
+    grid-column: 5/6;
+  }
+  .generator .component-button .component-type, .generator .component-button .enle, .generator .component-button .frepi, .generator .component-button .ensi, .generator .component-button .rusa {
+    grid-row: 1/2;
+  }
+  .generator .component-checkbox .component-type, .generator .component-checkbox .enle, .generator .component-checkbox .frepi, .generator .component-checkbox .ensi, .generator .component-checkbox .rusa {
+    grid-row: 2/3;
+  }
+  .generator .component-textfield .component-type, .generator .component-textfield .enle, .generator .component-textfield .frepi, .generator .component-textfield .ensi, .generator .component-textfield .rusa {
+    grid-row: 2/3;
+  }
+  .generator .component-modal .component-type, .generator .component-modal .enle, .generator .component-modal .frepi, .generator .component-modal .ensi, .generator .component-modal .rusa {
+    grid-row: 2/3;
   }
 }
 
@@ -161,7 +275,7 @@ header #logo span {
   }
 }
 
-@keyframes changeColor {}@keyframes bounce {
+@keyframes bounce {
   0% {
     transform: scale(1);
   }
@@ -366,12 +480,12 @@ header #logo span {
 }
 
 .animate-layer:before, .animate-layer:after {
+  width: 110%;
+  height: 110%;
   content: '';
   position: absolute;
   top: -5%;
   left: -5%;
-  width: 110%;
-  height: 110%;
   z-index: -1;
   border-radius: 50%;
 }

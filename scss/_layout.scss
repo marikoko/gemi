@@ -1,66 +1,169 @@
 // file: _layout.scss
 
 // this file includes all styles for Generator Layout
+.bi-fixed ul {
+    width: 100%;
+    // margin-left: 15vw;
+    // background: $color-white;
+    box-shadow: 0 5px 5px $color-lightgrey;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    position: fixed;
+    z-index: 10;
+}
+.bi-fixed #logo {
+    z-index: 0;
+}
+
 header {
-    grid-column: 1/6;
-    grid-row: 1/2;
-    background:$color-hover;
-    padding: $padding;
-    border-radius: $border-radius-top;
     #logo {
+        width: 100%;
+        padding: $padding;
         font-size: 1rem;
+        text-align: center;
+        background: $color-white;
+        box-shadow: 0 5px 5px $color-lightgrey;
+         position: fixed;
+        z-index: 10;
         span {
             margin-right: 15px;
             font-size: 1.5rem;
             font-family: 'Baloo Da', cursive;
         }
+
     }
+    .intro-text,#brandidentity, ul {
+        padding: $padding;
+    }
+
+    ul {
+        transition: all 0.5s ease-in-out;
+        li {
+            list-style-type: none;
+        }
+        li:first-of-type {
+            border-bottom: 4px solid $enle;
+        }
+        li:nth-of-type(2) {
+            border-bottom: 4px solid $frepi;
+        }
+        li:nth-of-type(3) {
+            border-bottom: 4px solid $ensi;
+        }
+        li:last-of-type {
+            border-bottom: 4px solid $rusa;
+        }
+    }
+
+    @media (min-width:50rem) {
+        @include grid(0.7fr repeat(4, 1fr), repeat(2,1fr));
+        #logo {
+            grid-column: 1/6;
+            grid-row: 1/2;
+        }
+        .intro-text {
+            grid-column: 1/2;
+            grid-row: 2/4;
+        }
+        #brandidentity {
+            grid-column: 2/6;
+            grid-row: 2/3;
+        }
+        #components {
+            grid-column:1/2;
+            grid-row: 3/4;
+        }
+        ul {
+            grid-column: 2/6;
+            grid-row: 3/4;
+            // @include grid(0.7fr repeat(4, 1fr), 1fr);
+            @include grid(repeat(4, 1fr), 1fr);
+        }
+    }
+}
+
+main {
+    grid-column: 1/6;
+    grid-row: 4/8;
 }
 
 /* GENERATOR */
 .generator {
-    background: orange;
-    .components {
-        background: $color-white;
+    padding: $padding;
+    .bi {
+        width:  18vw;
+        height: 10vw;
+        min-height: 100px;
+        margin: 1vw;
         padding: $padding;
-        margin-bottom: 0.5vw;
-        border-radius: $border-radius;
+        text-align: center;
+        background: $color-ultralightgrey;
+        position: relative;
+        .center {
+            @include absoluteCenter;
+        }
     }
+
+    .enle {
+        grid-column: 2/3;
+        border: 1px solid $enle;
+    }
+    .frepi {
+        grid-column: 3/4;
+        border: 1px solid $frepi;
+    }
+    .ensi {
+        grid-column: 4/5;
+        border: 1px solid $ensi;
+    }
+    .rusa {
+        grid-column: 5/6;
+        border: 1px solid $rusa;
+    }
+
     
     @media (min-width:50rem) {
-        display: grid; 
-        grid-template-columns: repeat(5, 1fr); 
-        grid-template-rows: repeat(5, 1fr); 
-        // grid-column-gap: 0px;
-        // grid-row-gap: 5vw; 
-        .component {
-            grid-column: 1/6;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 1fr;
-            // display: grid;
-            // grid-template-columns: repeat(2, 1fr);
-            // grid-template-rows: repeat(2, 1fr);
-            .component-text {
-                background: ligthgrey;
+        .component-button, .component-checkbox, 
+        .component-textfield, .component-modal {
+            @include grid(0.7fr repeat(4, 1fr), 1fr);
+            grid-row-gap: 2vw;
+            .component-type {
+                grid-column: 1/2;
+            }
+            .enle {
+                grid-column: 2/3;
+            }
+            .frepi {
+                grid-column:3/4;
+            }
+            .ensi {
+                grid-column: 4/5;
+            }
+            .rusa {
+                grid-column: 5/6;
+            }
+        }
+        .component-button {
+            .component-type, .enle, .frepi, .ensi, .rusa {
                 grid-row: 1/2;
             }
-            .component-button {
-                background:pink;
+        }
+        .component-checkbox {
+            .component-type, .enle, .frepi, .ensi, .rusa {
                 grid-row: 2/3;
             }
-            .component-checkbox {
-                background: darkblue;
-                grid-row: 3/4;
+        }
+        .component-textfield {
+            .component-type, .enle, .frepi, .ensi, .rusa {
+                grid-row: 2/3;
             }
-            .component-textfield {
-                background:darkgreen;
-                grid-row: 4/5;
+        }
+        .component-modal {
+            .component-type, .enle, .frepi, .ensi, .rusa {
+                grid-row: 2/3;
             }
-            .component-modal {
-                background:lightblue;
-                grid-row: 5/6;
-            }
-        } 
+        }
     }
 }
+

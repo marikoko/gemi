@@ -10,54 +10,97 @@
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
-    <header>
+    <header class='gridcontainer'>
         <h1 id="logo"><span>gemi</span>Generator for Branded Microinteractions </h1>
+        <div class="intro-text">
+            <p>Choose one from each category.</p>
+            <p>And you're good to go.</p>
+        </div>
+        <h2 id="brandidentity">Brandidentity</h2>
+        <ul>
+            <li>Energetic & Lively</li>
+            <li>Playfull & Friendly</li>
+            <li>Decisive & Sure</li>
+            <li>Calm & Soft</li>
+        </ul>
     </header>
-    <main>
-        <section class="generator">
-            <div class="component component-text">
-                <h2>Components</h2>
-                <p>For select for which of the following components you are looking for an animated micro-interaction.
-                    Choose the brand identity that comes closest to the brand identity of your company. 
-                    Start the selected animation with play. If you like it click on the button "get code".
-                </p>
-            </div>
-            <div class="component component-button">
-                <h3 class="component-type">Button</h3>
-                <div class="enle">
+    <main class='generator'>
+        <h2 id="components">Components</h2>
+        <section class="component-button">
+            <h3 class="component-type">Button</h3>
+            <div class="bi enle">
+                <div class="center">
                     <button id="enleBtn">
                         Send
                         <span class="animateBg"></span>
                     </button>
                 </div>
-                <div class="frepi">
+            </div>
+            <div class="bi frepi">
+                <div class="center">
                     <button class="frepiBtn">Button</button>
                 </div>
-                <div class="ensi">
+            </div>
+            <div class="bi ensi">
+                <div class="center">
                     <div id="ensiBtn">
                         <button id="entsiBtn-text" class="success">Send</button>
                         <button id="entsiBtn-ani" class="success"><i class="fas fa-angle-right"></i></button>
                     </div>
                 </div>
-                <div class="rusa">
-                    <div id="rusaBtn">
-                        <button id="ensiBtn-text" class="success">Send</button>
-                        <button id="ensiBtn-ani" class="success"><i class="fas fa-angle-right"></i></button>
+            </div>
+            <div class="bi rusa">
+                <div class="center">
+                    <div class="rusaBtn">
+                        <button id="rusaBtn" class="animate-layer">Send</button>
                     </div>
                 </div>
             </div>
-            <div class="component component-checkbox">
-                <h3>Checkbox</h3>
+        </section>
+        <section class="component-checkbox">
+            <h3 class="component-type">Checkbox</h3>
+            <div class="bi enle">
                 
             </div>
-            <div class="component component-textfield">
-                <h3>Textfield</h3>
+            <div class="bi frepi">
+            </div>
+            <div class="bi ensi">
                 
             </div>
-            <div class="component component-modal">
-                 <h3>Modal</h3>
+            <div class="bi rusa">
+                
+            </div>
+            
+        </section>
+        <section class="component-textfield">
+            <h3 class="component-type">Textfield</h3>
+            <div class="bi enle">
+                
+            </div>
+            <div class="bi frepi">
+            </div>
+            <div class="bi ensi">
+                
+            </div>
+            <div class="bi rusa">
+                
             </div>
         </section>
+        <section class="component-modal">
+            <h3 class="component-type">Modal</h3>
+            <div class="bi enle">
+                
+            </div>
+            <div class="bi frepi">
+            </div>
+            <div class="bi ensi">
+                
+            </div>
+            <div class="bi rusa">
+                
+            </div>
+        </section>
+
     </main>
 
     <footer>

@@ -29,18 +29,18 @@
 .grow {
     animation: grow 1s forwards;
 }
-.changeColor {
-    // animation: changeColor 0.5s ease-in-out;
-}
+// .changeColor {
+//     // animation: changeColor 0.5s ease-in-out;
+// }
 @keyframes grow {
     0%   { transform: translateX(25vw) scale(0); }
 	80%  { transform: translateX(25vw) scale(150); }
 	100% { transform: translateX(25vw) scale(150); opacity: 0; }
 }
-@keyframes changeColor {
-    // 0% { background-color: }
-    // 100% { background-color: }
-}
+// @keyframes changeColor {
+//     0% { background-color: }
+//     100% { background-color: }
+// }
 @keyframes bounce {
     0% { transform: scale(1); }
     35% { transform: scale(0.98); }
@@ -172,7 +172,6 @@
 
 /* -------- button rusa ----------------------------------------*/
 #rusaBtn {
-    // @include btn-style(80px, 80px, 3vw, 10px, 50%);
     @extend %button;
     width: 80px;
     height: 80px;
@@ -181,32 +180,32 @@
     background:$color-btn-bg;
     position: relative;
 }
+
 #rusaBtn:before, #rusaBtn:after {
     transition: all 0.5s ease-in-out;
 }
 .animate-main {
     animation: gooey-border 2s ease-in-out alternate;
 }
-.animate-layer {
-    &:before, &:after {
+.animate-layer:before, .animate-layer:after {
+        width: 110%;
+        height: 110%;
         content:'';
         position: absolute;
         top:-5%;
         left:-5%;
-        width: 110%;
-        height: 110%;
         z-index: -1;
         border-radius: 50%;
     }
-    &:before {
+    .animate-layer:before {
         background: rgba(darken($color-btn-bg, 10%), 0.3);
         animation: gooey-border 2s ease-in-out alternate-reverse;
     }
-    &:after {
+    .animate-layer:after {
         background: rgba($color-btn-bg,0.3);
         animation: gooey-border-after 2s ease-in-out alternate-reverse;
     }
-}
+
 @keyframes gooey-border {
   0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; }
   34% { border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%  ; }
@@ -219,7 +218,6 @@
   67% { border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%; } 
   100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 
 }
-
 
 /* CHECKBOX / RADIO */
 /* -------- checkbox enle ----------------------------------------*/

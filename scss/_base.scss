@@ -16,6 +16,19 @@ $color-hover:#C7E0E8;
 $color-darkbluegrey:#7f8f94;
 $color-white: #fff;
 
+$enle: hsla(36%, 100%, 67%, 1);
+$frepi: hsla(66%, 80%, 80%, 1);
+$ensi: hsla(196%, 69%, 78%, 1);
+$rusa: hsla(284%, 100%, 94%, 1);
+$grey: hsla(0%, 0%, 57%, 1);
+
+/* RGB */
+$enleR: rgba(255, 187, 86, 1);
+$frepiR: rgba(237, 245, 164, 1);
+$ensiR: rgba(161, 218, 238, 1);
+$rusaR: rgba(247, 225, 255, 1);
+$greyR: rgba(146, 146, 146, 1);
+
 /* Buttonani colors */
 $color-btn-bg: #E7C3FC;
 $color-btn-bg-orange: #EF6A0F;
@@ -27,6 +40,7 @@ $center: 0 auto;
 $border-radius: 5px;
 $border-radius-top: 5px 5px 0 0;
 $border-radius-bottom: 0 0 5px 5px;
+$border-radius-round: 50%;
 
 $opacity: 1;
 
@@ -56,9 +70,17 @@ $opacity: 1;
     padding: 0px;
     box-sizing: border-box;
 }
-@mixin headline3 () {
-    margin-bottom: 0.6rem;
-    font-size: 1.2rem; 
+
+@mixin mastergrid {
+    display: grid;
+    grid-template-columns: 0.7fr repeat(4, 1fr);
+    grid-template-rows: 1fr repeat(3, 0.7fr) repeat(4, 1fr);
+}
+
+@mixin grid($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
 }
 @mixin buttons-rounded () {
     width: 90%;
@@ -106,19 +128,17 @@ html, body {
     max-height: 500px;
 }
 body {
-    padding: $padding;
     font-size: $text-size-default;
     font-family: $text-font-default; 
-    background:$color-darkbluegrey;
+    background:$color-white;
 }
 h2 {
     margin-bottom: $margin;
-    padding: $padding;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: $color-ultradarkgrey;
 }
 h3 {
-    @include headline3;
+    font-size: 1rem;
 }
 p {
     font-size: 0.9rem;
