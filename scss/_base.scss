@@ -17,7 +17,7 @@ $color-darkbluegrey:#7f8f94;
 $color-white: #fff;
 
 $enle: hsla(36%, 100%, 67%, 1);
-$frepi: hsla(66%, 80%, 80%, 1);
+$frepi: #cad170;
 $ensi: hsla(196%, 69%, 78%, 1);
 $rusa: hsla(284%, 100%, 94%, 1);
 $grey: hsla(0%, 0%, 57%, 1);
@@ -73,7 +73,7 @@ $opacity: 1;
 
 @mixin mastergrid {
     display: grid;
-    grid-template-columns: 0.7fr repeat(4, 1fr);
+    grid-template-columns: 0.4fr repeat(4, 1fr);
     grid-template-rows: 1fr repeat(3, 0.7fr) repeat(4, 1fr);
 }
 
@@ -130,7 +130,7 @@ html, body {
 body {
     font-size: $text-size-default;
     font-family: $text-font-default; 
-    background:$color-white;
+    background:rgba(146, 146, 146, 0.1);
 }
 h2 {
     margin-bottom: $margin;

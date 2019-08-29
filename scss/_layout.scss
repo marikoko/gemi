@@ -22,8 +22,8 @@ header {
         padding: $padding;
         font-size: 1rem;
         text-align: center;
-        background: $color-white;
-        box-shadow: 0 5px 5px $color-lightgrey;
+        background: $color-hover;
+        box-shadow: 0 5px 5px rgba(146, 146, 146, 0.3);
          position: fixed;
         z-index: 10;
         span {
@@ -33,14 +33,16 @@ header {
         }
 
     }
-    .intro-text,#brandidentity, ul {
+    .intro-text,#brandidentity {
         padding: $padding;
     }
-
     ul {
+        padding: 1vw 1vw 0 1vw;
         transition: all 0.5s ease-in-out;
         li {
             list-style-type: none;
+            line-height: 2vw;
+            box-shadow: 0 5px 5px rgba(146, 146, 146, 0.3);
         }
         li:first-of-type {
             border-bottom: 4px solid $enle;
@@ -55,9 +57,8 @@ header {
             border-bottom: 4px solid $rusa;
         }
     }
-
     @media (min-width:50rem) {
-        @include grid(0.7fr repeat(4, 1fr), repeat(2,1fr));
+        @include grid(0.6fr repeat(4, 1fr), repeat(2,1fr));
         #logo {
             grid-column: 1/6;
             grid-row: 1/2;
@@ -65,6 +66,7 @@ header {
         .intro-text {
             grid-column: 1/2;
             grid-row: 2/4;
+            padding: 1vw 0 1vw 2vw;
         }
         #brandidentity {
             grid-column: 2/6;
@@ -77,7 +79,7 @@ header {
         ul {
             grid-column: 2/6;
             grid-row: 3/4;
-            // @include grid(0.7fr repeat(4, 1fr), 1fr);
+            // @include grid(0.6fr repeat(4, 1fr), 1fr);
             @include grid(repeat(4, 1fr), 1fr);
         }
     }
@@ -90,7 +92,6 @@ main {
 
 /* GENERATOR */
 .generator {
-    padding: $padding;
     .bi {
         width:  18vw;
         height: 10vw;
@@ -102,9 +103,24 @@ main {
         position: relative;
         .center {
             @include absoluteCenter;
+            position: relative;
         }
-    }
+        .shadow {
+            width: 100%;
+            height: 100%;
+            background: rgba(215,215,215, 0.7);
+            position: absolute;
+            top:0;  
+            left: 0;
+            transition: all 0.5s ease-in;
+            
+        }
+        .shadow:hover {
+            background: rgba(215,215,215, 0);
+        }
+        
 
+    }
     .enle {
         grid-column: 2/3;
         border: 1px solid $enle;
@@ -122,14 +138,23 @@ main {
         border: 1px solid $rusa;
     }
 
-    
     @media (min-width:50rem) {
+        #components, .component-button, .component-checkbox, 
+        .component-textfield, .component-modal {
+            padding: 0 1vw 0 2vw;
+        }
         .component-button, .component-checkbox, 
         .component-textfield, .component-modal {
-            @include grid(0.7fr repeat(4, 1fr), 1fr);
+            @include grid(0.5fr repeat(4, 1fr), 1fr);
             grid-row-gap: 2vw;
             .component-type {
+                width: 100%;
+                height: 83%;
+                padding-top: 2vw;
+                padding-left: 2vw;
+                background: rgba(146, 146, 146, 0.15);
                 grid-column: 1/2;
+                align-self: center;
             }
             .enle {
                 grid-column: 2/3;

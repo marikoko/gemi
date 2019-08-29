@@ -36,7 +36,7 @@ html, body {
 body {
   font-size: 16px;
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
-  background: #fff;
+  background: rgba(146, 146, 146, 0.1);
 }
 
 h2 {
@@ -72,8 +72,8 @@ header #logo {
   padding: 1vw;
   font-size: 1rem;
   text-align: center;
-  background: #fff;
-  box-shadow: 0 5px 5px #f1f1eb;
+  background: #C7E0E8;
+  box-shadow: 0 5px 5px rgba(146, 146, 146, 0.3);
   position: fixed;
   z-index: 10;
 }
@@ -84,16 +84,19 @@ header #logo span {
   font-family: 'Baloo Da', cursive;
 }
 
-header .intro-text, header #brandidentity, header ul {
+header .intro-text, header #brandidentity {
   padding: 1vw;
 }
 
 header ul {
+  padding: 1vw 1vw 0 1vw;
   transition: all 0.5s ease-in-out;
 }
 
 header ul li {
   list-style-type: none;
+  line-height: 2vw;
+  box-shadow: 0 5px 5px rgba(146, 146, 146, 0.3);
 }
 
 header ul li:first-of-type {
@@ -101,7 +104,7 @@ header ul li:first-of-type {
 }
 
 header ul li:nth-of-type(2) {
-  border-bottom: 4px solid #edf5a3;
+  border-bottom: 4px solid #cad170;
 }
 
 header ul li:nth-of-type(3) {
@@ -115,7 +118,7 @@ header ul li:last-of-type {
 @media (min-width: 50rem) {
   header {
     display: grid;
-    grid-template-columns: 0.7fr repeat(4, 1fr);
+    grid-template-columns: 0.6fr repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
   header #logo {
@@ -125,6 +128,7 @@ header ul li:last-of-type {
   header .intro-text {
     grid-column: 1/2;
     grid-row: 2/4;
+    padding: 1vw 0 1vw 2vw;
   }
   header #brandidentity {
     grid-column: 2/6;
@@ -149,10 +153,6 @@ main {
 }
 
 /* GENERATOR */
-.generator {
-  padding: 1vw;
-}
-
 .generator .bi {
   width: 18vw;
   height: 10vw;
@@ -169,6 +169,21 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.generator .bi .shadow {
+  width: 100%;
+  height: 100%;
+  background: rgba(215, 215, 215, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in;
+}
+
+.generator .bi .shadow:hover {
+  background: rgba(215, 215, 215, 0);
 }
 
 .generator .enle {
@@ -178,7 +193,7 @@ main {
 
 .generator .frepi {
   grid-column: 3/4;
-  border: 1px solid #edf5a3;
+  border: 1px solid #cad170;
 }
 
 .generator .ensi {
@@ -192,16 +207,26 @@ main {
 }
 
 @media (min-width: 50rem) {
+  .generator #components, .generator .component-button, .generator .component-checkbox,
+  .generator .component-textfield, .generator .component-modal {
+    padding: 0 1vw 0 2vw;
+  }
   .generator .component-button, .generator .component-checkbox,
   .generator .component-textfield, .generator .component-modal {
     display: grid;
-    grid-template-columns: 0.7fr repeat(4, 1fr);
+    grid-template-columns: 0.5fr repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-row-gap: 2vw;
   }
   .generator .component-button .component-type, .generator .component-checkbox .component-type,
   .generator .component-textfield .component-type, .generator .component-modal .component-type {
+    width: 100%;
+    height: 83%;
+    padding-top: 2vw;
+    padding-left: 2vw;
+    background: rgba(146, 146, 146, 0.15);
     grid-column: 1/2;
+    align-self: center;
   }
   .generator .component-button .enle, .generator .component-checkbox .enle,
   .generator .component-textfield .enle, .generator .component-modal .enle {
