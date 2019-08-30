@@ -5,12 +5,11 @@ const bi = document.querySelector('header ul'),
     enleBtn = document.querySelector('#enleBtn'),
     frepiBtn = document.querySelector('#frepiBtn'),
     ensiBtn = document.querySelector('#ensiBtn'),
-    rusaBtn = document.querySelector('#rusaBtn');
-
-    logoHeight = logo.offsetHeight;
-    biTop = bi.offsetTop;
+    rusaBtn = document.querySelector('#rusaBtn'),
+    aus = document.querySelector('.ausgabe'),
+    logoHeight = logo.offsetHeight,
+    biTop = bi.offsetTop,
     stopPoint = biTop - logoHeight;
-
 
 fixedBi = () => {
     console.log(biTop, window.scrollY);
