@@ -2,6 +2,7 @@
     "button": [
         {
             "name": "btn-prototype",
+            "html": "<button>Send</button>",
             "borderRadius": "none",
             "backgroundColor": "#fff",
             "color": "#313335",
@@ -9,6 +10,7 @@
         },
             {
                "name": "enle",
+                "html": "<button><span>hallo</span>Send</button>",
                 "borderRadius": "50%",
                 "backgroundColor": "#313335",
                 "color": "#fff",
