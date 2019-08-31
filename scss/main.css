@@ -495,9 +495,224 @@ main {
 }
 
 /* CHECKBOX / RADIO */
-/*make checkboxes invisible, so that custom styling is possible*/
+.animate-frepi input, .animate-ensi input {
+  display: none;
+}
+
+.animate-frepi div, .animate-ensi div {
+  display: flex;
+  align-items: center;
+}
+
+.frepiC label, .ensiC label {
+  font-size: 1.2rem;
+}
+
 /* CHECK ENLLE */
 /* CHECK FREPI */
+.animate-frepi {
+  width: 200px;
+  height: 50px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  display: block;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.animate-frepi span {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin-right: 13px;
+  background-color: white;
+  border: 2px solid darkgrey;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate-frepi span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+
+.animate-frepi span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 1px #fff;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.animate-frepi svg {
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.animate-frepi div::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  z-index: -1;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.animate-frepi:hover div span::before {
+  animation: wobble 0.3s ease;
+  background-color: #313335;
+}
+
+.animate-frepi:hover div::before {
+  background-color: #fff;
+  border: 1px solid #d3d0c9;
+}
+
+.animate-frepi input:checked + div {
+  color: #313335;
+}
+
+.animate-frepi input:checked + div::before {
+  animation: wobble 0.3s ease;
+  /* background-color: #37425f; */
+  color: #d3d0c9;
+  border: 1px solid #a6ac5c;
+}
+
+.animate-frepi input:checked + div span {
+  background-color: #a6ac5c;
+  animation: littleBounce 0.3s ease, wobble 0.3s ease;
+}
+
+.animate-frepi input:checked + div span::before {
+  background-color: #fff;
+}
+
+.animate-frepi input:checked + div svg,
+.animate-frepi.submit svg {
+  animation: showParticles 0.4s ease;
+}
+
+.animate-frepi input:checked + div svg:last-child,
+.animate-frepi.submit svg:last-child {
+  animation: showParticlesRotateChange 0.3s ease;
+}
+
+/* ANIMATIONS */
+@keyframes wobble {
+  0% {
+    ransform: scale(1) rotate(0deg);
+  }
+  40% {
+    transform: scale(1.1, 0.9) rotate(5deg);
+  }
+  70% {
+    transform: scale(0.9, 1.1) rotate(-3deg);
+  }
+  80% {
+    transform: scale(1.05, 0.95) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: scale(1.1, 0.9) rotate(5deg);
+  }
+  70% {
+    -webkit-transform: scale(0.9, 1.1) rotate(-3deg);
+  }
+  80% {
+    -webkit-transform: scale(1.05, 0.95) rotate(1deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes showParticles {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(20deg);
+  }
+}
+
+@-webkit-keyframes showParticles {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) rotate(20deg);
+  }
+}
+
+@keyframes showParticlesRotateChange {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-20deg);
+  }
+}
+
+@-webkit-keyframes showParticlesRotateChange {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) rotate(-20deg);
+  }
+}
+
 /* CHECK ENSI */
 .animate-ensi {
   display: block;
@@ -509,19 +724,6 @@ main {
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.ensiC label {
-  font-size: 1.2rem;
-}
-
-.animate-ensi input {
-  display: none;
-}
-
-.animate-ensi div {
-  display: flex;
-  align-items: center;
 }
 
 .animate-ensi div:before {
@@ -537,8 +739,8 @@ main {
 
 .animate-ensi span {
   position: relative;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   margin-right: 13px;
   background-color: #fff;
   border: 1px solid rgba(146, 146, 146, 0.7);
@@ -611,16 +813,39 @@ main {
   }
 }
 
-@keyframes scale {
+@-webkit-keyframes littleBounce {
   0% {
-    opacity: 0.5;
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
   }
   100% {
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    opacity: 0;
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes checkboxSelected {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes checkboxSelected {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scaleY(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
   }
 }
 
