@@ -124,3 +124,26 @@ rusaBtn.addEventListener('mouseenter', animateHoverRusa, false);
 rusaBtn.addEventListener('click', animateButtonRusa, false);
 
 
+/* CHECKBOX */
+/* ENSI CHECKBOX JS */
+const startbtn = document.querySelector('#start-checkbox');
+startbtn.addEventListener('mouseenter', function(e){
+    e.preventDefault();
+    console.log('hi');
+    createAniCheckboxes();
+},false);
+  
+function createAniCheckboxes() {
+    const checkboxes = document.querySelectorAll("[data-aniclass='ensi']");
+    console.log(checkboxes);
+    checkboxes.forEach(function(element, i) {
+        const label = document.createElement("label");
+        label.classList.add("animate-ensi");
+        var labelWrapper = document.createElement("div");
+        labelWrapper.innerHTML = (`<span></span>${element.value}`);
+        label.appendChild(labelWrapper);
+        element.classList.remove("animate-ensi");
+        element.parentNode.insertBefore(label, element);
+        label.prepend(element);
+    });
+}

@@ -145,7 +145,7 @@ main {
         .component-button, .component-checkbox, 
         .component-textfield, .component-modal {
             @include grid(0.5fr repeat(4, 1fr), 1fr);
-            grid-row-gap: 2vw;
+            grid-row-gap: 4vw;
             .component-type {
                 width: 100%;
                 height: 83%;
