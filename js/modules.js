@@ -1,12 +1,13 @@
 const ensiBtnAni = document.querySelector('#ensiBtn-ani'),
     ensiBtnText = document.querySelector('#ensiBtn-text'),
     buttons = [ensiBtnAni, ensiBtnText],  
-    btnBg = document.querySelector('.animateBg'),    
+    btnBg = document.querySelector('.animate-enle-btn-bg'),  
+    svgLines = document.querySelector('svg'),  
     delay = 3500;
 
 /* BUTTONS
 /* ENLE BTN JS */
-animateHoverEnle = (e) => {   
+animateHoverEnleBtn = (e) => {   
     console.log('hover');
     e.target.classList.add('bounce');
     console.log('bounce');
@@ -14,8 +15,7 @@ animateHoverEnle = (e) => {
         e.target.classList.remove('bounce');
     })
 }
-
-animateButtonEnle = (e) => {
+animateButtonEnleBtn = (e) => {
     // e.preventDefault();
     const x = e.offsetX;
          y = e.offsetY;
@@ -25,57 +25,85 @@ animateButtonEnle = (e) => {
     console.log(btnBg.style.top);
     btnBg.style.top = y + "px";
     console.log(btnBg.style.left);
-    btnBg.classList.add('grow');
-    enleBtn.addEventListener('animationend', animationEndEnle, false);
+    btnBg.classList.add('enle-btn-grow');
+    enleBtn.addEventListener('animationend', animationEndEnleBtn, false);
 }
-
-animationEndEnle = () => {
+animationEndEnleBtn = () => {
     // enleBtn.style.backgroundColor = '#14c88b';
-    btnBg.classList.remove('grow');
+    btnBg.classList.remove('enle-btn-grow');
     // btnBg.removeAttribute('data-ripple-color', '#EF6A0F');
-    removeAllEnle();
+    removeAllEnleBtn();
 }  
-
-removeAllEnle = () => {
+removeAllEnleBtn = () => {
     setTimeout(function(){
         console.log('weg');
         enleBtn.style.backgroundColor = '#000';
-        btnBg.classList.remove('grow');
+        btnBg.classList.remove('enle-grow');
     },delay);
 }
-
-enleBtn.addEventListener('mouseenter', animateHoverEnle, false);
-enleBtn.addEventListener('click', animateButtonEnle, false);
+enleBtn.addEventListener('mouseenter', animateHoverEnleBtn, false);
+enleBtn.addEventListener('click', animateButtonEnleBtn, false);
 
 
 /* FREPI BUTTON JS */ 
+animateHoverFrepiBtn = () => {
+    console.log('hover');
+    frepiBtn.style.color = '#313335';
+    frepiBtn.style.backgroundColor = 'rgba(254, 198, 78, 1)';
+}
+animateButtonFrepiBtn = (e) => {
+    console.log('frepi geklickt');
+    e.preventDefault;
+    frepiBtn.classList.remove('breath', 'animate-frepi-btn');
+    frepiBtn.classList.add('animate-frepi-btn');
+    svgLines.classList.add('animate-lines');
+
+    svgLines.addEventListener('animationend', aniSuccessFrepiBtn, false);
+}
+aniSuccessFrepiBtn = () => {
+    console.log('ende wird gestarte');
+    frepiBtn.style.backgroundColor = '#8FE2AD';
+    frepiBtn.classList.remove('animate-frepi-btn');
+    svgLines.classList.remove('animate-lines');
+    console.log('ende');
+    removeAllFrepiBtn();
+}
+removeAllFrepiBtn = () => {
+  setTimeout(function(){
+    svgLines.classList.remove('animate-lines');
+    frepiBtn.classList.remove('animate-frepi-btn');
+    frepiBtn.style.backgroundColor = 'rgba(254, 198, 78, 0.6)';
+  },delay);
+}
+frepiBtn.addEventListener('mouseenter', animateHoverFrepiBtn, false);
+frepiBtn.addEventListener('click', animateButtonFrepiBtn, false);
 
 
 /* ENSI BUTTON JS */
-animateHoverEnsi = () => {
+animateHoverEnsiBtn = () => {
     buttons.forEach((i) => {
       i.style.backgroundColor = '#5a5a5a';
     })
     ensiBtnText.style.color = "rgba(255,255,255,0.6)";
 } 
-animateButtonEnsi = (e) => {
+animateButtonEnsiBtn = (e) => {
     console.log('ensi geklickt');
     e.preventDefault();
     ensiBtn.style.backgroundColor = '#000';
-    ensiBtnAni.classList.remove('animate');
-    ensiBtnAni.classList.add('animate');
-    ensiBtn.addEventListener('animationend', aniDoneSuccessEnsi, false);
+    ensiBtnAni.classList.remove('animate-ensi-btn');
+    ensiBtnAni.classList.add('animate-ensi-btn');
+    ensiBtn.addEventListener('animationend', aniDoneSuccessEnsiBtn, false);
 }
-aniDoneSuccessEnsi = () => {
+aniDoneSuccessEnsiBtn = () => {
     console.log('ensi done')
     buttons.forEach((i) => {
         i.style.backgroundColor = '#14c88b';
         ensiBtn.style.border = "0px";
     })
     ensiBtnText.style.color = "#ffffff";
-    removeAllEnsi();
+    removeAllEnsiBtn();
 }
-animationEndEnsi = () => {
+animationEndEnsiBtn = () => {
     buttons.forEach((i) => {
         console.log('total end');
         i.style.backgroundColor = '#ffffff';
@@ -83,67 +111,45 @@ animationEndEnsi = () => {
         ensiBtn.style.border = '1px solid #3f3f3f';
     })
 }
-removeAllEnsi = () => {
+removeAllEnsiBtn = () => {
     console.log('remove');
     setTimeout(function(){
-        ensiBtnAni.classList.remove('animate');
-        animationEndEnsi();
+        ensiBtnAni.classList.remove('animate-ensi-btn');
+        animationEndEnsiBtn();
         console.log('entfernt nach time');
     },delay);
 }
-ensiBtn.addEventListener('mouseenter', animateHoverEnsi, false);
-ensiBtn.addEventListener('click', animateButtonEnsi, false);
+ensiBtn.addEventListener('mouseenter', animateHoverEnsiBtn, false);
+ensiBtn.addEventListener('click', animateButtonEnsiBtn, false);
 
 
 /* RUSA BUTTON JS */ 
-animateHoverRusa = () => {
+animateHoverRusaBtn = () => {
     rusaBtn.style.backgroundColor = '#d492fa';
 }
-animateButtonRusa = (e) => {
+animateButtonRusaBtn = (e) => {
     console.log('rusa geklickt');
     e.preventDefault;
     rusaBtn.style.backgroundColor = '#d492fa';
-    rusaBtn.classList.remove('animate-main', 'animate-layer');
-    rusaBtn.classList.add('animate-main', 'animate-layer');
-    rusaBtn.addEventListener('animationend', aniSuccessRusa, false);
+    rusaBtn.classList.remove('animate-rusa-btn-main', 'animate-rusa-btn-layer');
+    rusaBtn.classList.add('animate-rusa-btn-main', 'animate-rusa-btn-layer');
+    rusaBtn.addEventListener('animationend', aniSuccessRusaBtn, false);
 }
-aniSuccessRusa = () => {
+aniSuccessRusaBtn = () => {
     console.log('ende wird gestarte');
     rusaBtn.style.backgroundColor = '#8FE2AD';
-    rusaBtn.classList.remove('animate-main', 'animate-layer');
+    rusaBtn.classList.remove('animate-rusa-btn-main', 'animate-rusa-btn-layer');
     console.log('ende');
-    removeAllRusa();
+    removeAllRusaBtn();
 }
-removeAllRusa = () => {
+removeAllRusaBtn = () => {
   setTimeout(function(){
-    rusaBtn.classList.remove('animate-main', 'animate-layer');
+    rusaBtn.classList.remove('animate-rusa-btn-main', 'animate-rusa-btn-layer');
     rusaBtn.style.backgroundColor = '#E7C3FC';
   },delay);
 }
-rusaBtn.addEventListener('mouseenter', animateHoverRusa, false);
-rusaBtn.addEventListener('click', animateButtonRusa, false);
+rusaBtn.addEventListener('mouseenter', animateHoverRusaBtn, false);
+rusaBtn.addEventListener('click', animateButtonRusaBtn, false);
 
 
-/* CHECKBOX */
-/* ENSI CHECKBOX JS */
-// const startbtn = document.querySelector('#start-checkbox');
-// startbtn.addEventListener('mouseenter', function(e){
-//     e.preventDefault();
-//     console.log('hi');
-//     createAniCheckboxes();
-// },false);
-  
-// function createAniCheckboxes() {
-//     const checkboxes = document.querySelectorAll("[data-aniclass='ensi']");
-//     console.log(checkboxes);
-//     checkboxes.forEach(function(element, i) {
-//         const label = document.createElement("label");
-//         label.classList.add("animate-ensi");
-//         var labelWrapper = document.createElement("div");
-//         labelWrapper.innerHTML = (`<span></span>${element.value}`);
-//         label.appendChild(labelWrapper);
-//         element.classList.remove("animate-ensi");
-//         element.parentNode.insertBefore(label, element);
-//         label.prepend(element);
-//     });
-// }
+/* CHECKBOX: no js necessary */
