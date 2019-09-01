@@ -509,6 +509,184 @@ main {
 }
 
 /* CHECK ENLLE */
+.animate-enle {
+  display: block;
+  width: 200px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 50px;
+  height: 50px;
+  padding: 0 20px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.animate-enle div {
+  display: flex;
+  align-items: center;
+}
+
+.animate-enle input {
+  display: none;
+}
+
+.triangle {
+  border-top: 20px solid #037CA9;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  transform: rotate(180deg);
+}
+
+.animate-enle span {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 13px;
+  /* width: 0px;
+  height: 0px; 
+    border-top: 20px solid #037CA9; 
+ border-left: 12px solid transparent; 
+   border-right: 12px solid transparent; 
+   transform: rotate(180deg); 
+  background-color:transparent; */
+  background-color: white;
+  border: 1.5px solid darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate-enle span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+
+.animate-enle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid darkgrey;
+  /* box-shadow: 0 0 0 1px #fff;*/
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.animate-enle svg {
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.animate-enle div::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.animate-enle:hover div span::before {
+  background-color: #373d4c;
+}
+
+.animate-enle:hover div::before {
+  border: 1px solid lightgrey;
+}
+
+.animate-enle input:checked + div {
+  color: #000;
+}
+
+.animate-enle input:checked + div::before {
+  animation: bounce 0.3s 0.4s cubic-bezier(0.2, 0.37, 0.72, 1.38);
+  background-color: white;
+  border: 1px solid darkgrey;
+}
+
+.animate-enle input:checked + div span {
+  background-color: #fff;
+  animation: rotateCheck 0.4s ease-in-out;
+}
+
+.animate-enle input:checked + div span::before {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.5);
+  animation: grow 0.3s ease;
+}
+
+/* ANIMATION */
+@keyframes rotateCheck {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  70% {
+    transform: rotate(360deg) scale(1.1);
+    border-radius: 50%;
+  }
+  85% {
+    transform: rotate(880deg) scale(1.3);
+    border-radius: 50%;
+    background-color: darkgrey;
+  }
+  95% {
+    transform: rotate(1080deg) scale(1.3);
+    border-radius: 5%;
+    background-color: white;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    background-color: white;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  75% {
+    transform: scale(0.99);
+  }
+  90% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+    background: #373d4c;
+  }
+  35% {
+    transform: scale(3);
+    background-color: white;
+  }
+  100% {
+    transform: scale(1.5);
+    background: white;
+  }
+}
+
 /* CHECK FREPI */
 .animate-frepi {
   width: 200px;
