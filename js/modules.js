@@ -97,10 +97,11 @@ animateButtonEnsiBtn = (e) => {
 aniDoneSuccessEnsiBtn = () => {
     console.log('ensi done')
     buttons.forEach((i) => {
-        i.style.backgroundColor = '#14c88b';
+        i.style.backgroundColor = '#cad170';
         ensiBtn.style.border = "0px";
     })
     ensiBtnText.style.color = "#ffffff";
+    ensiBtnText.style.backgroundColor = '#cad170';
     removeAllEnsiBtn();
 }
 animationEndEnsiBtn = () => {
@@ -137,7 +138,7 @@ animateButtonRusaBtn = (e) => {
 }
 aniSuccessRusaBtn = () => {
     console.log('ende wird gestarte');
-    rusaBtn.style.backgroundColor = '#8FE2AD';
+    rusaBtn.style.backgroundColor = '#cad170';
     rusaBtn.classList.remove('animate-rusa-btn-main', 'animate-rusa-btn-layer');
     console.log('ende');
     removeAllRusaBtn();

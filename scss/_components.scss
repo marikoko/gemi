@@ -53,6 +53,7 @@
   color: $greyR;
   background:rgba(254, 198, 78, 0.6);
   position: relative;
+  z-index: 10;
 } 
 
 .frepi-btn-svg {
@@ -182,11 +183,11 @@
 }
 @keyframes success {
   from { transform: translate(-50%, -50%) rotate(-135deg) scale(0); }
-  to { transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #14c88b; }
+  to { transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #cad170; }
 }
 @-webkit-keyframes success {
   from { -webkit-transform: translate(-50%, -50%) rotate(-135deg) scale(0); }
-  to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #14c88b; }
+  to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #cad170; }
 }
 
 
@@ -199,15 +200,13 @@
   color: $color-white;
   background:$color-btn-bg;
   position: relative;
+  transition: all 0.7s ease-in;
 }
 #rusaBtn:before, #rusaBtn:after {
   transition: all 0.7s ease-in-out;
 }
-.animate-rusa-btn-hover {
-  background-color: '#d492fa';
-}
 .animate-rusa-btn-main {
-  animation: natural-border 2s ease-in-out alternate;
+  animation: natural-border 4s ease-in-out alternate;
 }
 .animate-rusa-btn-layer:before, .animate-rusa-btn-layer:after {
   width: 110%;
@@ -218,27 +217,29 @@
   left:-5%;
   z-index: -1;
   border-radius: 50%;
+  transition: all 1s ease-in-out;
 }
 .animate-rusa-btn-layer:before {
   background: rgba(darken($color-btn-bg, 10%), 0.3);
-  animation: natural-border 2s ease-in-out alternate-reverse;
+  animation: natural-border 4s ease-in-out alternate-reverse;
 }
 .animate-rusa-btn-layer:after {
   background: rgba($color-btn-bg,0.3);
-  animation: natural-border-after 2s ease-in-out alternate-reverse;
+  animation: natural-border-after 4s ease-in-out alternate-reverse;
 }
+
 /* BTN RUSA ANIMATIONS */
 @keyframes natural-border {
-  0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; }
-  34% { border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%  ; }
-  67% { border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%  ; }
-  100% { border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%  ; }
+  0% { transform: scale(1); border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ; }
+  34% { transform: scale(1.02); border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%  ; }
+  67% { transform: scale(1.02); border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%  ; }
+  100% { transform: scale(1); border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%  ; }
 }
 @keyframes natural-border-after {
-  0% { border-radius: 35% 65% 50% 50% / 50% 50% 50% 50% ; } 
-  34% { border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%; } 
-  67% { border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%; } 
-  100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 
+  0% { transform: scale(1); border-radius: 35% 65% 50% 50% / 50% 50% 50% 50% ; } 
+  34% { transform: scale(1.02); border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%; } 
+  67% { transform: scale(1.02); border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%; } 
+  100% { transform: scale(1); border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 
 }
 
 /* CHECKBOX / RADIO */
