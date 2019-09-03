@@ -12,6 +12,9 @@ $color-ultradarkgrey: #313335;
 $color-darkgrey: #d3d0c9;
 $color-lightgrey: #f1f1eb;
 $color-ultralightgrey: #fbfcf7;
+$color-darkerultralightgrey: #ecede8;
+
+// $color-darkerultralightgrey: #e5e6e1;
 $color-hover:#C7E0E8;
 $color-darkbluegrey:#7f8f94;
 $color-white: #fff;
@@ -135,7 +138,7 @@ html, body {
 body {
     font-size: $text-size-default;
     font-family: $text-font-default; 
-    background:rgba(146, 146, 146, 0.1);
+    background: $color-ultralightgrey;
 }
 h2 {
     margin-bottom: $margin;

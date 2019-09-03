@@ -201,7 +201,10 @@
   position: relative;
 }
 #rusaBtn:before, #rusaBtn:after {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+.animate-rusa-btn-hover {
+  background-color: '#d492fa';
 }
 .animate-rusa-btn-main {
   animation: natural-border 2s ease-in-out alternate;
@@ -596,15 +599,157 @@
 /* CHECK RUSA */
 
 
-/* TEXTFIELD */
-/* -------- textfield enle ----------------------------------------*/
-/* -------- textfield frepi ----------------------------------------*/
-/* -------- textfield ensi ----------------------------------------*/
-/* -------- textfield rusa ----------------------------------------*/
+/* HAMBURGER */
+/* HAMBURGER ENLE */
+/* HAMBURGER FREPI */
+/* HAMBURGER ENSI */
+.ensi-hamburger {
+  margin-left: 10%;
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ensi-hamburger-icon {
+  width: 46px;
+  height: 38px;
+  padding: 0 2px 0 3px;
+  border: 2px solid;
+  border-color: $color-darkgrey;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.ensi-hamburger-icon:hover .ensi-hamburger-line {
+  transform: scale(0.6);
+}
+
+.ensi-hamburger-line {
+  position: absolute;
+  width: 35px;
+  height: 5px;
+  background-color: $color-darkgrey;
+  border-radius: 2px;
+  overflow: hidden; 
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.ensi-hamburger-line:nth-child(1) {
+  top: 6px;
+}
+.ensi-hamburger-line:nth-child(2) {
+  top: 15px;
+}
+.ensi-hamburger-line:nth-child(3) {
+  top: 24px;
+}
+
+.ensi-hamburger-line:nth-child(1).animate-ensi-line1 {
+  top: 16px;
+  transform: scale(0.65) rotate(405deg);
+  background-color: $color-ultradarkgrey;
+}
+.ensi-hamburger-line:nth-child(2).animate-ensi-line2, {
+  top: 16px;
+  transform: scale(0.85) rotate(270deg);
+  background-color: transparent;
+}
+.ensi-hamburger-line:nth-child(3).animate-ensi-line3 {
+  top: 16px;
+  transform: scale(0.65) rotate(-45deg);
+  background-color: $color-ultradarkgrey;
+}
+.ensi-hamburger-text {
+  font-size: 1.6rem;
+  color: $color-darkgrey;
+  margin-left: 10%;
+  transition: color 0.5s ease-in-out;
+}
+.animate-text {
+  color: $color-ultradarkgrey;
+}
+.animate-box {
+  border-color: $color-ultradarkgrey;
+}
+
+/* HAMBURGER RUSA */
+.rusa-hamburger {
+  width: 120px;
+  height: 30px;
+  margin-left:20%;
+  position: relative;
+  top:-1px;
+  cursor: pointer;
+}
+.rusa-hamburger:hover {
+  color:#64686A;
+}
+.rusa-hamburger-text {
+  margin-left: 150%;
+  font-size: 1.5rem;
+  transition:all 0.3s ease-in-out;
+}
+.rusa-hamburger-icon {
+  width: 40px;
+  height: 30px;
+}
+.rusa-hamburger-icon .rusa-hamburger-line {
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: $color-ultradarkgrey;
+  border-radius: 2px;
+  overflow: hidden; 
+}
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(1) {
+    // top: 0;
+    transform: translateY(0);
+}
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(2) {
+    // top: 10px;
+    transform: translateY(10px);
+}
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(3) {
+    // top: 20px;
+    transform: translateY(20px);
+}
+.rusa-hamburger:hover .rusa-hamburger-line::after{
+  //left:0;
+  transform: translateX(0);
+}
+.rusa-hamburger-line::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #A6ABAB;
+  position: absolute;
+  // top: 0;
+  transform: translateY(0);
+  //left: 100%;
+  transform: translateX(100%);
+  z-index: 1;
+  transition: 1s;
+}
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(1)::after {
+    transition-delay: 0.1s;	}
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(2)::after {
+    transition-delay: 0.2s;	}
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(3)::after {
+    transition-delay: 0.3s;	}
+
+.animate-rusa-lines::after{
+  background: $color-btn-bg;
+}
+
+.animate-rusa-text {
+  color: #d492fa;
+}
 
 
 /* MODAL */
-/* -------- modal enle ----------------------------------------*/
-/* -------- modal frepi ----------------------------------------*/
-/* -------- modal ensi ----------------------------------------*/
-/* -------- modal rusa ----------------------------------------*/
+/* MODAL ENLE */
+/* MODAL FREPI */
+/* MODAL ENSI */
+/* MODAL RUSA */

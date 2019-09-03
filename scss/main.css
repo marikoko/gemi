@@ -36,7 +36,7 @@ html, body {
 body {
   font-size: 16px;
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
-  background: rgba(146, 146, 146, 0.1);
+  background: #fbfcf7;
 }
 
 h2 {
@@ -73,7 +73,7 @@ header #logo {
   font-size: 1rem;
   text-align: center;
   background: #C7E0E8;
-  box-shadow: 0 5px 5px rgba(146, 146, 146, 0.3);
+  box-shadow: 0 0 2px rgba(146, 146, 146, 0.3);
   position: fixed;
   z-index: 10;
 }
@@ -96,7 +96,7 @@ header ul {
 header ul li {
   list-style-type: none;
   line-height: 2vw;
-  box-shadow: 0 5px 5px rgba(146, 146, 146, 0.3);
+  box-shadow: 0 0px 1px #f1f1eb;
 }
 
 header ul li:first-of-type {
@@ -160,8 +160,9 @@ main {
   margin: 1vw;
   padding: 1vw;
   text-align: center;
-  background: #fbfcf7;
+  background: #fff;
   position: relative;
+  transition: all 0.5s ease;
 }
 
 .generator .bi .center {
@@ -194,40 +195,40 @@ main {
 
 @media (min-width: 50rem) {
   .generator #components, .generator .component-button, .generator .component-checkbox,
-  .generator .component-textfield, .generator .component-modal {
+  .generator .component-hamburger, .generator .component-modal {
     padding: 0 1vw 0 2vw;
   }
   .generator .component-button, .generator .component-checkbox,
-  .generator .component-textfield, .generator .component-modal {
+  .generator .component-hamburger, .generator .component-modal {
     display: grid;
     grid-template-columns: 0.5fr repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-row-gap: 4vw;
   }
   .generator .component-button .component-type, .generator .component-checkbox .component-type,
-  .generator .component-textfield .component-type, .generator .component-modal .component-type {
+  .generator .component-hamburger .component-type, .generator .component-modal .component-type {
     width: 100%;
     height: 83%;
     padding-top: 2vw;
     padding-left: 2vw;
-    background: rgba(146, 146, 146, 0.15);
+    background: #ecede8;
     grid-column: 1/2;
     align-self: center;
   }
   .generator .component-button .enle, .generator .component-checkbox .enle,
-  .generator .component-textfield .enle, .generator .component-modal .enle {
+  .generator .component-hamburger .enle, .generator .component-modal .enle {
     grid-column: 2/3;
   }
   .generator .component-button .frepi, .generator .component-checkbox .frepi,
-  .generator .component-textfield .frepi, .generator .component-modal .frepi {
+  .generator .component-hamburger .frepi, .generator .component-modal .frepi {
     grid-column: 3/4;
   }
   .generator .component-button .ensi, .generator .component-checkbox .ensi,
-  .generator .component-textfield .ensi, .generator .component-modal .ensi {
+  .generator .component-hamburger .ensi, .generator .component-modal .ensi {
     grid-column: 4/5;
   }
   .generator .component-button .rusa, .generator .component-checkbox .rusa,
-  .generator .component-textfield .rusa, .generator .component-modal .rusa {
+  .generator .component-hamburger .rusa, .generator .component-modal .rusa {
     grid-column: 5/6;
   }
   .generator .component-button .component-type, .generator .component-button .enle, .generator .component-button .frepi, .generator .component-button .ensi, .generator .component-button .rusa {
@@ -236,7 +237,7 @@ main {
   .generator .component-checkbox .component-type, .generator .component-checkbox .enle, .generator .component-checkbox .frepi, .generator .component-checkbox .ensi, .generator .component-checkbox .rusa {
     grid-row: 2/3;
   }
-  .generator .component-textfield .component-type, .generator .component-textfield .enle, .generator .component-textfield .frepi, .generator .component-textfield .ensi, .generator .component-textfield .rusa {
+  .generator .component-hamburger .component-type, .generator .component-hamburger .enle, .generator .component-hamburger .frepi, .generator .component-hamburger .ensi, .generator .component-hamburger .rusa {
     grid-row: 2/3;
   }
   .generator .component-modal .component-type, .generator .component-modal .enle, .generator .component-modal .frepi, .generator .component-modal .ensi, .generator .component-modal .rusa {
@@ -529,7 +530,11 @@ main {
 }
 
 #rusaBtn:before, #rusaBtn:after {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.animate-rusa-btn-hover {
+  background-color: '#d492fa';
 }
 
 .animate-rusa-btn-main {
@@ -1108,14 +1113,174 @@ main {
 }
 
 /* CHECK RUSA */
-/* TEXTFIELD */
-/* -------- textfield enle ----------------------------------------*/
-/* -------- textfield frepi ----------------------------------------*/
-/* -------- textfield ensi ----------------------------------------*/
-/* -------- textfield rusa ----------------------------------------*/
+/* HAMBURGER */
+/* HAMBURGER ENLE */
+/* HAMBURGER FREPI */
+/* HAMBURGER ENSI */
+.ensi-hamburger {
+  margin-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ensi-hamburger-icon {
+  width: 46px;
+  height: 38px;
+  padding: 0 2px 0 3px;
+  border: 2px solid;
+  border-color: #d3d0c9;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.ensi-hamburger-icon:hover .ensi-hamburger-line {
+  transform: scale(0.6);
+}
+
+.ensi-hamburger-line {
+  position: absolute;
+  width: 35px;
+  height: 5px;
+  background-color: #d3d0c9;
+  border-radius: 2px;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.ensi-hamburger-line:nth-child(1) {
+  top: 6px;
+}
+
+.ensi-hamburger-line:nth-child(2) {
+  top: 15px;
+}
+
+.ensi-hamburger-line:nth-child(3) {
+  top: 24px;
+}
+
+.ensi-hamburger-line:nth-child(1).animate-ensi-line1 {
+  top: 16px;
+  transform: scale(0.65) rotate(405deg);
+  background-color: #313335;
+}
+
+.ensi-hamburger-line:nth-child(2).animate-ensi-line2 {
+  top: 16px;
+  transform: scale(0.85) rotate(270deg);
+  background-color: transparent;
+}
+
+.ensi-hamburger-line:nth-child(3).animate-ensi-line3 {
+  top: 16px;
+  transform: scale(0.65) rotate(-45deg);
+  background-color: #313335;
+}
+
+.ensi-hamburger-text {
+  font-size: 1.6rem;
+  color: #d3d0c9;
+  margin-left: 10%;
+  transition: color 0.5s ease-in-out;
+}
+
+.animate-text {
+  color: #313335;
+}
+
+.animate-box {
+  border-color: #313335;
+}
+
+/* HAMBURGER RUSA */
+.rusa-hamburger {
+  width: 120px;
+  height: 30px;
+  margin-left: 20%;
+  position: relative;
+  top: -1px;
+  cursor: pointer;
+}
+
+.rusa-hamburger:hover {
+  color: #64686A;
+}
+
+.rusa-hamburger-text {
+  margin-left: 150%;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.rusa-hamburger-icon {
+  width: 40px;
+  height: 30px;
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line {
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: #313335;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(1) {
+  transform: translateY(0);
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(2) {
+  transform: translateY(10px);
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(3) {
+  transform: translateY(20px);
+}
+
+.rusa-hamburger:hover .rusa-hamburger-line::after {
+  transform: translateX(0);
+}
+
+.rusa-hamburger-line::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #A6ABAB;
+  position: absolute;
+  transform: translateY(0);
+  transform: translateX(100%);
+  z-index: 1;
+  transition: 1s;
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(1)::after {
+  transition-delay: 0.1s;
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(2)::after {
+  transition-delay: 0.2s;
+}
+
+.rusa-hamburger-icon .rusa-hamburger-line:nth-child(3)::after {
+  transition-delay: 0.3s;
+}
+
+.animate-rusa-lines::after {
+  background: #E7C3FC;
+}
+
+.animate-rusa-text {
+  color: #d492fa;
+}
+
 /* MODAL */
-/* -------- modal enle ----------------------------------------*/
-/* -------- modal frepi ----------------------------------------*/
-/* -------- modal ensi ----------------------------------------*/
-/* -------- modal rusa ----------------------------------------*/
+/* MODAL ENLE */
+/* MODAL FREPI */
+/* MODAL ENSI */
+/* MODAL RUSA */
 /*# sourceMappingURL=main.css.map */

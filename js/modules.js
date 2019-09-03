@@ -153,3 +153,39 @@ rusaBtn.addEventListener('click', animateButtonRusaBtn, false);
 
 
 /* CHECKBOX: no js necessary */
+
+/* HAMBURGER MENU */
+/* ENSI HAMBURGER MENU */
+const ensiAllLines = document.querySelectorAll('.ensi-hamburger-line'),
+    ensiHamburger = document.querySelector('.ensi-hamburger'),
+    ensiHamburgerIcon = document.querySelector('.ensi-hamburger-icon'),
+    ensiHamText = document.querySelector('.ensi-hamburger-text');
+
+nodeInArr = (list) => {
+    return Array.from(list);
+}
+
+const allLines = nodeInArr(ensiAllLines);
+
+ensiHamburger.addEventListener('click', function(){
+    allLines.forEach(function(i){
+        const index = allLines.indexOf(i) + 1;
+        i.classList.toggle('animate-ensi-line'+ index);
+        ensiHamText.classList.toggle('animate-text');
+        // ensiHamburgerIcon.style.borderColor = 'pink';
+        ensiHamburgerIcon.classList.toggle('animate-box');
+    })
+})
+
+/* RUSA HAMBURGER MENU */
+const rusaHamburger = document.querySelector('.rusa-hamburger')
+    rusaAllLines = document.querySelectorAll('.rusa-hamburger-line'),
+    rusaHamText = document.querySelector('.rusa-hamburger-text');
+
+rusaHamburger.addEventListener('click', function(){
+    console.log('geklickt');
+    rusaAllLines.forEach(function(i){
+        i.classList.toggle('animate-rusa-lines');
+        rusaHamText.classList.toggle('animate-rusa-text');
+    })
+})
