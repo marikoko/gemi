@@ -53,7 +53,6 @@
   color: $greyR;
   background:rgba(254, 198, 78, 0.6);
   position: relative;
-  z-index: 10;
 } 
 
 .frepi-btn-svg {
@@ -602,7 +601,194 @@
 
 /* HAMBURGER */
 /* HAMBURGER ENLE */
+.enle-hamburger {
+  margin-left: 10%;
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.enle-circle {
+  visibility: hidden;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+}
+
+.enle-hamburger-icon {
+  width: 46px;
+  height: 38px;
+  padding: 0 2px 0 4px;
+  // border: 2px solid;
+  // border-color: $color-darkgrey;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+// .enle-hamburger:hover .enle-ham1 {
+//   animation: enleline1 0.5s ease-in;
+// }
+
+// .enle-hamburger:hover .enle-ham2 {
+//   animation: enleline2 0.5s ease-in;
+// }
+// .enle-hamburger:hover .enle-ham3 {
+//   animation: enleline3 0.5s ease-in;
+// }
+
+.enle-hamburger-line {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: $color-darkgrey;
+  border-radius: 2px;
+  overflow: hidden; 
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.enle-hamburger-line:nth-child(1) {
+  top: 6px;
+}
+.enle-hamburger-line:nth-child(2) {
+  top: 15px;
+}
+.enle-hamburger-line:nth-child(3) {
+  top: 24px;
+}
+
+.enle-hamburger-line:nth-child(1).animate-enle-line1 {
+  top: 16px;
+  transform: scale(0.65) rotate(405deg);
+  background-color: $color-ultradarkgrey;
+}
+.enle-hamburger-line:nth-child(2).animate-enle-line2, {
+  top: 16px;
+  transform: scale(0.85) rotate(270deg);
+  background-color: transparent;
+}
+.enle-hamburger-line:nth-child(3).animate-enle-line3 {
+  top: 16px;
+  transform: scale(0.65) rotate(-45deg);
+  background-color: $color-ultradarkgrey;
+}
+.enle-hamburger-text {
+  font-size: 1.5rem;
+  color: $color-darkgrey;
+  margin-left: 10%;
+  transition: color 0.5s ease-in-out;
+}
+
+.animate-text {
+  color: $color-ultradarkgrey;
+}
+.animate-box {
+  border-color: $color-ultradarkgrey;
+}
+
+@keyframes enleline1 {
+  0% { transform: translasteX(-5px);}
+  10% { transform: translateY(9px);}
+  20% { transform: translateY(9px) translateX(5px) scale(0.6)}
+  30% { opacity: 0;}
+}
+
+@keyframes enleline2 {
+  0% { transform: translasteX(5px)}
+  10% { transform: translateX(10px)}
+  20% { transform: translateX(5px) scale(0.6)}
+  30% { opacity: 0;}
+}
+
+@keyframes enleline3 {
+  0% { transform: translasteX(-5px)}
+  10% { transform: translateY(-9px);}
+  20% { transform: translateX(5px) scale(0.6)}
+  30% { opacity: 0;}
+
+}
+
+
 /* HAMBURGER FREPI */
+.frepi-hamburger {
+  margin-left: 10%;
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.frepi-hamburger-icon {
+  width: 46px;
+  height: 38px;
+  padding: 0 2px 0 4px;
+  // border: 2px solid;
+  // border-color: $color-darkgrey;
+  // border-radius: 8px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.frepi-hamburger:hover .frepi-hamburger-line {
+    opacity: 1;
+    animation: wobble 0.5s ease-in, scaleElastic 0.5s ease-in;
+}
+
+.frepi-hamburger:hover .frepi-hamburger-text {
+  color: $color-ultradarkgrey;
+}
+
+.frepi-hamburger-line {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: $color-ultradarkgrey;
+  border-radius: 2px;
+  opacity: 0.3;
+  overflow: hidden; 
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.frepi-hamburger-line:nth-child(1) {
+  top: 6px;
+}
+.frepi-hamburger-line:nth-child(2) {
+  top: 15px;
+}
+.frepi-hamburger-line:nth-child(3) {
+  top: 24px;
+}
+
+.frepi-hamburger-line:nth-child(1).animate-frepi-line1 {
+  top: 16px;
+  transform: scale(0.75) rotate(405deg);
+  opacity: 1;
+}
+.frepi-hamburger-line:nth-child(2).animate-frepi-line2, {
+  top: 16px;
+  transform: scale(0.85) rotate(270deg);
+  opacity: 0;
+}
+.frepi-hamburger-line:nth-child(3).animate-frepi-line3 {
+  top: 16px;
+  transform: scale(0.75) rotate(-45deg);
+  opacity: 1;
+}
+.frepi-hamburger-text {
+  font-size: 1.5rem;
+  color: $color-darkgrey;
+  margin-left: 10%;
+  transition: color 0.5s ease-in-out;
+}
+
+.animate-text {
+  color: $color-ultradarkgrey;
+}
+.animate-box {
+  opacity: 1;
+}
+
+
+
 /* HAMBURGER ENSI */
 .ensi-hamburger {
   margin-left: 10%;
@@ -615,22 +801,28 @@
 .ensi-hamburger-icon {
   width: 46px;
   height: 38px;
-  padding: 0 2px 0 3px;
+  padding: 0 2px 0 4px;
   border: 2px solid;
-  border-color: $color-darkgrey;
+  border-color: $color-ultradarkgrey;
+  opacity: 0.3;
   position: relative;
   transition: all 0.5s ease-in-out;
 }
 
-.ensi-hamburger-icon:hover .ensi-hamburger-line {
-  transform: scale(0.6);
+.ensi-hamburger:hover .ensi-hamburger-line,
+.ensi-hamburger:hover .ensi-hamburger-icon {
+  opacity: 1;
+}
+.ensi-hamburger:hover .ensi-hamburger-text {
+  color: $color-ultradarkgrey;
 }
 
 .ensi-hamburger-line {
   position: absolute;
-  width: 35px;
-  height: 5px;
-  background-color: $color-darkgrey;
+  width: 33px;
+  height: 4px;
+  background-color: $color-ultradarkgrey;
+  opacity: 0.3;
   border-radius: 2px;
   overflow: hidden; 
   position: absolute;
@@ -648,30 +840,31 @@
 
 .ensi-hamburger-line:nth-child(1).animate-ensi-line1 {
   top: 16px;
-  transform: scale(0.65) rotate(405deg);
-  background-color: $color-ultradarkgrey;
+  transform: rotate(45deg);
+  opacity: 1;
 }
 .ensi-hamburger-line:nth-child(2).animate-ensi-line2, {
   top: 16px;
-  transform: scale(0.85) rotate(270deg);
-  background-color: transparent;
+  transform: scale(0);
+  opacity: 0;
 }
 .ensi-hamburger-line:nth-child(3).animate-ensi-line3 {
   top: 16px;
-  transform: scale(0.65) rotate(-45deg);
-  background-color: $color-ultradarkgrey;
+  transform: rotate(-45deg);
+  opacity: 1;
 }
 .ensi-hamburger-text {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: $color-darkgrey;
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
+
 .animate-text {
   color: $color-ultradarkgrey;
 }
 .animate-box {
-  border-color: $color-ultradarkgrey;
+  opacity: 1;
 }
 
 /* HAMBURGER RUSA */

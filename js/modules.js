@@ -156,6 +156,50 @@ rusaBtn.addEventListener('click', animateButtonRusaBtn, false);
 /* CHECKBOX: no js necessary */
 
 /* HAMBURGER MENU */
+/* ENLE HAMBURGER MENU */
+const enleLine1 = document.querySelector('.enle-linie3');
+    // enleLineM = document.querySelector('.enle–line2'),
+    // enleLineB = document.querySelector('.enle–line3'),
+    // enleCircle = document.querySelector('.enle-circle'),
+    // masterTl = new TimelineMax();
+
+    // masterTl
+    //     .addLabel('start')
+    //     .to([enleLineT, enleLineB], 1, {x:-5}, 'start')
+    //     .to(enleLineM, 1, {x:5}, 'start')
+    //     .addLabel('together')
+    //     .to(enleLineT, 1, {y:9}, 'together')
+    //     .to(enleLineB, 1, {y:-9}, 'together')
+    //     .to(enleLineM, 1, {x:5}, 'together')
+    //     .to(enleCircle, 1, {autoAlpha:1, strokeDasoffset:0, ease:Power4.easeOut});
+
+
+
+
+
+/* FREPI HAMBURGER MENU */
+const frepiAllLines = document.querySelectorAll('.frepi-hamburger-line'),
+    frepiHamburger = document.querySelector('.frepi-hamburger'),
+    frepiHamburgerIcon = document.querySelector('.frepi-hamburger-icon'),
+    frepiHamText = document.querySelector('.frepi-hamburger-text');
+
+nodeInArr = (list) => {
+    return Array.from(list);
+}
+
+const allLines = nodeInArr(frepiAllLines);
+
+frepiHamburger.addEventListener('click', function(){
+    allLines.forEach(function(i){
+        const index = allLines.indexOf(i) + 1;
+
+        i.classList.toggle('animate-frepi-line'+ index);
+        frepiHamText.classList.toggle('animate-text');
+        // frepiHamburgerIcon.style.borderColor = 'pink';
+        frepiHamburgerIcon.classList.toggle('animate-box');
+    })
+})
+
 /* ENSI HAMBURGER MENU */
 const ensiAllLines = document.querySelectorAll('.ensi-hamburger-line'),
     ensiHamburger = document.querySelector('.ensi-hamburger'),
@@ -166,17 +210,17 @@ nodeInArr = (list) => {
     return Array.from(list);
 }
 
-const allLines = nodeInArr(ensiAllLines);
-
+const allLinesEnsi = nodeInArr(ensiAllLines);
+    
 ensiHamburger.addEventListener('click', function(){
-    allLines.forEach(function(i){
-        const index = allLines.indexOf(i) + 1;
+    allLinesEnsi.forEach(function(i){
+        const index = allLinesEnsi.indexOf(i) + 1;
         i.classList.toggle('animate-ensi-line'+ index);
         ensiHamText.classList.toggle('animate-text');
-        // ensiHamburgerIcon.style.borderColor = 'pink';
         ensiHamburgerIcon.classList.toggle('animate-box');
     })
 })
+
 
 /* RUSA HAMBURGER MENU */
 const rusaHamburger = document.querySelector('.rusa-hamburger')
