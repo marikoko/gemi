@@ -157,25 +157,18 @@ rusaBtn.addEventListener('click', animateButtonRusaBtn, false);
 
 /* HAMBURGER MENU */
 /* ENLE HAMBURGER MENU */
-const enleLine1 = document.querySelector('.enle-linie3');
-    // enleLineM = document.querySelector('.enle–line2'),
-    // enleLineB = document.querySelector('.enle–line3'),
-    // enleCircle = document.querySelector('.enle-circle'),
-    // masterTl = new TimelineMax();
+const enleHamburger = document.querySelector('.enle-hamburger'),
+    enleTopline = document.querySelector('.enletopline'),
+    enleMidline = document.querySelector('.enlemidline'),
+    enleBotline = document.querySelector('.enlebotline'),
 
-    // masterTl
-    //     .addLabel('start')
-    //     .to([enleLineT, enleLineB], 1, {x:-5}, 'start')
-    //     .to(enleLineM, 1, {x:5}, 'start')
-    //     .addLabel('together')
-    //     .to(enleLineT, 1, {y:9}, 'together')
-    //     .to(enleLineB, 1, {y:-9}, 'together')
-    //     .to(enleLineM, 1, {x:5}, 'together')
-    //     .to(enleCircle, 1, {autoAlpha:1, strokeDasoffset:0, ease:Power4.easeOut});
+    enleHamburgerText = document.querySelector('enle-hamburger-text');
 
-
-
-
+enleHamburger.addEventListener('click', function(){
+    enleTopline.classList.toggle('animate-line1');
+    enleMidline.classList.toggle('animate-line2');
+    enleBotline.classList.toggle('animate-line3');
+})
 
 /* FREPI HAMBURGER MENU */
 const frepiAllLines = document.querySelectorAll('.frepi-hamburger-line'),

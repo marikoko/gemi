@@ -1128,12 +1128,6 @@ main {
   cursor: pointer;
 }
 
-.enle-circle {
-  visibility: hidden;
-  stroke-dasharray: 240;
-  stroke-dashoffset: 240;
-}
-
 .enle-hamburger-icon {
   width: 46px;
   height: 38px;
@@ -1142,11 +1136,27 @@ main {
   transition: all 0.5s ease-in-out;
 }
 
+.enle-hamburger:hover .enletopline {
+  transform: translateY(-5px);
+  opacity: 1;
+}
+
+.enle-hamburger:hover .enlemidline {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.enle-hamburger:hover .enlebotline {
+  transform: translateY(5px);
+  opacity: 1;
+}
+
 .enle-hamburger-line {
   position: absolute;
   width: 40px;
   height: 4px;
-  background-color: #d3d0c9;
+  background-color: #313335;
+  opacity: 0.3;
   border-radius: 2px;
   overflow: hidden;
   position: absolute;
@@ -1165,22 +1175,16 @@ main {
   top: 24px;
 }
 
-.enle-hamburger-line:nth-child(1).animate-enle-line1 {
-  top: 16px;
-  transform: scale(0.65) rotate(405deg);
-  background-color: #313335;
+.animate-line1 {
+  animation: enleline1 1s ease-in forwards;
 }
 
-.enle-hamburger-line:nth-child(2).animate-enle-line2 {
-  top: 16px;
-  transform: scale(0.85) rotate(270deg);
-  background-color: transparent;
+.animate-line2 {
+  animation: enleline2 1s ease-in forwards;
 }
 
-.enle-hamburger-line:nth-child(3).animate-enle-line3 {
-  top: 16px;
-  transform: scale(0.65) rotate(-45deg);
-  background-color: #313335;
+.animate-line3 {
+  animation: enleline3 1s ease-in forwards;
 }
 
 .enle-hamburger-text {
@@ -1200,46 +1204,101 @@ main {
 
 @keyframes enleline1 {
   0% {
-    transform: translasteX(-5px);
+    transform: translasteY(0);
   }
   10% {
     transform: translateY(9px);
   }
   20% {
-    transform: translateY(9px) translateX(5px) scale(0.6);
+    transform: translateY(-20px);
   }
   30% {
     opacity: 0;
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(13px) rotate(45deg) scaleX(0.65);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(9px) rotate(45deg) scaleX(0.65);
+  }
+  52% {
+    transform: translateY(9px) rotate(32deg) scaleX(0.65);
+  }
+  56% {
+    transform: translateY(9px) rotate(52deg) scaleX(0.65);
+  }
+  60% {
+    transform: translateY(9px) rotate(43deg) scaleX(0.65);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(9px) rotate(45deg) scaleX(0.65);
   }
 }
 
 @keyframes enleline2 {
   0% {
-    transform: translasteX(5px);
+    transform: translasteY(0);
   }
   10% {
-    transform: translateX(10px);
+    transform: scaleX(1.2);
+    height: 3px;
   }
   20% {
-    transform: translateX(5px) scale(0.6);
+    transform: rotate(5deg);
   }
-  30% {
+  24% {
+    transform: rotate(-5deg);
+  }
+  28% {
+    transform: rotate(3deg);
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
     opacity: 0;
   }
 }
 
 @keyframes enleline3 {
   0% {
-    transform: translasteX(-5px);
+    transform: translasteY(0);
   }
   10% {
     transform: translateY(-9px);
   }
   20% {
-    transform: translateX(5px) scale(0.6);
+    transform: translateY(19px);
   }
   30% {
     opacity: 0;
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-13px) rotate(-45deg) scaleX(0.65);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-9px) rotate(-45deg) scaleX(0.65);
+  }
+  52% {
+    transform: translateY(-9px) rotate(-32deg) scaleX(0.65);
+  }
+  56% {
+    transform: translateY(-9px) rotate(-52deg) scaleX(0.65);
+  }
+  60% {
+    transform: translateY(-9px) rotate(-43deg) scaleX(0.65);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-9px) rotate(-45deg) scaleX(0.65);
   }
 }
 
