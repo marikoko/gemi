@@ -617,9 +617,9 @@
   position: relative;
   transition: all 0.5s ease-in-out;
 }
-.enletopline, .enlemidline, .enlebotline {
-  // transform-origin: 50% 50%;
-}
+// .enletopline, .enlemidline, .enlebotline {
+//   // transform-origin: 50% 50%;
+// }
 .enle-hamburger:hover .enletopline {
   transform: translateY(-5px);
   opacity: 1;
