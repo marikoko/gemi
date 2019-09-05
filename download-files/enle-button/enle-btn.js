@@ -1,8 +1,7 @@
 /* ------ GENERATOR ---------------------------------------- */
 const enleBtn = document.querySelector('#enleBtn'),
     logoHeight = logo.offsetHeight,
-    biTop = bi.offsetTop,
-    stopPoint = biTop - logoHeight,
+    btnBg = document.querySelector('.animate-enle-btn-bg'),  
     delay = 3500;
 
 /* BUTTONS
@@ -16,7 +15,7 @@ animateHoverEnleBtn = (e) => {
     })
 }
 animateButtonEnleBtn = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const x = e.offsetX;
          y = e.offsetY;
     console.log(e.offsetX, e.offsetY, x, y);
