@@ -110,6 +110,7 @@
     border: 1px solid #3f3f3f;
     display: flex;
     justify-content: flex-start;
+    transition: all 0.5s ease-in-out;
 }
 #ensiBtn-text, #ensiBtn-ani {
   background: $color-white;
@@ -119,6 +120,7 @@
   transition: all 0.2s ease-in-out;
   outline: 0 !important;
 }
+
 #ensiBtn-text {
     @extend %button;
     width:70%;
@@ -182,11 +184,11 @@
 }
 @keyframes success {
   from { transform: translate(-50%, -50%) rotate(-135deg) scale(0); }
-  to { transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #cad170; }
+  to { transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: transparent; }
 }
 @-webkit-keyframes success {
   from { -webkit-transform: translate(-50%, -50%) rotate(-135deg) scale(0); }
-  to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: #cad170; }
+  to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); background-color: transparent; }
 }
 
 

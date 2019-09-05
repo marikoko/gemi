@@ -409,6 +409,7 @@ main {
   border: 1px solid #3f3f3f;
   display: flex;
   justify-content: flex-start;
+  transition: all 0.5s ease-in-out;
 }
 
 #ensiBtn-text, #ensiBtn-ani {
@@ -504,7 +505,7 @@ main {
   }
   to {
     transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-    background-color: #cad170;
+    background-color: transparent;
   }
 }
 
@@ -514,7 +515,7 @@ main {
   }
   to {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-    background-color: #cad170;
+    background-color: transparent;
   }
 }
 
@@ -1202,6 +1203,7 @@ main {
   border-color: #313335;
 }
 
+/* Animations */
 @keyframes enleline1 {
   0% {
     transform: translasteY(0);
