@@ -608,7 +608,6 @@
   align-items: center;
   cursor: pointer;
 }
-
 .enle-hamburger-icon {
   width: 46px;
   height: 38px;
@@ -621,7 +620,6 @@
 .enletopline, .enlemidline, .enlebotline {
   // transform-origin: 50% 50%;
 }
-
 .enle-hamburger:hover .enletopline {
   transform: translateY(-5px);
   opacity: 1;
@@ -634,7 +632,6 @@
   transform: translateY(5px);
   opacity: 1;
 }
-
 .enle-hamburger-line {
   position: absolute;
   width: 40px;
@@ -655,43 +652,21 @@
 .enle-hamburger-line:nth-child(3) {
   top: 24px;
 }
-
-// .enle-hamburger-line:nth-child(1).animate-enle-line1 {
-//   top: 16px;
-//   transform: scale(0.65) rotate(405deg);
-//   background-color: $color-ultradarkgrey;
-// }
-// .enle-hamburger-line:nth-child(2).animate-enle-line2 {
-//   top: 16px;
-//   transform: scale(0.85) rotate(270deg);
-//   background-color: transparent;
-// }
-// .enle-hamburger-line:nth-child(3).animate-enle-line3 {
-//   top: 16px;
-//   transform: scale(0.65) rotate(-45deg);
-//   background-color: $color-ultradarkgrey;
-// }
-
 .animate-line1 {
   animation: enleline1 1s ease-in forwards;
 }
-
 .animate-line2 {
   animation: enleline2 1s ease-in forwards;
 }
-
 .animate-line3 {
   animation: enleline3 1s ease-in forwards;
 }
-
-
 .enle-hamburger-text {
   font-size: 1.5rem;
   color: $color-darkgrey;
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
-
 .animate-text {
   color: $color-ultradarkgrey;
 }
@@ -699,6 +674,7 @@
   border-color: $color-ultradarkgrey;
 }
 
+/* Animations */
 @keyframes enleline1 {
   0% { transform: translasteY(0);}
   10% { transform: translateY(9px);}
@@ -710,9 +686,7 @@
   56% { transform:translateY(9px) rotate(52deg) scaleX(0.65); }
   60% { transform:translateY(9px) rotate(43deg) scaleX(0.65); }
   100% { opacity:1; transform:translateY(9px) rotate(45deg) scaleX(0.65)}
-
 }
-
 @keyframes enleline2 {
   0% { transform: translasteY(0)}
   10% { transform:scaleX(1.2); height:3px; }
@@ -723,7 +697,6 @@
   60% { opacity:0;}
   100% { opacity: 0;}
 }
-
 @keyframes enleline3 {
   0% { transform: translasteY(0)}
   10% { transform: translateY(-9px);}
@@ -735,7 +708,6 @@
   56% { transform:translateY(-9px) rotate(-52deg) scaleX(0.65); }
   60% { transform:translateY(-9px) rotate(-43deg) scaleX(0.65); }
   100% { opacity:1; transform:translateY(-9px) rotate(-45deg) scaleX(0.65)}
-
 }
 
 
@@ -747,7 +719,6 @@
   align-items: center;
   cursor: pointer;
 }
-
 .frepi-hamburger-icon {
   width: 46px;
   height: 38px;
@@ -758,16 +729,13 @@
   position: relative;
   transition: all 0.5s ease-in-out;
 }
-
 .frepi-hamburger:hover .frepi-hamburger-line {
     opacity: 1;
     animation: wobble 0.5s ease-in, scaleElastic 0.5s ease-in;
 }
-
 .frepi-hamburger:hover .frepi-hamburger-text {
   color: $color-ultradarkgrey;
 }
-
 .frepi-hamburger-line {
   position: absolute;
   width: 40px;
@@ -788,7 +756,6 @@
 .frepi-hamburger-line:nth-child(3) {
   top: 24px;
 }
-
 .frepi-hamburger-line:nth-child(1).animate-frepi-line1 {
   top: 16px;
   transform: scale(0.75) rotate(405deg);
@@ -810,7 +777,6 @@
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
-
 .animate-text {
   color: $color-ultradarkgrey;
 }
@@ -827,7 +793,6 @@
   align-items: center;
   cursor: pointer;
 }
-
 .ensi-hamburger-icon {
   width: 46px;
   height: 38px;
@@ -838,7 +803,6 @@
   position: relative;
   transition: all 0.5s ease-in-out;
 }
-
 .ensi-hamburger:hover .ensi-hamburger-line,
 .ensi-hamburger:hover .ensi-hamburger-icon {
   opacity: 1;
@@ -846,7 +810,6 @@
 .ensi-hamburger:hover .ensi-hamburger-text {
   color: $color-ultradarkgrey;
 }
-
 .ensi-hamburger-line {
   position: absolute;
   width: 33px;
@@ -867,7 +830,6 @@
 .ensi-hamburger-line:nth-child(3) {
   top: 24px;
 }
-
 .ensi-hamburger-line:nth-child(1).animate-ensi-line1 {
   top: 16px;
   transform: rotate(45deg);
@@ -889,13 +851,13 @@
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
-
 .animate-text {
   color: $color-ultradarkgrey;
 }
 .animate-box {
   opacity: 1;
 }
+
 
 /* HAMBURGER RUSA */
 .rusa-hamburger {
@@ -966,7 +928,6 @@
 .animate-rusa-lines::after{
   background: $color-btn-bg;
 }
-
 .animate-rusa-text {
   color: #d492fa;
 }
