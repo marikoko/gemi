@@ -56,55 +56,50 @@ selectBrandidentity = (e) => {
 }
 
 let btnPrototype = document.querySelector('#btn-prototype');
-// var outputIn = codeObj.buttons[0].html;
-// console.log(outputIn);
-// output.innerHTML = outputIn; 
-// output.style.backgroundColor = 'red';
 
 /* TEMPLATES */
 // alte version: var templateBtn = function () {
 const codeOutput = (index) => {
-console.log();
-const outputIn = codeObj.buttons[index].js;
-const outputHTML = codeObj.buttons[index].html;
-console.log(outputIn);
-// output.innerHTML = outputIn; 
-output.textContent = outputIn;
-// output.style.backgroundColor = 'red';
+    console.log();
+    const outputIn = codeObj.buttons[index].js;
+    const outputHTML = codeObj.buttons[index].html;
+    console.log(outputIn);
+    // output.innerHTML = outputIn; 
+    output.textContent = outputIn;
+    // output.style.backgroundColor = 'red';
 };
 
 codeOutput(0);
 const templateCheck = () => {
+    // If there are no data-type hier kommt Platzhalter hin
+    if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
 
-// If there are no data-type hier kommt Platzhalter hin
-if (dataObj.component.length < 1 && dataObj.bi.length < 1) return '<p>nix zu sehen</p>';
-
-// If there are
-return '<input type="checkbox" name="hobbies" value="lesen">lesen' + dataObj.component.map(function (item) {
-    return '<p>' + item + '</p>';
-}).join('') + '</input>';
+    // If there are
+    return '<input type="checkbox" name="hobbies" value="lesen">lesen' 
+    + dataObj.component.map(function (item) {
+        return '<p>' + item + '</p>';
+        }).join('') + '</input>';
 };
-
 
 /* RENDERING */
 // Function to render the UI into the DOM
 var render = function (aniType) {
-if (!aniType) return;
-console.log(aniType);
-if (aniType === '1A') {
-    // templateBtn('enleBtn');
-    console.log('gehe zu google');
-    window.location = "https://marikoko.github.io/gemi/download-files/enle-button/enle-btn.html";
-} else if (aniType === '1B') {
-    templateBtn('frepiBtn');
-} else if (aniType === '1C') {
-    templateBtn('ensiBtn');
-} else if (aniType === '1D') {
-    // templateBtn('rusaBtn');
-    window.location = "https://marikoko.github.io/gemi/download-files/rusa-button/rusa-btn.html";
-} else {
-    return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
-}
+    if (!aniType) return;
+    console.log(aniType);
+    if (aniType === '1A') {
+        // templateBtn('enleBtn');
+        console.log('gehe zu google');
+        window.location = "https://marikoko.github.io/gemi/download-files/enle-button/enle-btn.html";
+    } else if (aniType === '1B') {
+            templateBtn('frepiBtn');
+    } else if (aniType === '1C') {
+        templateBtn('ensiBtn');
+    } else if (aniType === '1D') {
+        // templateBtn('rusaBtn');
+        window.location = "https://marikoko.github.io/gemi/download-files/rusa-button/rusa-btn.html";
+    } else {
+            return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
+    }
 }
 
 /* UI UPDATE NACH CLICK */
@@ -113,39 +108,44 @@ nodeInArr = (list) => {
 return Array.from(list);
 }
 
-selectionArea.addEventListener('click', function(e) {
+selectButtons.forEach((i) => {
+    i.addEventListener('click', function(e) {
 
-// console.log('area geklickt');
-// Stop the event
-e.preventDefault();
+        // console.log('area geklickt');
+        // Stop the event
+        e.preventDefault();
+        if(!i.classList.contains('active')) {
+            i.classList.add('active');
+        }  else {
+            i.classList.remove('active');
+        }
+        selectComponent(e);
+        selectBrandidentity(e);
+        // Get button
+        // var btn = event.target.querySelector('#btn');
+        var btn = e.target;
 
+        console.log(btn);
+        var type = btn.getAttribute('data-type');
+        console.log(type);
 
-// Get button
-// var btn = event.target.querySelector('#btn');
-var btn = e.target;
-// btn.classList.add('active');
-selectComponent(e);
-selectBrandidentity(e);
-console.log(btn);
-var type = btn.getAttribute('data-type');
-console.log(type);
+        if(type ==='comp') {
+            console.log('Yeah');
+            // Update data
+            // old version: dataObj.component.push(btn.dataset.comp);
+            dataObj.component[0] = btn.dataset.comp;
+        } else if(type ==='bi'){
+            console.log('wooooo');
+            dataObj.bi[0] = btn.dataset.bi;
+        } else {
+            console.log('fehler');
+        }
 
-if(type ==='comp') {
-    console.log('Yeah');
-    // Update data
-    // old version: dataObj.component.push(btn.dataset.comp);
-    dataObj.component[0] = btn.dataset.comp;
-} else if(type ==='bi'){
-    console.log('wooooo');
-    dataObj.bi[0] = btn.dataset.bi;
-} else {
-    console.log('fehler');
-}
+        // save complete anityp 
+        const aniType = dataObj.fullType();
 
-// save complete anityp 
-const aniType = dataObj.fullType();
+        // render UI according to anitype
+        render(aniType);
 
-// render UI according to anitype
-render(aniType);
-
-}, false);
+    }, false)
+})

@@ -29,8 +29,8 @@
 }
 
 html, body {
-  width: 100%;
-  max-height: 100%;
+  width: 100vw;
+  max-height: 100vw;
 }
 
 body {
@@ -70,6 +70,10 @@ main {
 }
 
 /* GENERATOR */
+.generator {
+  width: 100%;
+}
+
 .generator header {
   background: #C7E0E8;
   padding: 1vw;
@@ -162,10 +166,17 @@ main {
 
 .selection .components-select, .selection .brandidentity-select,
 .selection .brandcolors-select {
-  background: #fff;
   padding: 1vw;
   margin-bottom: 0.5vw;
+  font-family: "Barlow Semi Condensed", Arial, sans-serif;
   border-radius: 5px;
+  background: #fff;
+}
+
+.selection #brandidentity, .selection #components {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .selection #components {
@@ -186,6 +197,7 @@ main {
 .selection .buttons {
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
   background-color: white;
+  outline: 0 !important;
   transition: all 0.5s ease-in-out;
 }
 
@@ -201,8 +213,15 @@ main {
 }
 
 .selection #brandcolors label {
-  margin: 0.5vw 1vw 0 0;
+  margin: 1vw 1vw 5px 0;
   display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.selection #brandcolors input {
+  padding: 2px;
+  font-size: 0.8rem;
 }
 
 .selection #btn-enle {

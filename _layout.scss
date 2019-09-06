@@ -8,13 +8,12 @@ main {
     @media (min-width:50rem) {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr repeat(3, 2fr);
-        grid-gap: 1vw;
+        // grid-gap: 1vw;
     }
 }
 
 /* GENERATOR */
 .generator {
-    width: 100%;
     header {
         background:$color-hover;
         padding: $padding;
@@ -95,18 +94,14 @@ main {
         border-radius: $border-radius;
         margin-bottom:0.5vw;
     }
-    .components-select, .brandidentity-select, 
-    .brandcolors-select {
+    .components, .brandidentity, .brandcolors {
+        background: $color-white;
         padding: $padding;
         margin-bottom: 0.5vw;
-        font-family: $text-font-default;
         border-radius: $border-radius;
-        background: $color-white;
     }
-    #brandidentity, #components {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+    .buttons:hover {
+        @include button-hover;
     }
     #components {
         display: flex;
@@ -114,11 +109,6 @@ main {
     }
     #components .buttons {
         @include buttons-rounded;
-    }
-    .buttons {
-        font-family: $text-font-default;
-        background-color: white;
-        outline: 0 !important;
         transition: all 0.5s ease-in-out;
     }
     #brandidentity {
@@ -126,38 +116,12 @@ main {
         grid-gap:0.2vw;
     }
     #brandidentity .buttons {
-        height: 40px;
-        margin: 0.5vw;
-        font-size: 1rem;
+        height: 50px;
+        border: none; 
     }
     #brandcolors label {
-        margin: 1vw 1vw 5px 0;
+        margin: 0.5vw 1vw 0 0;
         display: block;
-        font-size: 0.8rem;
-        font-weight: 500;
-    }
-    #brandcolors input {
-        padding: 2px;
-        font-size: 0.8rem;
-    }
-    #btn-enle {
-       border: 1.5px solid $enle;
-    }
-    #btn-frepi {
-        border: 1.5px solid $frepi;
-    }
-    #btn-ensi {
-        border: 1.5px solid $ensi;
-    }
-    #btn-rusa {
-        border: 1.5px solid $rusa;
-    }
-    // #components .buttons:hover, 
-    // #brandidentity .buttons:hover {
-    //     @include buttons-hover;
-    // }
-    .active {
-        background-color:$color-hover;
     }
     @media (min-width:50rem) {
         grid-column: 3/4;
@@ -168,26 +132,21 @@ main {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
         }
-        #enle {
+        #btn-enle {
             grid-column: 1/2;
             grid-row: 1/2;
         }
-        #frepi {
+        #btn-frepi {
             grid-column: 2/3;
             grid-row: 1/2;
         }
-        #ensi {
+        #btn-ensi {
             grid-column: 1/2;
             grid-row: 2/3;
         }
-        #rusa {
+        #btn-rusa {
             grid-column: 2/3;
             grid-row: 2/3;
         }
     }
-}
-
-.code-output {
-    color: orange;
-    height: 50px;
 }

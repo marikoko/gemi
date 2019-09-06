@@ -14,7 +14,6 @@ main {
 
 /* GENERATOR */
 .generator {
-    width: 100%;
     header {
         background:$color-hover;
         padding: $padding;
@@ -137,8 +136,8 @@ main {
         font-weight: 500;
     }
     #brandcolors input {
-        padding: 2px;
-        font-size: 0.8rem;
+        width: 75vw;
+        font-size: 1rem;
     }
     #btn-enle {
        border: 1.5px solid $enle;

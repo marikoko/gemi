@@ -38,7 +38,7 @@ $color-btn-bg: #E7C3FC;
 $color-btn-bg-orange: #EF6A0F;
 $color-btn-bg-gelb: rgba(254, 198, 78, 1);
 
-$width-height-default: 100%;
+$width-height-default: 100vw;
 $padding: 1vw;
 $margin: 1vw;
 $center: 0 auto;
@@ -79,13 +79,6 @@ $opacity: 1;
     padding: 0px;
     box-sizing: border-box;
 }
-
-@mixin mastergrid {
-    display: grid;
-    grid-template-columns: 0.4fr repeat(4, 1fr);
-    grid-template-rows: 1fr repeat(3, 0.7fr) repeat(4, 1fr);
-}
-
 @mixin grid($columns, $rows) {
     display: grid;
     grid-template-columns: $columns;
@@ -102,19 +95,6 @@ $opacity: 1;
 }
 @mixin buttons-hover () {
     background-color: $color-hover;
-}
-@mixin btn-style($width, $height, $margin, $padding, $radius) {
-    width: $width;
-    height: $height;
-    margin: $margin auto;
-    padding: $padding;
-    opacity: $opacity;
-    font-size: $text-size-btn;
-    border-radius: $radius;
-    border: none;
-    box-shadow: none;
-    transform-origin: 50% 50%;
-    transition: all 0.5s ease-in-out;
 }
 @mixin flex ($justify, $align:stretch) {
     display: flex;
