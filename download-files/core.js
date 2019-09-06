@@ -123,7 +123,7 @@ getCode.addEventListener('click', () => {
 /* TEMPLATE */
 const templateBtn = (type) =>{
     const animaType = type;
-    window.location = "https://marikoko.github.io/gemi/download-files/"+animaType +".html";
+    window.location = "https://marikoko.github.io/gemi/download-files/rusa-btn.html";
 }
 
 
@@ -133,20 +133,36 @@ const render = (aniType) => {
     if (!aniType) return;
     console.log(aniType);
     if (aniType === '1A') {
-        templateBtn('enle-btn');
-        // window.location = "https://marikoko.github.io/gemi/download-files/enle-button/enle-btn.html";
+        console.log(aniType);
+
+        // templateBtn('enle-btn');
+        window.location = "https://marikoko.github.io/gemi/download-files/enle-btn.html";
+        // window.location = "http://127.0.0.1:5500/download-files/enle-btn.html";
     } else if (aniType === '1B') {
-            // templateBtn('frepiBtn');
+        console.log(aniType);
+        // templateBtn('frepi-btn');
+        window.location = "https://marikoko.github.io/gemi/download-files/frepi-btn.html";
+        // window.location = "http://127.0.0.1:5500/download-files/frepi-btn.html";
+
     } else if (aniType === '1C') {
-        // templateBtn('ensiBtn');
+
+        console.log(aniType);
+
+        // templateBtn('ensi-btn');
+        window.location = "https://marikoko.github.io/gemi/download-files/ensi-btn.html";
+        // window.location = "http://127.0.0.1:5500/download-files/ensi-btn.html";
+
     } else if (aniType === '1D') {
-        // templateBtn('rusaBtn');
-        window.location = "https://marikoko.github.io/gemi/download-files/rusa-button/rusa-btn.html";
+        console.log(aniType);
+
+        // templateBtn('rusa-btn');
+        window.location = "https://marikoko.github.io/gemi/download-files/rusa-btn.html";
+        // window.location = "http://127.0.0.1:5500/download-files/rusa-btn.html";
+
     } else {
             return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
     }
 }
-
 /* UI UPDATE NACH CLICK */
 // Funktion um Nodelist in Array umzuwandeln
 nodeInArr = (list) => {
