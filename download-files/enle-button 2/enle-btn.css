@@ -1,0 +1,81 @@
+#enleBtn {
+  width: 120px;
+  height: 50px;
+  margin: 1vw;
+  padding: 1vw;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #313335;
+  background: #fff;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  outline: 0;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+
+/* BUTTONS */
+/* BTN ENLE*/
+#enleBtn {
+  color: #fff;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.animate-enle-btn-bg {
+  width: 0.05rem;
+  height: 0.05rem;
+  border-radius: 50%;
+  background: #EF6A0F;
+  position: absolute;
+  mix-blend-mode: screen;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.bounce {
+  animation: bounce 0.5s forwards;
+}
+
+.enle-btn-grow {
+  animation: enleBtnGrow 1s forwards;
+}
+
+/* BTN ENLE ANIMATIONS */
+@keyframes enleBtnGrow {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(300);
+  }
+  100% {
+    transform: scale(300);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  75% {
+    transform: scale(0.99);
+  }
+  90% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

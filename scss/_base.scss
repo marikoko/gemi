@@ -9,6 +9,7 @@ $text-size-btn: 1.2rem;
 
 // $color-ultradarkgrey: #1d1f21;
 $color-ultradarkgrey: #313335;
+$color-darkbluegrey:#7f8f94;
 $color-darkgrey: #d3d0c9;
 $color-lightgrey: #f1f1eb;
 $color-ultralightgrey: #fbfcf7;
@@ -92,15 +93,14 @@ $opacity: 1;
 }
 @mixin buttons-rounded () {
     width: 90%;
-    height: 30px;
+    height: 40px;
     margin: 1vw;
-    font-size: 0.8rem;
+    font-size: 1rem;
     border-radius: 20px;
     border: 1.5px solid $color-darkgrey;
     box-shadow: none;
-    background:$color-white;
 }
-@mixin button-hover () {
+@mixin buttons-hover () {
     background-color: $color-hover;
 }
 @mixin btn-style($width, $height, $margin, $padding, $radius) {
@@ -133,21 +133,24 @@ $opacity: 1;
 }
 html, body {
     width: $width-height-default;
-    max-height: 500px;
+    max-height: $width-height-default;
 }
 body {
+    padding: $padding;
     font-size: $text-size-default;
     font-family: $text-font-default; 
-    background: $color-ultralightgrey;
+    background: $color-darkbluegrey;
 }
 h2 {
     margin-bottom: $margin;
-    font-size: 1.2rem;
-    color: $color-ultradarkgrey;
+    padding: $padding;
+    font-size: 1.5rem;
+    color: $color-white;
+    background: $color-ultradarkgrey;
 }
 h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 p {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
