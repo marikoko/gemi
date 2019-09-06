@@ -1,0 +1,88 @@
+/* BTN RUSA */
+#rusaBtn {
+  width: 80px;
+  height: 80px;
+  margin: 1vw;
+  padding: 1vw;
+  font-size: 1.2rem;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  outline: 0;
+  opacity: 1;
+  border-radius: 50%;
+  color: #fff;
+  background: #E7C3FC;
+  position: relative;
+  transition: all 0.7s ease-in;
+}
+
+#rusaBtn:before, #rusaBtn:after {
+  transition: all 0.7s ease-in-out;
+}
+
+.animate-rusa-btn-main {
+  animation: natural-border 4s ease-in-out alternate;
+}
+
+.animate-rusa-btn-layer:before, .animate-rusa-btn-layer:after {
+  width: 110%;
+  height: 110%;
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  z-index: -1;
+  border-radius: 50%;
+  transition: all 1s ease-in-out;
+}
+
+.animate-rusa-btn-layer:before {
+  background: rgba(212, 146, 250, 0.3);
+  animation: natural-border 4s ease-in-out alternate-reverse;
+}
+
+.animate-rusa-btn-layer:after {
+  background: rgba(231, 195, 252, 0.3);
+  animation: natural-border-after 4s ease-in-out alternate-reverse;
+}
+
+/* BTN RUSA ANIMATIONS */
+@keyframes natural-border {
+  0% {
+    transform: scale(1);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  34% {
+    transform: scale(1.02);
+    border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%;
+  }
+  67% {
+    transform: scale(1.02);
+    border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%;
+  }
+}
+
+@keyframes natural-border-after {
+  0% {
+    transform: scale(1);
+    border-radius: 35% 65% 50% 50% / 50% 50% 50% 50%;
+  }
+  34% {
+    transform: scale(1.02);
+    border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%;
+  }
+  67% {
+    transform: scale(1.02);
+    border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}

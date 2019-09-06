@@ -7,6 +7,8 @@ const ensiBtnAni = document.querySelector('#ensiBtn-ani'),
 
 /* BUTTONS
 /* ENLE BTN JS */
+enleBtn.style.backgroundColor=colors.primary;
+btnBg.style.backgroundColor = colors.accent;
 animateHoverEnleBtn = (e) => {   
     console.log('hover');
     e.target.classList.add('bounce');
@@ -80,12 +82,18 @@ frepiBtn.addEventListener('click', animateButtonFrepiBtn, false);
 
 
 /* ENSI BUTTON JS */
-animateHoverEnsiBtn = () => {
+animateHoverEnsiBtn = (e) => {
     buttons.forEach((i) => {
       i.style.backgroundColor = '#5a5a5a';
     })
     ensiBtnText.style.color = "rgba(255,255,255,0.6)";
 } 
+// animateHoverLeaveEnsiBtn = (e) => {
+//     buttons.forEach((i) => {
+//       i.style.backgroundColor = '#fff';
+//     })
+//     ensiBtnText.style.color = "rgba(0,0,0,1)";
+// } 
 animateButtonEnsiBtn = (e) => {
     console.log('ensi geklickt');
     e.preventDefault();
@@ -120,7 +128,8 @@ removeAllEnsiBtn = () => {
         console.log('entfernt nach time');
     },delay);
 }
-ensiBtn.addEventListener('mouseenter', animateHoverEnsiBtn, false);
+ensiBtn.addEventListener('mouseover', animateHoverEnsiBtn, false);
+// ensiBtn.addEventListener('mouseleave', animateHoverLeaveEnsiBtn, false);
 ensiBtn.addEventListener('click', animateButtonEnsiBtn, false);
 
 

@@ -29,8 +29,9 @@
 }
 
 html, body {
-  width: 100vw;
-  max-height: 100vw;
+  width: 100%;
+  max-width: 100vw;
+  max-height: 100%;
 }
 
 body {
@@ -96,31 +97,28 @@ main {
   background: #fbfcf7;
 }
 
-.generator .btn-controls {
-  width: 35px;
+.generator .get-code {
+  width: 90%;
+  height: 40px;
+  margin: 1vw;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1.5px solid #d3d0c9;
+  box-shadow: none;
+  width: 80px;
   height: 35px;
-  margin: 10px 5px 0 5px;
-  padding: 7px;
-  border-radius: 50%;
-  box-shadow: 5px 5px 7px #d3d0c9;
+  font-family: "Barlow Semi Condensed", Arial, sans-serif;
+  background: #d3d0c9;
+  cursor: pointer;
   border: none;
-  background: #7f8f94;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  transition: all 0.5s ease-in;
 }
 
-.generator .btn-controls .cls-1 {
-  fill: #fff;
-}
-
-.generator .btn-controls .cls-2, .generator .btn-controls .cls-4 {
-  fill: none;
-  stroke: #fff;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 100px;
-}
-
-.generator .btn-controls .cls-3 {
-  fill: #fff;
+.generator .get-code:hover {
+  background-color: #C7E0E8;
 }
 
 .generator #ani-preview {
@@ -144,10 +142,27 @@ main {
   border-radius: 0 0 5px 5px;
 }
 
+.generator #ani-code .code-output {
+  min-height: 50px;
+  margin: 0.5vw;
+  padding: 5px;
+  border: 1px solid #f1f1eb;
+  border-radius: 5px;
+}
+
+.generator #ani-code .code-output .code-headline {
+  color: #C7E0E8;
+}
+
 @media (min-width: 50rem) {
   .generator #ani-code {
     grid-column: 1/3;
     grid-row: 4/5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .generator #ani-code h2 {
+    grid-column: 1/4;
   }
 }
 
@@ -221,7 +236,7 @@ main {
 
 .selection #brandcolors input {
   padding: 2px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .selection #btn-enle {
@@ -238,6 +253,11 @@ main {
 
 .selection #btn-rusa {
   border: 1.5px solid #f7e0ff;
+}
+
+.selection #components .buttons:hover,
+.selection #brandidentity .buttons:hover {
+  background-color: #C7E0E8;
 }
 
 .selection .active {
@@ -270,11 +290,6 @@ main {
     grid-column: 2/3;
     grid-row: 2/3;
   }
-}
-
-.code-output {
-  color: orange;
-  height: 50px;
 }
 
 /* BUTTONS */

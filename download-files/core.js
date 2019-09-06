@@ -22,8 +22,8 @@ const dataObj = {
     // enleBtn = document.querySelector('#enleBtn'),
     // frepiBtn = document.querySelector('#frepiBtn'),
     // ensiBtn = document.querySelector('#ensiBtn'),
-    // // rusaBtn = document.querySelector('#rusaBtn'),
-    // aniBtns = document.querySelectorAll('.aniBtn'),
+    // rusaBtn = document.querySelector('#rusaBtn'),
+    aniBtns = document.querySelectorAll('.aniBtn'),
     outputHTML = document.querySelector('.output-html'),
     outputCSS = document.querySelector('.output-css'),
     outputJS = document.querySelector('.output-js'),
@@ -106,17 +106,24 @@ const codeOutput = (index) => {
 
 getCode.addEventListener('click', () => {
     console.log('joo');
-
-    const getHTML = codeObj.buttons[0].html, 
-        getCSS = codeObj.buttons[0].css,
-        getJS = codeObj.buttons[0].js;
+    if(dataObj.name[0] === '1A') {
+        let getHTML = codeObj.buttons[0].html, 
+            getCSS = codeObj.buttons[0].css,
+            getJS = codeObj.buttons[0].js;
+    } else if (dataObj.name[0] === '2A') {
+        let getHTML = codeObj.buttons[1].html, 
+        getCSS = codeObj.buttons[1].css,
+        getJS = codeObj.buttons[1].js;
+    }
+    
     outputHTML.textContent = getHTML;
     outputCSS.textContent = getCSS;
     outputJS.textContent = getJS;
 });
 /* TEMPLATE */
 const templateBtn = (type) =>{
-    window.location = "https://marikoko.github.io/gemi/download-files/"+type*".html";
+    const animaType = type;
+    window.location = "https://marikoko.github.io/gemi/download-files/"+animaType +".html";
 }
 
 
@@ -129,12 +136,12 @@ const render = (aniType) => {
         templateBtn('enle-btn');
         // window.location = "https://marikoko.github.io/gemi/download-files/enle-button/enle-btn.html";
     } else if (aniType === '1B') {
-        templateBtn('frepi-btn');
+            // templateBtn('frepiBtn');
     } else if (aniType === '1C') {
-        templateBtn('ensi-btn');
+        // templateBtn('ensiBtn');
     } else if (aniType === '1D') {
-        templateBtn('rusa-btn');
-        // window.location = "https://marikoko.github.io/gemi/download-files/rusa-button/rusa-btn.html";
+        // templateBtn('rusaBtn');
+        window.location = "https://marikoko.github.io/gemi/download-files/rusa-button/rusa-btn.html";
     } else {
             return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
     }

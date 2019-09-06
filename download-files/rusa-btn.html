@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!-- allgemeines CSS -->
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- individuelles CSS -->
-    <!-- <link rel="stylesheet" href="scss/????"> -->
+    <link rel="stylesheet" href="rusa-btn.css">
 </head>
 <body>
     <main>
@@ -18,18 +18,19 @@
             <header>
                 <h1 id="logo"><span>gemi</span>Generator for Branded Microinteractions </h1>
             </header>
+            <!-- <div id="ani-controls">
+                <button class="get-code">Get Code</button>
+            </div> -->
             <div id="ani-preview" class="container">
                 <button class="get-code">Get Code</button>
 
                 <!-- Place for the Microinteraction -->
-                <div class="center">
-                        <button id="enleBtn">
-                            Text
-                            <span class="animate-enle-btn-bg" data-ripple-color="#fff"></span>
-                        </button>
-                    </div>
+                <div class="rusaBtn center">
+                    <button id="rusaBtn">Text</button>
+                </div>
                 <!-- End Microinteraction -->
 
+            </div>
             </div>
             <div id="ani-code">
                 <div class="code-output">
@@ -93,8 +94,8 @@
         <p>Ich bin der footer</p>
     </footer>
 
-    <script src="js/core.js"></script>
-    <script src="js/modules.js"></script>
+    <script src="core.js"></script>
+    <script src="rusa-btn.js"></script>
 
 </body>
 </html>
