@@ -58,8 +58,8 @@ const dataObj = {
         buttons: [
             {
                 name: "enleBtn",
-                html: "\<button\>\<span\>text\</span\>\</button\>",
-                css: ".button{color:#234546;} .button::before{background-color:'yellow';}",
+                html: "<button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button>",
+                css: ".button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}",
                 js: "const myvar = document.querySelector('#enle'); function(){alert('hi')}"
             },
             {
@@ -67,6 +67,14 @@ const dataObj = {
                 html: "<input type='checkbox'",
                 css: ".check{width: 150px;}",
                 js: "const myvar = document.querySelector('#frepi'); function(){alert('hi')}"
+            }
+        ],
+        checkbox: [
+            {
+                name: "enleCheck",
+                html: "jafsjs",
+                css: "",
+                js: ""
             }
         ]
     };
@@ -92,27 +100,12 @@ selectBrandidentity = (e) => {
         })
     })
 }
+// Funktion um Nodelist in Array umzuwandeln
+nodeInArr = (list) => {
+    return Array.from(list);
+    }
 
-/* OUTPUT */
-const codeOutput = (index) => {
-    console.log('joo');
-    const outputHTML = codeObj.buttons[index].html, 
-        outputCSS = codeObj.buttons[index].css,
-        outputJS = codeObj.buttons[index].js;
-    outputHTML.textContent = outputHTML;
-    outputCSS.textContent = outputCSS;
-    outputJS.textContent = outputJS;
-};
 
-getCode.addEventListener('click', () => {
-    console.log('joo');
-    const getHTML = codeObj.buttons[0].html, 
-        getCSS = codeObj.buttons[0].css,
-        getJS = codeObj.buttons[0].js;
-    outputHTML.textContent = getHTML;
-    outputCSS.textContent = getCSS;
-    outputJS.textContent = getJS;
-});
 /* TEMPLATE */
 const templateBtn = (type) =>{
     window.location = "https://marikoko.github.io/gemi/download-files/rusa-btn.html";
@@ -157,11 +150,6 @@ const render = (aniType) => {
 }
 
 /* UI UPDATE NACH CLICK */
-// Funktion um Nodelist in Array umzuwandeln
-nodeInArr = (list) => {
-return Array.from(list);
-}
-
 selectButtons.forEach((i) => {
     i.addEventListener('click', (e) => {
 
@@ -203,3 +191,24 @@ selectButtons.forEach((i) => {
 
     }, false)
 })
+
+/* CODE OUTPUT */
+const codeOutput = (index) => {
+    console.log('joo');
+    const outputHTML = codeObj.buttons[index].html, 
+        outputCSS = codeObj.buttons[index].css,
+        outputJS = codeObj.buttons[index].js;
+    outputHTML.textContent = outputHTML;
+    outputCSS.textContent = outputCSS;
+    outputJS.textContent = outputJS;
+};
+
+getCode.addEventListener('click', () => {
+    console.log('joo');
+    const getHTML = codeObj.buttons[0].html, 
+        getCSS = codeObj.buttons[0].css,
+        getJS = codeObj.buttons[0].js;
+    outputHTML.textContent = getHTML;
+    outputCSS.textContent = getCSS;
+    outputJS.textContent = getJS;
+});

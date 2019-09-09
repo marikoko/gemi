@@ -7,12 +7,14 @@ $text-font-default: 'Barlow Semi Condensed', Arial, sans-serif;
 $text-size-default: 16px;
 $text-size-btn: 1.2rem;
 
-// $color-ultradarkgrey: #1d1f21;
-$color-ultradarkgrey: #313335;
-$color-darkbluegrey:#7f8f94;
-$color-darkgrey: #d3d0c9;
+/* color scheme */
+$color-darkbluegrey:#91a3a9;
+$color-lightblue:#C7E0E8;
+$color-ultralightgrey: #fafcf5;
+$color-darkgrey: #dbdbd2;
+$color-ultradarkgrey: #3c3b3a;
+
 $color-lightgrey: #f1f1eb;
-$color-ultralightgrey: #fbfcf7;
 $color-darkerultralightgrey: #ecede8;
 
 // $color-darkerultralightgrey: #e5e6e1;
@@ -58,7 +60,7 @@ $opacity: 1;
     font-size: $text-size-btn;
     text-align: center;
     color: #313335;
-    background: #fff;
+    background:$color-white;
     border-radius: 0;
     border: none;
     box-shadow: none;
@@ -134,4 +136,9 @@ h3 {
 }
 p {
     font-size: 1rem;
+}
+
+footer {
+    height: 5vw;
+    background: $color-lightblue;
 }

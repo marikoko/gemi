@@ -1,4 +1,5 @@
 /* VARIABLES */
+/* color scheme */
 /* RGB */
 /* Buttonani colors */
 /* EXTEND */
@@ -46,7 +47,7 @@ h2 {
   padding: 1vw;
   font-size: 1.5rem;
   color: #fff;
-  background: #313335;
+  background: #3c3b3a;
 }
 
 h3 {
@@ -57,6 +58,11 @@ p {
   font-size: 1rem;
 }
 
+footer {
+  height: 5vw;
+  background: #C7E0E8;
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -65,8 +71,7 @@ main {
 @media (min-width: 50rem) {
   main {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr repeat(3, 2fr);
-    grid-gap: 1vw;
+    grid-template-rows: 0.4fr 2.5fr 1fr;
   }
 }
 
@@ -75,7 +80,7 @@ main {
   width: 100%;
 }
 
-.generator header {
+.generator header, .generator footer {
   background: #C7E0E8;
   padding: 1vw;
   border-radius: 5px 5px 0 0;
@@ -94,7 +99,7 @@ main {
 .generator #ani-controls {
   text-align: right;
   padding: 1vw;
-  background: #fbfcf7;
+  background: #fafcf5;
 }
 
 .generator .get-code {
@@ -103,12 +108,12 @@ main {
   margin: 1vw;
   font-size: 1rem;
   border-radius: 20px;
-  border: 1.5px solid #d3d0c9;
+  border: 1.5px solid #dbdbd2;
   box-shadow: none;
   width: 80px;
   height: 35px;
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
-  background: #d3d0c9;
+  background: #dbdbd2;
   cursor: pointer;
   border: none;
   position: absolute;
@@ -122,23 +127,24 @@ main {
 }
 
 .generator #ani-preview {
-  height: 70vh;
+  height: 69vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: #fbfcf7;
+  background: #fafcf5;
   position: relative;
 }
 
 .generator #ani-preview #btn-prototype {
-  border: 1px solid #d3d0c9;
+  border: 1px solid #dbdbd2;
 }
 
 .generator #ani-code {
+  height: 28.5vh;
   padding: 1vw;
   color: #fff;
-  background: #313335;
+  background: #3c3b3a;
   border-radius: 0 0 5px 5px;
 }
 
@@ -146,6 +152,7 @@ main {
   min-height: 50px;
   margin: 0.5vw;
   padding: 5px;
+  overflow: scroll;
   border: 1px solid #f1f1eb;
   border-radius: 5px;
 }
@@ -174,6 +181,10 @@ main {
 }
 
 /* SELECTION AREA */
+.selection {
+  margin-left: 10px;
+}
+
 .selection h2 {
   border-radius: 5px;
   margin-bottom: 0.5vw;
@@ -182,7 +193,7 @@ main {
 .selection .components-select, .selection .brandidentity-select,
 .selection .brandcolors-select {
   padding: 1vw;
-  margin-bottom: 0.5vw;
+  margin-bottom: 10px;
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
   border-radius: 5px;
   background: #fff;
@@ -205,13 +216,14 @@ main {
   margin: 1vw;
   font-size: 1rem;
   border-radius: 20px;
-  border: 1.5px solid #d3d0c9;
+  border: 1.5px solid #dbdbd2;
   box-shadow: none;
+  margin: 1vw 1vw 0.5vw 1vw;
 }
 
 .selection .buttons {
   font-family: "Barlow Semi Condensed", Arial, sans-serif;
-  background-color: white;
+  background-color: #fff;
   outline: 0 !important;
   transition: all 0.5s ease-in-out;
 }
@@ -235,6 +247,7 @@ main {
 }
 
 .selection #brandcolors input {
+  width: 90%;
   padding: 2px;
   font-size: 0.9rem;
 }
@@ -269,7 +282,7 @@ main {
     grid-column: 3/4;
     grid-row: 1/5;
   }
-  .selection #brandidentity, .selection #components {
+  .selection #brandidentity, .selection #components, .selection #brandcolors {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -290,6 +303,24 @@ main {
     grid-column: 2/3;
     grid-row: 2/3;
   }
+}
+
+/* FOOTER */
+footer {
+  padding: 1vw;
+  font-size: 1rem;
+  border-radius: 5px 5px 0 0;
+  border-radius: 0 0 5px 5px;
+  background: #C7E0E8;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+footer span {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  font-family: 'Baloo Da', cursive;
 }
 
 /* BUTTONS */
@@ -895,22 +926,22 @@ main {
 
 .animate-frepi:hover div span::before {
   animation: wobble 0.3s ease;
-  background-color: #d3d0c9;
+  background-color: #dbdbd2;
 }
 
 .animate-frepi:hover div::before {
   background-color: #f1f1eb;
-  border: 1px solid #d3d0c9;
+  border: 1px solid #dbdbd2;
 }
 
 .animate-frepi input:checked + div {
-  color: #313335;
+  color: #3c3b3a;
 }
 
 .animate-frepi input:checked + div::before {
   animation: wobble 0.3s ease;
   /* background-color: #37425f; */
-  color: #d3d0c9;
+  color: #dbdbd2;
   border: 1px solid #a6ac5c;
 }
 
@@ -920,7 +951,7 @@ main {
 }
 
 .animate-frepi input:checked + div span::before {
-  background-color: #313335;
+  background-color: #3c3b3a;
 }
 
 .animate-frepi input:checked + div svg,
@@ -1204,7 +1235,7 @@ main {
   position: absolute;
   width: 40px;
   height: 4px;
-  background-color: #313335;
+  background-color: #3c3b3a;
   opacity: 0.3;
   border-radius: 2px;
   overflow: hidden;
@@ -1238,17 +1269,17 @@ main {
 
 .enle-hamburger-text {
   font-size: 1.5rem;
-  color: #d3d0c9;
+  color: #dbdbd2;
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
 
 .animate-text {
-  color: #313335;
+  color: #3c3b3a;
 }
 
 .animate-box {
-  border-color: #313335;
+  border-color: #3c3b3a;
 }
 
 /* Animations */
@@ -1375,14 +1406,14 @@ main {
 }
 
 .frepi-hamburger:hover .frepi-hamburger-text {
-  color: #313335;
+  color: #3c3b3a;
 }
 
 .frepi-hamburger-line {
   position: absolute;
   width: 40px;
   height: 4px;
-  background-color: #313335;
+  background-color: #3c3b3a;
   border-radius: 2px;
   opacity: 0.3;
   overflow: hidden;
@@ -1422,13 +1453,13 @@ main {
 
 .frepi-hamburger-text {
   font-size: 1.5rem;
-  color: #d3d0c9;
+  color: #dbdbd2;
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
 
 .animate-text {
-  color: #313335;
+  color: #3c3b3a;
 }
 
 .animate-box {
@@ -1449,7 +1480,7 @@ main {
   height: 38px;
   padding: 0 2px 0 4px;
   border: 2px solid;
-  border-color: #313335;
+  border-color: #3c3b3a;
   opacity: 0.3;
   position: relative;
   transition: all 0.5s ease-in-out;
@@ -1461,14 +1492,14 @@ main {
 }
 
 .ensi-hamburger:hover .ensi-hamburger-text {
-  color: #313335;
+  color: #3c3b3a;
 }
 
 .ensi-hamburger-line {
   position: absolute;
   width: 33px;
   height: 4px;
-  background-color: #313335;
+  background-color: #3c3b3a;
   opacity: 0.3;
   border-radius: 2px;
   overflow: hidden;
@@ -1508,13 +1539,13 @@ main {
 
 .ensi-hamburger-text {
   font-size: 1.5rem;
-  color: #d3d0c9;
+  color: #dbdbd2;
   margin-left: 10%;
   transition: color 0.5s ease-in-out;
 }
 
 .animate-text {
-  color: #313335;
+  color: #3c3b3a;
 }
 
 .animate-box {
@@ -1550,7 +1581,7 @@ main {
   position: absolute;
   width: 40px;
   height: 5px;
-  background-color: #313335;
+  background-color: #3c3b3a;
   border-radius: 2px;
   overflow: hidden;
 }
