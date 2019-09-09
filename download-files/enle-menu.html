@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!-- allgemeines CSS -->
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- individuelles CSS -->
-    <!-- <link rel="stylesheet" href="scss/????"> -->
+    <link rel="stylesheet" href="enle-menu.css">
 </head>
 <body>
     <main>
@@ -23,11 +23,15 @@
 
                 <!-- Place for the Microinteraction -->
                 <div class="center">
-                        <button id="enleBtn">
-                            Text
-                            <span class="animate-enle-btn-bg" data-ripple-color="#fff"></span>
-                        </button>
+                    <div class="enle-hamburger">
+                        <div class="enle-hamburger-icon">
+                            <div class="enle-hamburger-line enletopline"></div>
+                            <div class="enle-hamburger-line enlemidline"></div>
+                            <div class="enle-hamburger-line enlebotline"></div>
+                        </div>
+                        <div class="enle-hamburger-text">MENU</div>  
                     </div>
+                </div>
                 <!-- End Microinteraction -->
 
             </div>
@@ -93,8 +97,8 @@
         </section>
     </main>
 
-    <script src="js/core.js"></script>
-    <script src="js/modules.js"></script>
+    <script src="core.js"></script>
+    <script src="enle-menu.js"></script>
 
 </body>
 </html>

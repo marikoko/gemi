@@ -1,16 +1,18 @@
 /* ------ GENERATOR ---------------------------------------- */
 /* STORE ANIMATIONTYPE IN DATA-OBJECT */
+
+
 const dataObj = {
-    name: [],
-    component: [],
-    bi: [],
-    primaryColor: [],
-    secondaryColor: [],
-    accentColor: [],
-    fullType: function() {
-        return this.component + this.bi;
-        }
-    },
+            name: [],
+            component: [],
+            bi: [],
+            primaryColor: [],
+            secondaryColor: [],
+            accentColor: [],
+            fullType: function() {
+                return this.component + this.bi;
+                }
+            },
     selectionArea = document.querySelector('.selection'),
     component = document.querySelector('#component'),
     selectComp = document.querySelectorAll('#components .buttons'),
@@ -67,6 +69,14 @@ const dataObj = {
                 html: "<input type='checkbox'",
                 css: ".check{width: 150px;}",
                 js: "const myvar = document.querySelector('#frepi'); function(){alert('hi')}"
+            }
+        ],
+        checkbox: [
+            {
+                name: "enleCheck",
+                html: "jafsjs",
+                css: "",
+                js: ""
             }
         ]
     };

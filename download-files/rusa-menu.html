@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!-- allgemeines CSS -->
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- individuelles CSS -->
-    <!-- <link rel="stylesheet" href="scss/????"> -->
+    <link rel="stylesheet" href="rusa-menu.css">
 </head>
 <body>
     <main>
@@ -23,11 +23,15 @@
 
                 <!-- Place for the Microinteraction -->
                 <div class="center">
-                        <button id="enleBtn">
-                            Text
-                            <span class="animate-enle-btn-bg" data-ripple-color="#fff"></span>
-                        </button>
+                    <div class="rusa-hamburger">
+                        <div class="rusa-hamburger-icon">
+                            <div class="rusa-hamburger-line"></div>
+                            <div class="rusa-hamburger-line"></div>
+                            <div class="rusa-hamburger-line"></div>
+                            <span class="rusa-hamburger-text">Menu</span>
+                        </div>
                     </div>
+                </div>
                 <!-- End Microinteraction -->
 
             </div>
@@ -93,8 +97,8 @@
         </section>
     </main>
 
-    <script src="js/core.js"></script>
-    <script src="js/modules.js"></script>
+    <script src="core.js"></script>
+    <script src="rusa-menu.js"></script>
 
 </body>
 </html>

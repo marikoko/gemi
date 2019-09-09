@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!-- allgemeines CSS -->
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- individuelles CSS -->
-    <!-- <link rel="stylesheet" href="scss/????"> -->
-</head>
+    <link rel="stylesheet" href="ensi-menu.css">
 <body>
     <main>
         <section class="generator">
@@ -23,11 +22,15 @@
 
                 <!-- Place for the Microinteraction -->
                 <div class="center">
-                        <button id="enleBtn">
-                            Text
-                            <span class="animate-enle-btn-bg" data-ripple-color="#fff"></span>
-                        </button>
+                    <div class="ensi-hamburger">
+                        <div class="ensi-hamburger-icon">
+                            <div id="ensi-firstline" class="ensi-hamburger-line"></div>
+                            <div id="ensi-secondline" class="ensi-hamburger-line"></div>
+                            <div id="ensi-thirdline" class="ensi-hamburger-line"></div>
+                        </div>
+                        <div class="ensi-hamburger-text">MENU</div>    
                     </div>
+                </div>
                 <!-- End Microinteraction -->
 
             </div>
@@ -93,8 +96,8 @@
         </section>
     </main>
 
-    <script src="js/core.js"></script>
-    <script src="js/modules.js"></script>
+    <script src="core.js"></script>
+    <script src="ensi-menu.js"></script>
 
 </body>
 </html>

@@ -18,9 +18,6 @@
             <header>
                 <h1 id="logo"><span>gemi</span>Generator for Branded Microinteractions </h1>
             </header>
-            <!-- <div id="ani-controls">
-                <button class="get-code">Get Code</button>
-            </div> -->
             <div id="ani-preview" class="container">
                 <button class="get-code">Get Code</button>
 
@@ -33,7 +30,6 @@
                 </div>
                 <!-- End Microinteraction -->
 
-            </div>
             </div>
             <div id="ani-code">
                 <div class="code-output">
@@ -50,15 +46,13 @@
                 </div>
             </div>
         </section>
-        
-
         <section class="selection">
             <h2>Selection Area</h2>
             <div class="components-select">
                 <h3>Components</h3>
                 <p>Select a component for which you want to create an animated microinteraction:</p>
                 <div id="components">
-                    <button class="buttons btn active" data-type='comp' data-comp="1">Button</button>
+                    <button class="buttons btn" data-type='comp' data-comp="1">Button</button>
                     <button class="buttons check" data-type='comp' data-comp="2">Checkbox</button>
                     <button class="buttons menu" data-type='comp' data-comp="3">Hamburger Menu</button>
                     <button class="buttons modal" data-type='comp' data-comp="4">Modal</button>
@@ -71,7 +65,7 @@
                 <div id="brandidentity">
                     <button id="btn-enle" class="buttons" data-type='bi' data-bi="A">energetic & lively</button>
                     <button id="btn-frepi" class="buttons" data-type='bi' data-bi="B">playfull & friendly</button>
-                    <button id="btn-ensi" class="buttons active" data-type='bi' data-bi="C">decisive & sure</button>
+                    <button id="btn-ensi" class="buttons" data-type='bi' data-bi="C">decisive & sure</button>
                     <button id="btn-rusa" class="buttons" data-type='bi' data-bi="D">calm & soft</button>
                 </div>
             </div>
@@ -79,23 +73,25 @@
                 <h3>Colors</h3>
                 <p>Enter your brand color codes as rgba-values:</p>
                 <div id="brandcolors">
-                    <label for="primary">Primary Color</label>
-                    <input id="primary" type="text" data-type="color" data-color="primary">
-                    
-                    <label for="secondary">Secondary Color</label>
-                    <input id="secondary" type="text" data-type="color" data-color="secondary">
-                    
-                    <label for="accent">Accent Color</label>
-                    <input id="accent"type="text" data-type="color" data-color="accent">
-                    
+                    <div class="form-posi">
+                        <label for="primary">Primary Color</label>
+                        <input id="primary" type="text" data-type="color" data-color="primary">        
+                    </div>
+                    <div class="form-posi">
+                        <label for="accent">Accent Color</label>
+                        <input id="accent"type="text" data-type="color" data-color="accent">
+                    </div>
+                    <div class="form-posi">
+                        <label for="secondary">Secondary Color</label>
+                        <input id="secondary" type="text" data-type="color" data-color="secondary">
+                    </div>
+                    <div class="form-posi">
+                        <p>made by okko &copy; 2019</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>Ich bin der footer</p>
-    </footer>
 
     <script src="core.js"></script>
     <script src="ensi-btn.js"></script>

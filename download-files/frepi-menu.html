@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!-- allgemeines CSS -->
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- individuelles CSS -->
-    <!-- <link rel="stylesheet" href="scss/????"> -->
+    <link rel="stylesheet" href="frepi-menu.css">
 </head>
 <body>
     <main>
@@ -23,11 +23,15 @@
 
                 <!-- Place for the Microinteraction -->
                 <div class="center">
-                        <button id="enleBtn">
-                            Text
-                            <span class="animate-enle-btn-bg" data-ripple-color="#fff"></span>
-                        </button>
+                    <div class="frepi-hamburger">
+                        <div class="frepi-hamburger-icon">
+                            <div id="frepi-firstline" class="frepi-hamburger-line"></div>
+                            <div id="frepi-secondline" class="frepi-hamburger-line"></div>
+                            <div id="frepi-thirdline" class="frepi-hamburger-line"></div>
+                        </div>
+                        <div class="frepi-hamburger-text">Menu</div>    
                     </div>
+                </div>
                 <!-- End Microinteraction -->
 
             </div>
@@ -93,8 +97,8 @@
         </section>
     </main>
 
-    <script src="js/core.js"></script>
-    <script src="js/modules.js"></script>
+    <script src="core.js"></script>
+    <script src="frepi-menu.js"></script>
 
 </body>
 </html>

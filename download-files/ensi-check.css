@@ -1,0 +1,148 @@
+/* CHECK ENSI */
+.animate-ensi input {
+  display: none;
+}
+
+.animate-ensi div {
+  display: flex;
+  align-items: center;
+}
+
+.ensiC label {
+  font-size: 1.2rem;
+}
+.animate-ensi {
+  display: block;
+  width: 90%;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 50px;
+  height: 50px;
+  padding: 0 20px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.animate-ensi div::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.animate-ensi span {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 13px;
+  background-color: #fff;
+  border: 1px solid rgba(146, 146, 146, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate-ensi span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+
+.animate-ensi span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 1px lightgrey;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.animate-ensi:hover div span::before {
+  background: lightgrey;
+}
+
+.animate-ensi:hover div::before {
+  border: 1px solid lightgrey;
+}
+
+.animate-ensi input:checked + div {
+  color: #000;
+}
+
+.animate-ensi input:checked + div::before {
+  box-shadow: 0 0 5px lightgrey;
+  background-color: #fff;
+  border: 1px solid lightgrey;
+}
+
+.animate-ensi input:checked + div span {
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: littleBounce 0.3s ease;
+}
+
+.animate-ensi input:checked + div span::before {
+  background-color: #fff;
+}
+
+.animate-ensi input:checked + div span::after {
+  animation: scale 0.25s ease;
+}
+
+/* ANIMATIONS */
+@keyframes littleBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes littleBounce {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes checkboxSelected {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes checkboxSelected {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scaleY(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}

@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da|Barlow+Semi+Condensed&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
     <!-- allgemeines CSS -->
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- individuelles CSS -->
-    <!-- <link rel="stylesheet" href="scss/????"> -->
+    <link rel="stylesheet" href="ensi-check.css">
 </head>
 <body>
     <main>
@@ -22,12 +22,12 @@
                 <button class="get-code">Get Code</button>
 
                 <!-- Place for the Microinteraction -->
-                <div class="center">
-                        <button id="enleBtn">
-                            Text
-                            <span class="animate-enle-btn-bg" data-ripple-color="#fff"></span>
-                        </button>
-                    </div>
+                <div class="container center ensiC">
+                    <label for="ensiC" class="animate-ensi">
+                        <input id="ensiC" type="checkbox" name="category" value="value">
+                        <div><span></span>Text</div>
+                    </label>
+                </div>
                 <!-- End Microinteraction -->
 
             </div>
@@ -93,8 +93,8 @@
         </section>
     </main>
 
-    <script src="js/core.js"></script>
-    <script src="js/modules.js"></script>
+    <script src="core.js"></script>
+    <!-- <script src="ensi-check.js"></script> -->
 
 </body>
 </html>

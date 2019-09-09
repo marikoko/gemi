@@ -1,0 +1,85 @@
+/* HAMBURGER ENSI */
+.ensi-hamburger {
+  margin-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ensi-hamburger-icon {
+  width: 58px;
+  height: 38px;
+  padding: 0 2px 0 4px;
+  border: 2px solid;
+  border-color: #3c3b3a;
+  opacity: 0.3;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.ensi-hamburger:hover .ensi-hamburger-line,
+.ensi-hamburger:hover .ensi-hamburger-icon {
+  opacity: 1;
+}
+
+.ensi-hamburger:hover .ensi-hamburger-text {
+  color: #3c3b3a;
+}
+
+.ensi-hamburger-line {
+  position: absolute;
+  width: 33px;
+  height: 4px;
+  background-color: #3c3b3a;
+  opacity: 0.3;
+  border-radius: 2px;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.ensi-hamburger-line:nth-child(1) {
+  top: 6px;
+}
+
+.ensi-hamburger-line:nth-child(2) {
+  top: 15px;
+}
+
+.ensi-hamburger-line:nth-child(3) {
+  top: 24px;
+}
+
+.ensi-hamburger-line:nth-child(1).animate-ensi-line1 {
+  top: 16px;
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+.ensi-hamburger-line:nth-child(2).animate-ensi-line2 {
+  top: 16px;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.ensi-hamburger-line:nth-child(3).animate-ensi-line3 {
+  top: 16px;
+  transform: rotate(-45deg);
+  opacity: 1;
+}
+
+.ensi-hamburger-text {
+  font-size: 1.5rem;
+  color: #dbdbd2;
+  margin-left: 20px;
+  transition: color 0.5s ease-in-out;
+}
+
+.animate-text {
+  color: #3c3b3a;
+}
+
+.animate-box {
+  opacity: 1;
+}

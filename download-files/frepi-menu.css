@@ -1,0 +1,82 @@
+/* HAMBURGER FREPI */
+.frepi-hamburger {
+  margin-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.frepi-hamburger-icon {
+  width: 46px;
+  height: 38px;
+  padding: 0 2px 0 4px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.frepi-hamburger:hover .frepi-hamburger-line {
+  opacity: 1;
+  animation: wobble 0.5s ease-in, scaleElastic 0.5s ease-in;
+}
+
+.frepi-hamburger:hover .frepi-hamburger-text {
+  color: #3c3b3a;
+}
+
+.frepi-hamburger-line {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: #3c3b3a;
+  border-radius: 2px;
+  opacity: 0.3;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.frepi-hamburger-line:nth-child(1) {
+  top: 6px;
+}
+
+.frepi-hamburger-line:nth-child(2) {
+  top: 15px;
+}
+
+.frepi-hamburger-line:nth-child(3) {
+  top: 24px;
+}
+
+.frepi-hamburger-line:nth-child(1).animate-frepi-line1 {
+  top: 16px;
+  transform: scale(0.75) rotate(405deg);
+  opacity: 1;
+}
+
+.frepi-hamburger-line:nth-child(2).animate-frepi-line2 {
+  top: 16px;
+  transform: scale(0.85) rotate(270deg);
+  opacity: 0;
+}
+
+.frepi-hamburger-line:nth-child(3).animate-frepi-line3 {
+  top: 16px;
+  transform: scale(0.75) rotate(-45deg);
+  opacity: 1;
+}
+
+.frepi-hamburger-text {
+  font-size: 1.5rem;
+  color: #dbdbd2;
+  margin-left: 20px;
+  transition: color 0.5s ease-in-out;
+}
+
+.animate-text {
+  color: #3c3b3a;
+}
+
+.animate-box {
+  opacity: 1;
+}

@@ -64,7 +64,7 @@ footer {
 }
 
 main {
-  max-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -72,7 +72,7 @@ main {
 @media (min-width: 50rem) {
   main {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.4fr 2.5fr 1.5fr 1fr;
+    grid-template-rows: 0.4fr 2.5fr 1.5fr;
   }
 }
 
@@ -253,6 +253,13 @@ main {
   font-size: 0.9rem;
 }
 
+.selection .form-posi:last-of-type {
+  width: 90%;
+  margin-top: 2.5vw;
+  padding: 5px;
+  text-align: right;
+}
+
 .selection #btn-enle {
   border: 1.5px solid #ffbc57;
 }
@@ -303,31 +310,6 @@ main {
   .selection #rusa {
     grid-column: 2/3;
     grid-row: 2/3;
-  }
-}
-
-/* FOOTER */
-footer {
-  padding: 1vw;
-  font-size: 1rem;
-  border-radius: 5px 5px 0 0;
-  border-radius: 0 0 5px 5px;
-  background: #C7E0E8;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-footer span {
-  margin-right: 15px;
-  font-size: 1.5rem;
-  font-family: 'Baloo Da', cursive;
-}
-
-@media (min-width: 50rem) {
-  footer {
-    grid-column: 1/4;
-    grid-row: 3/4;
   }
 }
 
