@@ -37,6 +37,9 @@ const bi = document.querySelector('header ul'),
                 accent: 'rgba(255,255,255,1)'
         }
     }
+    const codeOut = {
+        
+    }
 
 fixedBi = () => {
     console.log(biTop, window.scrollY);

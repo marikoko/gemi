@@ -5,10 +5,10 @@
 /* VARIABLES */
 $text-font-default: 'Barlow Semi Condensed', Arial, sans-serif;
 $text-size-default: 16px;
-$text-size-btn: 1.2rem;
+$text-size-btn: 1rem;
 
 /* color scheme */
-$color-darkbluegrey:#91a3a9;
+$color-darkbluegrey:#7f8f94;
 $color-lightblue:#C7E0E8;
 $color-ultralightgrey: #fafcf5;
 $color-darkgrey: #dbdbd2;
@@ -19,7 +19,6 @@ $color-darkerultralightgrey: #ecede8;
 
 // $color-darkerultralightgrey: #e5e6e1;
 $color-hover:#C7E0E8;
-$color-darkbluegrey:#7f8f94;
 $color-white: #fff;
 
 $enle: hsla(36%, 100%, 67%, 1);
@@ -129,13 +128,13 @@ h2 {
     padding: $padding;
     font-size: 1.5rem;
     color: $color-white;
-    background: $color-ultradarkgrey;
+    background: rgba(60,59,58,0.7);
 }
 h3 {
     font-size: 1.2rem;
 }
 p {
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 footer {

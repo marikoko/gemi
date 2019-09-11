@@ -57,27 +57,84 @@ const dataObj = {
     codeObj = {
         buttons: [
             {
-                name: "enleBtn",
-                html: "<button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button><button><span>text</span></button>",
-                css: ".button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}.button{color:#234546;} .button::before{background-color:'yellow';}",
-                js: "const myvar = document.querySelector('#enle'); function(){alert('hi')}"
+                name: "enle-btn",
+                html: "enle-btn-html",
+                css: "enle-btn-css",
+                js: "enle-btn-js"
             },
             {
-                name: "ensiBtn",
-                html: "<input type='checkbox'",
-                css: ".check{width: 150px;}",
-                js: "const myvar = document.querySelector('#frepi'); function(){alert('hi')}"
+                name: "frepi-btn",
+                html: "frepi-btn-html",
+                css: "frepi-btn-css",
+                js: "frepi-btn-js"
+            },
+            {
+                name: "ensi-btn",
+                html: "ensi-btn-html",
+                css: "ensi-btn-css",
+                js: "ensi-btn-js"
+            },
+            {
+                name: "rusa-btn",
+                html: "rusa-btn-html",
+                css: "rusa-btn-css",
+                js: "rusa-btn-js"
             }
         ],
         checkbox: [
             {
-                name: "enleCheck",
-                html: "jafsjs",
-                css: "",
-                js: ""
+                name: "enle-check",
+                html: "enle-check-html",
+                css: "enle-check-css",
+                js: "enle-check-js"
+            },
+            {
+                name: "frepi-check",
+                html: "frepi-check-html",
+                css: "frepi-check-css",
+                js: "frepi-check-js"
+            },
+            {
+                name: "ensi-check",
+                html: "ensi-check-html",
+                css: "ensi-check-css",
+                js: "ensi-check-js"
+            },
+            {
+                name: "rusa-check",
+                html: "rusa-check-html",
+                css: "rusa-check-css",
+                js: "rusa-check-js"
             }
-        ]
+        ],
+        menu: [
+            {
+                name: "enle-menu",
+                html: "enle-menu-html",
+                css: "enle-menu-css",
+                js: "enle-menu-js"
+            },
+            {
+                name: "frepi-menu",
+                html: "frepi-menu-html",
+                css: "frepi-menu-css",
+                js: "frepi-menu-js"
+            },
+            {
+                name: "ensi-menu",
+                html: "ensi-menu-html",
+                css: "ensi-menu-css",
+                js: "ensi-menu-js"
+            },
+            {
+                name: "rusa-menu",
+                html: "rusa-menu-html",
+                css: "rusa-menu-css",
+                js: "rusa-menu-js"
+            }
+        ],
     };
+
 
 /* button selected functions */
 selectComponent = (e) => {
@@ -108,7 +165,8 @@ nodeInArr = (list) => {
 
 /* TEMPLATE */
 const templateBtn = (type) =>{
-    window.location = "https://marikoko.github.io/gemi/download-files/rusa-btn.html";
+    // window.location = "https://marikoko.github.io/gemi/download-files/"+type+".html";
+    window.location = "../download-files/"+type+".html";
 }
 
 
@@ -117,43 +175,64 @@ const templateBtn = (type) =>{
 const render = (aniType) => {
     if (!aniType) return;
     console.log(aniType);
-    if (aniType === '1A') {
-        console.log(aniType);
-
-        // templateBtn('enle-btn');
-        window.location = "https://marikoko.github.io/gemi/download-files/enle-btn.html";
-        // window.location = "http://127.0.0.1:5500/download-files/enle-btn.html";
-    } else if (aniType === '1B') {
-        console.log(aniType);
-        // templateBtn('frepi-btn');
-        window.location = "https://marikoko.github.io/gemi/download-files/frepi-btn.html";
-        // window.location = "http://127.0.0.1:5500/download-files/frepi-btn.html";
-
-    } else if (aniType === '1C') {
-
-        console.log(aniType);
-
-        // templateBtn('ensi-btn');
-        window.location = "https://marikoko.github.io/gemi/download-files/ensi-btn.html";
-        // window.location = "http://127.0.0.1:5500/download-files/ensi-btn.html";
-
-    } else if (aniType === '1D') {
-        console.log(aniType);
-
-        // templateBtn('rusa-btn');
-        window.location = "https://marikoko.github.io/gemi/download-files/rusa-btn.html";
-        // window.location = "http://127.0.0.1:5500/download-files/rusa-btn.html";
-
-    } else {
-            return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
+    switch (aniType) {
+        case '1A': 
+        console.log('enle-btn');
+        templateBtn('enle-btn');
+        break;
+        case '1B':
+        console.log('frepi-btn');
+        templateBtn('frepi-btn');
+        break;
+        case '1C':
+        console.log('ensi-btn');
+        templateBtn('ensi-btn');
+        break;
+        case'1D':
+        console.log('rusa-btn');
+        templateBtn('rusa-btn');
+        break;
+        case'2A':
+        console.log('enle-check');
+        templateBtn('enle-check');
+        break;
+        case'2B':
+        console.log('frepi-check');
+        templateBtn('frepi-check');
+        break;
+        case'2C':
+        console.log('ensi-check');
+        templateBtn('ensi-check');
+        break;
+        case'2D':
+        console.log('rusa-check');
+        templateBtn('rusa-check');
+        break;
+        case'3A':
+        console.log('enle-menu');
+        templateBtn('enle-menu');
+        break;
+        case'3B':
+        console.log('frepi-menu');
+        templateBtn('frepi-menu');
+        break;
+        case'3C':
+        console.log('ensi-menu');
+        templateBtn('ensi-menu');
+        break;
+        case'3D':
+        console.log('rusa-menu');
+        templateBtn('rusa-menu');
+        break;
+        default:
+        return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
     }
 }
 
 /* UI UPDATE NACH CLICK */
 selectButtons.forEach((i) => {
     i.addEventListener('click', (e) => {
-
-        // console.log('area geklickt');
+        console.log('aniType');
         // Stop the event
         e.preventDefault();
         if(!i.classList.contains('active')) {
@@ -184,8 +263,10 @@ selectButtons.forEach((i) => {
         }
 
         // save complete anityp 
-        const aniType = dataObj.fullType();
-        dataObj.name[0] = aniType;
+        aniType = dataObj.fullType();
+        console.log(aniType);
+        // dataObj.name[0] = aniType;
+        localStorage.setItem('name', aniType);
         // render UI according to anitype
         render(aniType);
 
@@ -193,22 +274,69 @@ selectButtons.forEach((i) => {
 })
 
 /* CODE OUTPUT */
-const codeOutput = (index) => {
-    console.log('joo');
-    const outputHTML = codeObj.buttons[index].html, 
-        outputCSS = codeObj.buttons[index].css,
-        outputJS = codeObj.buttons[index].js;
-    outputHTML.textContent = outputHTML;
-    outputCSS.textContent = outputCSS;
-    outputJS.textContent = outputJS;
+const codeOutput = (key, index) => {
+    console.log(codeObj[key][index].css);
+    const outHTML = codeObj[key][index].html, 
+        outCSS = codeObj[key][index].css,
+        outJS = codeObj[key][index].js;
+    outputHTML.textContent = outHTML;
+    outputCSS.textContent = outCSS;
+    outputJS.textContent = outJS;
 };
 
 getCode.addEventListener('click', () => {
     console.log('joo');
-    const getHTML = codeObj.buttons[0].html, 
-        getCSS = codeObj.buttons[0].css,
-        getJS = codeObj.buttons[0].js;
-    outputHTML.textContent = getHTML;
-    outputCSS.textContent = getCSS;
-    outputJS.textContent = getJS;
+    const aniName = localStorage.getItem('name');
+    switch (aniName) {
+        case '1A': 
+        console.log('enle-btn');
+        codeOutput('buttons', 0);
+        break;
+        case '1B':
+        console.log('frepi-btn');
+        codeOutput('buttons', 1);
+        break;
+        case '1C':
+        console.log('ensi-btn');
+        codeOutput('buttons',2);
+        break;
+        case'1D':
+        console.log('rusa-btn');
+        codeOutput('buttons',3);
+        break;
+        case'2A':
+        console.log('enle-check');
+        codeOutput('checkbox',0);
+        break;
+        case'2B':
+        console.log('frepi-check');
+        codeOutput('checkbox',1);
+        break;
+        case'2C':
+        console.log('ensi-check');
+        codeOutput('checkbox',1);
+        break;
+        case'2D':
+        console.log('rusa-check');
+        codeOutput('checkbox',3);
+        break;
+        case'3A':
+        console.log('enle-menu');
+        codeOutput('menu',0);
+        break;
+        case'3B':
+        console.log('frepi-menu');
+        codeOutput('menu',1);
+        break;
+        case'3C':
+        console.log('ensi-menu');
+        codeOutput('menu',2);
+        break;
+        case'3D':
+        console.log('rusa-menu');
+        codeOutput('menu',3);
+        break;
+        default:
+        return '<p>Oops, something went wrong. Select the desired one again in the Selction Area.</p>';
+    }
 });

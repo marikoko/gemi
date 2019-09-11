@@ -1,11 +1,8 @@
 /* ------ GENERATOR ---------------------------------------- */
 const enleBtn = document.querySelector('#enleBtn'),
-    logoHeight = logo.offsetHeight,
     btnBg = document.querySelector('.animate-enle-btn-bg'),  
     delay = 3500;
 
-/* BUTTONS
-/* ENLE BTN JS */
 animateHoverEnleBtn = (e) => {   
     console.log('hover');
     e.target.classList.add('bounce');
@@ -19,7 +16,6 @@ animateButtonEnleBtn = (e) => {
     const x = e.offsetX;
          y = e.offsetY;
     console.log(e.offsetX, e.offsetY, x, y);
-    // btnBg.setAttribute('data-ripple-color', '#EF6A0F');
     btnBg.style.left = x + "px";
     console.log(btnBg.style.top);
     btnBg.style.top = y + "px";
@@ -28,9 +24,7 @@ animateButtonEnleBtn = (e) => {
     enleBtn.addEventListener('animationend', animationEndEnleBtn, false);
 }
 animationEndEnleBtn = () => {
-    // enleBtn.style.backgroundColor = '#14c88b';
     btnBg.classList.remove('enle-btn-grow');
-    // btnBg.removeAttribute('data-ripple-color', '#EF6A0F');
     removeAllEnleBtn();
 }  
 removeAllEnleBtn = () => {
