@@ -110,7 +110,7 @@
 
 .animate-particles {
   -webkit-animation: showParticles 0.4s ease;
-          animation: showParticles 0.4s ease; */
+          animation: showParticles 0.4s ease;
 }
 
 @keyframes showParticles {

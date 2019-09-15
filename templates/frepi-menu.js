@@ -15,7 +15,6 @@ frepiHamburger.addEventListener('click', function(){
 
         i.classList.toggle('animate-frepi-line'+ index);
         frepiHamText.classList.toggle('animate-text');
-        // frepiHamburgerIcon.style.borderColor = 'pink';
     })
-    // frepiHamburgerIcon.classList.toggle('animate-particles');
+    frepiHamburgerIcon.classList.toggle('animate-particles');
 })
