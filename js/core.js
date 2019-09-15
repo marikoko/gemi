@@ -169,8 +169,8 @@ nodeInArr = (list) => {
 
 /* TEMPLATE */
 const templateBtn = (type) =>{
-    // window.location = "https://marikoko.github.io/gemi/templates/"+type+".html";
-    window.location = "../templates/"+type+".html";
+    window.location = "https://marikoko.github.io/gemi/templates/"+type+".html";
+    // window.location = "../templates/"+type+".html";
 }
 
 
