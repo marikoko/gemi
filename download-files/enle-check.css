@@ -16,13 +16,19 @@
   position: relative;
   cursor: pointer;
   margin-bottom: 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1;
 }
 
 .animate-enle-check div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .animate-enle-check span {
@@ -32,9 +38,15 @@
   margin-right: 13px;
   background-color: white;
   border: 1.5px solid darkgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .animate-enle-check span::before {
@@ -42,6 +54,8 @@
   width: 6px;
   height: 6px;
   border-radius: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -74,6 +88,8 @@
   bottom: 5px;
   left: 5px;
   z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -90,79 +106,171 @@
 }
 
 .animate-enle-check input:checked + div::before {
-  animation: bounce 0.3s 0.4s cubic-bezier(0.2, 0.37, 0.72, 1.38);
+  -webkit-animation: bounce 0.3s 0.4s cubic-bezier(0.2, 0.37, 0.72, 1.38);
+          animation: bounce 0.3s 0.4s cubic-bezier(0.2, 0.37, 0.72, 1.38);
   background-color: white;
   border: 1px solid darkgrey;
 }
 
 .animate-enle-check input:checked + div span {
   background-color: #fff;
-  animation: rotateCheck 0.4s ease-in-out;
+  -webkit-animation: rotateCheck 0.4s ease-in-out;
+          animation: rotateCheck 0.4s ease-in-out;
 }
 
 .animate-enle-check input:checked + div span::before {
   background-color: rgba(0, 0, 0, 0.7);
-  transform: scale(1.5);
-  animation: grow 0.3s ease;
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-animation: grow 0.3s ease;
+          animation: grow 0.3s ease;
 }
 
 /* ANIMATION */
-@keyframes rotateCheck {
+@-webkit-keyframes rotateCheck {
   0% {
-    transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
   70% {
-    transform: rotate(360deg) scale(1.1);
+    -webkit-transform: rotate(360deg) scale(1.1);
+            transform: rotate(360deg) scale(1.1);
     border-radius: 50%;
   }
   85% {
-    transform: rotate(880deg) scale(1.3);
+    -webkit-transform: rotate(880deg) scale(1.3);
+            transform: rotate(880deg) scale(1.3);
     border-radius: 50%;
     background-color: darkgrey;
   }
   95% {
-    transform: rotate(1080deg) scale(1.3);
+    -webkit-transform: rotate(1080deg) scale(1.3);
+            transform: rotate(1080deg) scale(1.3);
     border-radius: 5%;
     background-color: white;
   }
   100% {
-    transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
     background-color: white;
+  }
+}
+@keyframes rotateCheck {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  70% {
+    -webkit-transform: rotate(360deg) scale(1.1);
+            transform: rotate(360deg) scale(1.1);
+    border-radius: 50%;
+  }
+  85% {
+    -webkit-transform: rotate(880deg) scale(1.3);
+            transform: rotate(880deg) scale(1.3);
+    border-radius: 50%;
+    background-color: darkgrey;
+  }
+  95% {
+    -webkit-transform: rotate(1080deg) scale(1.3);
+            transform: rotate(1080deg) scale(1.3);
+    border-radius: 5%;
+    background-color: white;
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+    background-color: white;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  50% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+  }
+  75% {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
+  }
+  90% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes bounce {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   35% {
-    transform: scale(0.98);
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
   }
   50% {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
   }
   75% {
-    transform: scale(0.99);
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
   }
   90% {
-    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes grow {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background: #373d4c;
+  }
+  35% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+    background-color: white;
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    background: white;
   }
 }
 
 @keyframes grow {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     background: #373d4c;
   }
   35% {
-    transform: scale(3);
+    -webkit-transform: scale(3);
+            transform: scale(3);
     background-color: white;
   }
   100% {
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
     background: white;
   }
 }

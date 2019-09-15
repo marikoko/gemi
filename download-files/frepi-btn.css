@@ -9,11 +9,14 @@
   color: #929292;
   border-radius: 50%;
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: pointer;
   outline: 0;
   opacity: 1;
   background: rgba(254, 198, 78, 0.6);
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   position: relative;
 }
@@ -28,77 +31,165 @@
 }
 
 .circle-lines {
-  fill: none;
+  fill: #929292;
   stroke: #929292;
   stroke-miterlimit: 10;
   stroke-width: 0.5px;
 }
 
 .breath {
-  animation: breath 4s infinite alternate linear;
+  -webkit-animation: breath 4s infinite alternate linear;
+          animation: breath 4s infinite alternate linear;
 }
 
 .animate-frepi-btn {
-  animation: scaleElastic 0.7s ease;
+  -webkit-animation: scaleElastic 0.7s ease;
+          animation: scaleElastic 0.7s ease;
 }
 
 .animate-lines {
-  animation: lines 0.5s 0.5s ease-out;
+  -webkit-animation: lines 0.35s 0.5s ease-out;
+          animation: lines 0.35s 0.5s ease-out;
+}
+
+@-webkit-keyframes breath {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @keyframes breath {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleElastic {
+  0% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  16% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  28% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  44% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  59% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  73% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  88% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes scaleElastic {
   0% {
-    transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
   }
   16% {
-    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
   }
   28% {
-    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   44% {
-    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
   59% {
-    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
   }
   73% {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   88% {
-    transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-@keyframes lines {
+@-webkit-keyframes lines {
   0% {
-    transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
     opacity: 0;
   }
   33% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   66% {
     opacity: 0.4;
   }
   100% {
-    transform: scale(1.6);
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes lines {
+  0% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+    opacity: 0;
+  }
+  33% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.4;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
     opacity: 0;
   }
 }

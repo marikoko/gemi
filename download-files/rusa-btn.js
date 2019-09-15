@@ -1,3 +1,4 @@
+console.log('rusa');
 const rusaBtn = document.querySelector('#rusaBtn'),
     delay = 3500;
 

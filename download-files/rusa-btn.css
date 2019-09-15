@@ -7,7 +7,8 @@
   font-size: 1.2rem;
   text-align: center;
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: pointer;
   outline: 0;
   opacity: 1;
@@ -15,15 +16,20 @@
   color: #fff;
   background: #E7C3FC;
   position: relative;
+  -webkit-transition: all 0.7s ease-in;
+  -o-transition: all 0.7s ease-in;
   transition: all 0.7s ease-in;
 }
 
 #rusaBtn:before, #rusaBtn:after {
+  -webkit-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
 
 .animate-rusa-btn-main {
-  animation: natural-border 4s ease-in-out alternate;
+  -webkit-animation: natural-border 4s ease-in-out alternate;
+          animation: natural-border 4s ease-in-out alternate;
 }
 
 .animate-rusa-btn-layer:before, .animate-rusa-btn-layer:after {
@@ -35,6 +41,8 @@
   left: -5%;
   z-index: -1;
   border-radius: 50%;
+  -webkit-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
@@ -49,40 +57,93 @@
 }
 
 /* BTN RUSA ANIMATIONS */
-@keyframes natural-border {
+@-webkit-keyframes natural-border {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
   }
   34% {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
     border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%;
   }
   67% {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
     border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%;
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%;
+  }
+}
+@keyframes natural-border {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  34% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    border-radius: 62% 38% 50% 50% / 50% 50% 50% 50%;
+  }
+  67% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    border-radius: 62% 38% 63% 37% / 50% 65% 35% 50%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-radius: 62% 38% 63% 37% / 39% 65% 35% 61%;
+  }
+}
+
+@-webkit-keyframes natural-border-after {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-radius: 35% 65% 50% 50% / 50% 50% 50% 50%;
+  }
+  34% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%;
+  }
+  67% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
   }
 }
 
 @keyframes natural-border-after {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     border-radius: 35% 65% 50% 50% / 50% 50% 50% 50%;
   }
   34% {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
     border-radius: 35% 65% 45% 55% / 69% 50% 50% 31%;
   }
   67% {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
     border-radius: 35% 65% 45% 55% / 69% 33% 67% 31%;
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
   }
 }

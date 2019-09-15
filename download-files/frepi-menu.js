@@ -1,6 +1,6 @@
 const frepiAllLines = document.querySelectorAll('.frepi-hamburger-line'),
     frepiHamburger = document.querySelector('.frepi-hamburger'),
-    frepiHamburgerIcon = document.querySelector('.frepi-hamburger-icon'),
+    frepiHamburgerIcon = document.querySelector('.frepi-hamburger-icon .particles'),
     frepiHamText = document.querySelector('.frepi-hamburger-text');
 
 nodeInArr = (list) => {
@@ -16,6 +16,6 @@ frepiHamburger.addEventListener('click', function(){
         i.classList.toggle('animate-frepi-line'+ index);
         frepiHamText.classList.toggle('animate-text');
         // frepiHamburgerIcon.style.borderColor = 'pink';
-        frepiHamburgerIcon.classList.toggle('animate-box');
     })
+    // frepiHamburgerIcon.classList.toggle('animate-particles');
 })

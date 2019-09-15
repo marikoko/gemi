@@ -8,27 +8,39 @@
   background: #fff;
   border-radius: 0;
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: pointer;
   outline: 0;
   opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 #ensiBtn {
   margin: 0 0 0 3vw;
   padding: 0;
-  border: 1px solid #3f3f3f;
+  border: 1px solid #3f3f3f !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 #ensiBtn-text, #ensiBtn-ani {
   background: #fff;
   cursor: pointer;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   -webkit-appearance: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   outline: 0 !important;
 }
@@ -63,7 +75,8 @@
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
   animation: rotate-circle ease-in-out 1s forwards;
   -webkit-animation: rotate-circle ease-in-out 1s forwards;
 }
@@ -79,7 +92,8 @@
   left: 50%;
   top: 40%;
   -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
-  transform: translate(-50%, -50%) rotate(0) scale(0);
+  -ms-transform: translate(-50%, -50%) rotate(0) scale(0);
+      transform: translate(-50%, -50%) rotate(0) scale(0);
   -webkit-animation: success ease-in 0.2s forwards;
   animation: success ease-in 0.2s forwards;
   -webkit-animation-delay: 1s;
@@ -89,13 +103,16 @@
 /* BTN ENSI ANIMATIONS */
 @keyframes rotate-circle {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+            transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
   }
   90% {
-    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+    -webkit-transform: translate(-50%, -50%) rotate(720deg) scale(0.8);
+            transform: translate(-50%, -50%) rotate(720deg) scale(0.8);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 
@@ -113,10 +130,12 @@
 
 @keyframes success {
   from {
-    transform: translate(-50%, -50%) rotate(-135deg) scale(0);
+    -webkit-transform: translate(-50%, -50%) rotate(-135deg) scale(0);
+            transform: translate(-50%, -50%) rotate(-135deg) scale(0);
   }
   to {
-    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+            transform: translate(-50%, -50%) rotate(-45deg) scale(1);
     background-color: transparent;
   }
 }

@@ -1,9 +1,15 @@
 /* HAMBURGER FREPI */
 .frepi-hamburger {
   margin-left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
 }
 
@@ -12,12 +18,15 @@
   height: 38px;
   padding: 0 2px 0 4px;
   position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .frepi-hamburger:hover .frepi-hamburger-line {
   opacity: 1;
-  animation: wobble 0.5s ease-in, scaleElastic 0.5s ease-in;
+  -webkit-animation: wobble 0.5s ease-in, scaleElastic 0.5s ease-in;
+          animation: wobble 0.5s ease-in, scaleElastic 0.5s ease-in;
 }
 
 .frepi-hamburger:hover .frepi-hamburger-text {
@@ -33,6 +42,8 @@
   opacity: 0.3;
   overflow: hidden;
   position: absolute;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -50,19 +61,25 @@
 
 .frepi-hamburger-line:nth-child(1).animate-frepi-line1 {
   top: 16px;
-  transform: scale(0.75) rotate(405deg);
+  -webkit-transform: scale(0.75) rotate(405deg);
+      -ms-transform: scale(0.75) rotate(405deg);
+          transform: scale(0.75) rotate(405deg);
   opacity: 1;
 }
 
 .frepi-hamburger-line:nth-child(2).animate-frepi-line2 {
   top: 16px;
-  transform: scale(0.85) rotate(270deg);
+  -webkit-transform: scale(0.85) rotate(270deg);
+      -ms-transform: scale(0.85) rotate(270deg);
+          transform: scale(0.85) rotate(270deg);
   opacity: 0;
 }
 
 .frepi-hamburger-line:nth-child(3).animate-frepi-line3 {
   top: 16px;
-  transform: scale(0.75) rotate(-45deg);
+  -webkit-transform: scale(0.75) rotate(-45deg);
+      -ms-transform: scale(0.75) rotate(-45deg);
+          transform: scale(0.75) rotate(-45deg);
   opacity: 1;
 }
 
@@ -70,6 +87,8 @@
   font-size: 1.5rem;
   color: #dbdbd2;
   margin-left: 20px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
   transition: color 0.5s ease-in-out;
 }
 
@@ -79,4 +98,81 @@
 
 .animate-box {
   opacity: 1;
+}
+
+.particles {
+  width: 40px;
+  position: absolute;
+  top: -55px;
+  left: 5px;
+  visibility: hidden;
+}
+
+.animate-particles {
+  -webkit-animation: showParticles 0.4s ease;
+          animation: showParticles 0.4s ease; */
+}
+
+@keyframes showParticles {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2) rotate(300deg);
+            transform: scale(2) rotate(300deg);
+  }
+}
+
+@-webkit-keyframes showParticles {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) rotate(20deg);
+  }
+}
+
+@keyframes showParticlesRotateChange {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform: scale(0.25) rotate(0);
+            transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) rotate(-20deg);
+            transform: scale(0.5) rotate(-20deg);
+  }
+}
+
+@-webkit-keyframes showParticlesRotateChange {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform: scale(0.25) rotate(0);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) rotate(-20deg);
+  }
 }

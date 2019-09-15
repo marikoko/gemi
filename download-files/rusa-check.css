@@ -1,0 +1,175 @@
+/* CHECK ENSI */
+.animate-rusa input {
+    display: none;
+  }
+  
+  .animate-rusa div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .rusaC label {
+    font-size: 1.2rem;
+  }
+  .animate-rusa {
+    width: 200px;
+    height: 50px;
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  
+  .animate-rusa div::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    border-radius: 20px;
+    z-index: -1;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  
+  .animate-rusa span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 13px;
+    background-color: #fff;
+    border-radius: 100%;
+    border: 1px solid rgba(146, 146, 146, 0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    transition: all 0.7s ease-out;
+  }
+  
+  .animate-rusa span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  
+  .animate-rusa span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 0 1px lightgrey;
+            box-shadow: 0 0 0 1px lightgrey;
+    border-radius: 100%;
+    opacity: 0;
+  }
+  
+  .animate-rusa:hover div span::before {
+    background: lightgrey;
+  }
+  
+  .animate-rusa:hover div::before {
+    border: 1px solid lightgrey;
+
+  }
+  
+  .animate-rusa input:checked + div {
+    color: #000;
+  }
+  
+  .animate-rusa input:checked + div::before {
+    background-color: #fff;
+    border: 1px solid lightgrey;
+  }
+  
+  .animate-rusa input:checked + div span {
+    background-color: #E7C3FC;
+  }
+  
+  .animate-rusa input:checked + div span::before {
+    background-color: #fff;
+  }
+  
+  .animate-rusa input:checked + div span::after {
+    -webkit-animation: scale 0.5s ease;
+            animation: scale 0.5s ease;
+  }
+  
+  /* ANIMATIONS */
+  @keyframes littleBounce {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  @-webkit-keyframes littleBounce {
+    0% {
+      -webkit-transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.2);
+    }
+    100% {
+      -webkit-transform: scale(1);
+    }
+  }
+  
+  @keyframes checkboxSelected {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    70% {
+      -webkit-transform: scaleY(1.1);
+              transform: scaleY(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  @-webkit-keyframes checkboxSelected {
+    0% {
+      -webkit-transform: scale(1);
+    }
+    70% {
+      -webkit-transform: scaleY(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+    }
+  }

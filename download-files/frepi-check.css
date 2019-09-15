@@ -3,8 +3,12 @@
 }
 
 .animate-frepi div{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .frepiC label {
@@ -21,6 +25,8 @@
   line-height: 50px;
   position: relative;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1;
 }
@@ -33,9 +39,15 @@
   background-color: white;
   border: 2px solid darkgrey;
   border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .animate-frepi span::before {
@@ -43,6 +55,8 @@
   width: 8px;
   height: 8px;
   border-radius: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -53,7 +67,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  box-shadow: 0 0 0 1px #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
   border-radius: 100%;
   opacity: 0;
 }
@@ -74,12 +89,15 @@
   bottom: 5px;
   left: 5px;
   z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-radius: 6px;
 }
 
 .animate-frepi:hover div span::before {
-  animation: wobble 0.3s ease;
+  -webkit-animation: wobble 0.3s ease;
+          animation: wobble 0.3s ease;
   background-color: #dbdbd2;
 }
 
@@ -93,7 +111,8 @@
 }
 
 .animate-frepi input:checked + div::before {
-  animation: wobble 0.3s ease;
+  -webkit-animation: wobble 0.3s ease;
+          animation: wobble 0.3s ease;
   /* background-color: #37425f; */
   color: #dbdbd2;
   border: 1px solid #a6ac5c;
@@ -101,7 +120,8 @@
 
 .animate-frepi input:checked + div span {
   background-color: #fff;
-  animation: littleBounce 0.3s ease, wobble 0.3s ease;
+  -webkit-animation: littleBounce 0.3s ease, wobble 0.3s ease;
+          animation: littleBounce 0.3s ease, wobble 0.3s ease;
 }
 
 .animate-frepi input:checked + div span::before {
@@ -110,30 +130,37 @@
 
 .animate-frepi input:checked + div svg,
 .animate-frepi.submit svg {
-  animation: showParticles 0.4s ease;
+  -webkit-animation: showParticles 0.4s ease;
+          animation: showParticles 0.4s ease;
 }
 
 .animate-frepi input:checked + div svg:last-child,
 .animate-frepi.submit svg:last-child {
-  animation: showParticlesRotateChange 0.3s ease;
+  -webkit-animation: showParticlesRotateChange 0.3s ease;
+          animation: showParticlesRotateChange 0.3s ease;
 }
 
 /* ANIMATIONS */
 @keyframes wobble {
   0% {
-    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
   }
   40% {
-    transform: scale(1.1, 0.9) rotate(5deg);
+    -webkit-transform: scale(1.1, 0.9) rotate(5deg);
+            transform: scale(1.1, 0.9) rotate(5deg);
   }
   70% {
-    transform: scale(0.9, 1.1) rotate(-3deg);
+    -webkit-transform: scale(0.9, 1.1) rotate(-3deg);
+            transform: scale(0.9, 1.1) rotate(-3deg);
   }
   80% {
-    transform: scale(1.05, 0.95) rotate(1deg);
+    -webkit-transform: scale(1.05, 0.95) rotate(1deg);
+            transform: scale(1.05, 0.95) rotate(1deg);
   }
   100% {
-    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
   }
 }
 
@@ -159,14 +186,16 @@
   0% {
     opacity: 0;
     visibility: visible;
-    transform: scale(0.25) rotate(0);
+    -webkit-transform: scale(0.25) rotate(0);
+            transform: scale(0.25) rotate(0);
   }
   50% {
     opacity: 0.4;
   }
   100% {
     opacity: 0;
-    transform: scale(0.5) rotate(20deg);
+    -webkit-transform: scale(0.5) rotate(20deg);
+            transform: scale(0.5) rotate(20deg);
   }
 }
 
@@ -189,14 +218,16 @@
   0% {
     opacity: 0;
     visibility: visible;
-    transform: scale(0.25) rotate(0);
+    -webkit-transform: scale(0.25) rotate(0);
+            transform: scale(0.25) rotate(0);
   }
   50% {
     opacity: 0.4;
   }
   100% {
     opacity: 0;
-    transform: scale(0.5) rotate(-20deg);
+    -webkit-transform: scale(0.5) rotate(-20deg);
+            transform: scale(0.5) rotate(-20deg);
   }
 }
 

@@ -4,22 +4,29 @@
 }
 
 .animate-ensi div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .ensiC label {
   font-size: 1.2rem;
 }
 .animate-ensi {
+  width: 200px;
+  height: 50px;
   display: block;
-  width: 90%;
   color: rgba(0, 0, 0, 0.5);
   line-height: 50px;
   height: 50px;
   padding: 0 20px;
   position: relative;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1;
 }
@@ -32,6 +39,8 @@
   bottom: 5px;
   left: 5px;
   z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -42,9 +51,15 @@
   margin-right: 13px;
   background-color: #fff;
   border: 1px solid rgba(146, 146, 146, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .animate-ensi span::before {
@@ -52,6 +67,8 @@
   width: 8px;
   height: 8px;
   border-radius: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -62,7 +79,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  box-shadow: 0 0 0 1px lightgrey;
+  -webkit-box-shadow: 0 0 0 1px lightgrey;
+          box-shadow: 0 0 0 1px lightgrey;
   border-radius: 100%;
   opacity: 0;
 }
@@ -80,14 +98,16 @@
 }
 
 .animate-ensi input:checked + div::before {
-  box-shadow: 0 0 5px lightgrey;
+  -webkit-box-shadow: 0 0 5px lightgrey;
+          box-shadow: 0 0 5px lightgrey;
   background-color: #fff;
   border: 1px solid lightgrey;
 }
 
 .animate-ensi input:checked + div span {
   background-color: rgba(0, 0, 0, 0.6);
-  animation: littleBounce 0.3s ease;
+  -webkit-animation: littleBounce 0.3s ease;
+          animation: littleBounce 0.3s ease;
 }
 
 .animate-ensi input:checked + div span::before {
@@ -95,19 +115,23 @@
 }
 
 .animate-ensi input:checked + div span::after {
-  animation: scale 0.25s ease;
+  -webkit-animation: scale 0.25s ease;
+          animation: scale 0.25s ease;
 }
 
 /* ANIMATIONS */
 @keyframes littleBounce {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -125,13 +149,16 @@
 
 @keyframes checkboxSelected {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   70% {
-    transform: scaleY(1.1);
+    -webkit-transform: scaleY(1.1);
+            transform: scaleY(1.1);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 

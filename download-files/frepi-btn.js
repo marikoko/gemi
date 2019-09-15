@@ -1,3 +1,4 @@
+console.log('fepi');
 const frepiBtn = document.querySelector('#frepiBtn'),
     svgLines = document.querySelector('svg'),
     delay = 3500;
