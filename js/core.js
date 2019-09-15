@@ -137,8 +137,12 @@ const dataObj = {
 
 
 /* button selected functions */
+
 selectComponent = (e) => {
     selectComp.forEach((i) => {
+        if(i.classList.contains('active')){
+            i.classList.remove('active');
+        }
         i.addEventListener('click', function(e){
              selectComp.forEach((i) => {
                 i.classList.remove('active');
@@ -165,8 +169,8 @@ nodeInArr = (list) => {
 
 /* TEMPLATE */
 const templateBtn = (type) =>{
-    // window.location = "https://marikoko.github.io/gemi/download-files/"+type+".html";
-    window.location = "../download-files/"+type+".html";
+    // window.location = "https://marikoko.github.io/gemi/templates/"+type+".html";
+    window.location = "../templates/"+type+".html";
 }
 
 
@@ -240,8 +244,8 @@ selectButtons.forEach((i) => {
         }  else {
             i.classList.remove('active');
         }
-        selectComponent(e);
-        selectBrandidentity(e);
+        // selectComponent(e);
+        // selectBrandidentity(e);
         // Get button
         // var btn = event.target.querySelector('#btn');
         var btn = e.target;

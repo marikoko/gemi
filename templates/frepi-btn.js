@@ -1,7 +1,13 @@
 console.log('fepi');
 const frepiBtn = document.querySelector('#frepiBtn'),
     svgLines = document.querySelector('svg'),
+    compBtn = document.querySelector('.btn'),
+    biFrepi = document.querySelector('#btn-frepi'),
     delay = 3500;
+document.addEventListener('DOMContentLoaded', () => {
+  biFrepi.classList.add('active');
+  compBtn.classList.add('active');
+})
 
 /* FREPI BUTTON JS */ 
 animateHoverFrepiBtn = () => {
