@@ -4,10 +4,10 @@ const frepiBtn = document.querySelector('#frepiBtn'),
     compBtn = document.querySelector('.btn'),
     biFrepi = document.querySelector('#btn-frepi'),
     delay = 3500;
-document.addEventListener('DOMContentLoaded', () => {
-  biFrepi.classList.add('active');
-  compBtn.classList.add('active');
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//   biFrepi.classList.add('active');
+//   compBtn.classList.add('active');
+// })
 
 /* FREPI BUTTON JS */ 
 animateHoverFrepiBtn = () => {
